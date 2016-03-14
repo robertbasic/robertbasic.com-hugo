@@ -1,0 +1,134 @@
+body {
+    background: #161D32;
+    color: #8D95AA;
+    font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: #44537F;
+}
+
+a {
+    text-decoration: none;
+    color: #f7e98c;
+}
+
+a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+acronym {
+    border-bottom: 1px dotted #6c7388;
+}
+
+blockquote {
+    border-left: 1px solid #f7e98c;
+    margin: 0 20px 20px 20px;
+    padding-left: 20px;
+    display: block;
+}
+
+#page {
+    float: none;
+    margin: 0 auto;
+}
+
+#top h1{
+    font-size: 38pt;
+    margin: 40px 0;
+    text-align: center;
+}
+
+#sidebar {
+    font-size: 14px;
+}
+
+#sidebar li {
+    list-style: none;
+}
+
+.Zend_Tag_Cloud {
+    margin-left: 40px;
+}
+
+#footer {
+    text-align: center;
+    font-size: 80%;
+    margin: 10px 10px;
+    padding: 10px 0;
+    border-top: 1px solid #6C7388;
+}
+
+.entry_details {
+    border-bottom: 1px solid #6C7388;
+    padding: 2px;
+    margin-bottom: 20px;
+    font-size: 80%;
+    text-align: right;
+}
+
+.post {
+    margin: 0 0 60px;
+    text-align: left;
+    border-bottom: 1px solid #6c7388;
+}
+
+.no-bottom-border {
+    border-bottom:none;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0px;
+}
+
+.navigation {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    font-size: 80%;
+}
+
+.navigation a{
+    text-align: center;
+    padding: 5px 10px;
+    margin: 0 2px 0 2px;
+    border: 1px solid #6C7388;
+}
+
+.navigation a:hover {
+    background: #6C7388;
+}
+
+.current{
+    background: #6C7388;
+}
+
+.aligncenter, div.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#my_contact{
+    font-size: 90%;
+    text-align: left;
+    background: #1f2946;
+    margin: 0 50px 20px 50px;
+    padding: 5px;
+    border: 1px solid #6c7388;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#my_contact dd{
+    margin: 0 0 0 30px;
+    color: #f7e98c;
+}
