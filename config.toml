@@ -1,6 +1,6 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "http://robertbasic.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Robert Basic's blog"
 theme = "robertbasic.com"
 
 [params]

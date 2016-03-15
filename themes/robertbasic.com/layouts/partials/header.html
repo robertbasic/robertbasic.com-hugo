@@ -11,7 +11,14 @@
         <meta name="author" content="Robert Basic" />
         <meta name="copyright" content="copyright (c) 2008 by Robert Basic" />
 
-        <title>Robert Basic's blog</title>
+        <title>
+            {{ if .IsPage }}
+                {{ if .Title }}
+                    {{ .Title }} ~
+                {{ end }}
+            {{ end }}
+            {{ .Site.Title }}
+        </title>
 
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
