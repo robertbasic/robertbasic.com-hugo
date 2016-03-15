@@ -2,3 +2,6 @@ baseurl = "http://replace-this-with-your-hugo-site.com/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "robertbasic.com"
+
+[params]
+    description = "Robert Basic is a web developer from Serbia."
