@@ -1,0 +1,22 @@
+<div class="post">
+
+    <h1 class="no-bottom-margin">
+        <a title="{{ .Title }}" href="{{ .Permalink }}" rel="bookmark">
+            {{ .Title }}
+        </a>
+    </h1>
+
+    <div class="entry_details">
+        by Robert Basic on {{ .Date.Format "02-01-2006" }}
+    </div>
+
+    <div class="entry">
+        {{ .Content }}
+    </div>
+
+    <div class="entry_details no-bottom-border no-bottom-margin">
+        Tags: <?php echo $this->postTags($this->post); ?>.<br>
+        Categories: <?php echo $this->postCategories($this->post); ?>.<br>
+    </div>
+
+</div>
