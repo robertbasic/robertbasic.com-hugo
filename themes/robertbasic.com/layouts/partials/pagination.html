@@ -1,0 +1,22 @@
+<div class="navigation">
+    {{ if .Paginator.HasPrev }}
+        <a href="{{ .Paginator.First.URL }}"> &laquo; </a>
+        <a href="{{ .Paginator.Prev.URL }}"> &lsaquo; </a>
+    {{ end }}
+
+    {{/* saving the current page number to a variable */}}
+    {{/* because it is being overriden inside range's scope */}}
+    {{ $currentPage := .Paginator.PageNumber }}
+    {{ range .Paginator.Pagers }}
+        {{ if eq $currentPage .PageNumber }}
+        <a href="{{ .URL }}" class="current"> {{ .PageNumber }} </a>
+        {{ else }}
+        <a href="{{ .URL }}"> {{ .PageNumber }} </a>
+        {{ end }}
+    {{ end }}
+
+    {{ if .Paginator.HasNext }}
+        <a href="{{ .Paginator.Next.URL }}"> &rsaquo; </a>
+        <a href="{{ .Paginator.Last.URL }}"> &raquo; </a>
+    {{ end }}
+</div>
