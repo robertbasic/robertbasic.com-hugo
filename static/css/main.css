@@ -132,3 +132,8 @@ blockquote {
     margin: 0 0 0 30px;
     color: #f7e98c;
 }
+
+pre {
+    background: none !important;
+    color: #8d95aa;
+}

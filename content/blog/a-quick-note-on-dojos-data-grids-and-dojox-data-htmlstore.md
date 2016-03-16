@@ -28,21 +28,21 @@ Let's take for example this is the given HTML table:
 
 I was defining the structure for the columns as:
 
-<pre name="code" class="php">
+{{< highlight javascript >}}
 var struct = [[
    { field: 'id', name: 'ID', width: 'auto' },
    { field: 'name', name: 'Name', width: 'auto'}
 ]];
-</pre>
+{{< /highlight >}}
 
 which was wrong. This is the correct one:
 
-<pre name="code" class="php">
+{{< highlight javascript >}}
 var struct = [[
    { field: 'ID', name: 'ID', width: 'auto' },
    { field: 'Name', name: 'Name', width: 'auto'}
 ]];
-</pre>
+{{< /highlight >}}
 
 Use what's in the <strong>TH tags</strong> for the <strong>field</strong> properties! I was trying to be clever and use the name of the fields in the database. The worst part is that there will be no errors, the grid will render correctly the header row and a correct number of rows for the data, but! it will show "..." in each column, instead of the actual data.
 

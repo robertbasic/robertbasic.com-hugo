@@ -3,8 +3,11 @@ languageCode = "en-us"
 title = "Robert Basic's blog"
 theme = "robertbasic.com"
 
+pygmentsstyle = "monokai"
+
 [params]
     description = "Robert Basic is a web developer from Serbia."
+
 
 [taxonomies]
     tag = "tags"
