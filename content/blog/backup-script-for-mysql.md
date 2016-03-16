@@ -6,8 +6,9 @@ description = "A bash script that backups a database, gzipit and deletes all bac
 tags = ["backup", "mysql", "script", "shell"]
 categories = ["Development"]
 +++
-<p>This post is more of a reminder for myself. Anywayz, a little bash script that backups a database, gzipit and deletes all backups older than 3 days.</p>
-<pre class="bash" name="code">#!/bin/bash
+This post is more of a reminder for myself. Anywayz, a little bash script that backups a database, gzipit and deletes all backups older than 3 days.
+
+{{< highlight bash >}}#!/bin/bash
 
 DBUSER="user"
 DBPASS="pass"
@@ -21,5 +22,6 @@ mysqldump -u$DBUSER -p$DBPASS $DBDB > "$BACKUPSQL"
 gzip -c $BACKUPSQL > $BACKUPGZIP
 rm $BACKUPSQL
 find $BACKUPROOTDIR -type f -name "mysqlbackup\*" -mtime +3 | xargs rm
-</pre>
-<p>Kudos to <a href="http://twitter.com/zsteva">@zsteva</a> for looking at it to spot any errors I might have made.</p>
+{{< /highlight >}}
+
+Kudos to <a href="http://twitter.com/zsteva">@zsteva</a> for looking at it to spot any errors I might have made.
