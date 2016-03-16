@@ -5,3 +5,7 @@ theme = "robertbasic.com"
 
 [params]
     description = "Robert Basic is a web developer from Serbia."
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
