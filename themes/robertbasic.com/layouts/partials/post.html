@@ -17,9 +17,11 @@
     <div class="entry_details no-bottom-border no-bottom-margin">
         {{ with .Params.tags }}
         {{/*not sure why it doesn't work without the (sort .) part */}}
-        Tags: {{ delimit (apply (sort .) "partial" "tag" ".") ", " }}.<br>
+        Tags: {{ delimit (apply (apply (sort .) "partial" "tag" ".") "chomp" ".") ", " }}.<br>
         {{ end }}
-        Categories: {{ delimit .Params.categories ", " }}.<br>
+        {{ with .Params.categories }}
+        Categories: {{ delimit (apply (apply (sort .) "partial" "category" ".") "chomp" ".") ", " }}.<br>
+        {{ end }}
     </div>
 
 </div>
