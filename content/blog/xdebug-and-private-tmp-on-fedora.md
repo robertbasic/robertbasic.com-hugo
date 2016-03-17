@@ -10,13 +10,13 @@ This one was a bit weird and needed some figuring out. Xdebug profiler output fi
 
 I wanted to do some profiling with <a href="http://xdebug.org">xdebug</a>. I set all the <a href="http://xdebug.org/docs/all_settings#profiler_enable_trigger">necessary configuration settings</a>  in my php.ini, restarted apache, confirmed xdebug is present and configured correctly with <code>php -i | grep xdebug</code>, appended <code>?XDEBUG_PROFILE=1</code> aaaand! Nothing. Nothing in <code>/tmp</code>, the default profiler output directory. Double checked paths, permissions, nope, nothing. No profiler files were generated.
 
-{{< highlight bash }}
+{{< highlight bash >}}
 find /tmp -name "cachegrind*"
 {{< /highlight >}}
 
  listed the files in
 
-{{< highlight bash }}
+{{< highlight bash >}}
 /tmp/systemd-httpd.service-X9iE20R/tmp/
 {{< /highlight >}}
 

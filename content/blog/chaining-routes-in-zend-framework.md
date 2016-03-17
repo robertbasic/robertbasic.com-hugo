@@ -50,7 +50,7 @@ public function _initRoutes()
 
 Assuming that we have an Index controller, with actions index and contact and a Foo controller with actions index and bar, paired with the routes from the above example, we could do requests like:
 
-{{< highlight >}}
+{{< highlight php >}}
 / => /index/index/lang/en
 /de => /index/index/lang/de
 /sr/contact => /index/contact/lang/sr
