@@ -1,8 +1,7 @@
-{{ if isset .Data "Pages" }}
 <h2>Recent posts</h2>
 
 <ul>
-{{ range first 10 .Data.Pages }}
+{{ range first 10 . }}
 <li>
     <a href="{{ .Permalink }}">
     {{ .Title }}
@@ -10,4 +9,3 @@
 </li>
 {{ end }}
 </ul>
-{{ end }}

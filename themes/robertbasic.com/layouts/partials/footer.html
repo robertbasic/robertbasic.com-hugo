@@ -10,8 +10,7 @@
                             <a href="http://feeds2.feedburner.com/robertbasic/blog/">Get the feed</a>
                         </li>
                     </ul>
-
-                    {{ partial "recent-posts.html" . }}
+                    {{ partial "recent-posts.html" .Site.Pages }}
                     {{ partial "tag-cloud.html" . }}
                     == categories ==
                     == archives ==
