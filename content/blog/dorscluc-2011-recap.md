@@ -5,6 +5,7 @@ slug = "dorscluc-2011-recap"
 description = "My overall thoughts on the DORS/CLUC 2011 conference."
 tags = ["conference", "dors/cluc"]
 categories = ["Blablabla", "Development"]
+2011 = ["05"]
 +++
 This year's <a href="http://www.dorscluc.org/">DORS/CLUC</a> has been and gone, 18th in the row for the organisers, first one (but not the last!) for me. For those of you who not know, DORS/CLUC is a conference about GNU/Linux and open source, which took place in the nice town of <a href="http://en.wikipedia.org/wiki/Zagreb">Zagreb</a>, Croatia, in one of the auditoriums of FER (Faculty of electronics and computer science). I attended the conference as a speaker with a lightning talk on <a href="http://phpplaneta.net/">PHPPlaneta.net</a> and a regular talk on <a href="http://framework.zend.com/">Zend Framework</a>.
 

@@ -5,6 +5,7 @@ slug = "changing-jenkins-home-directory-on-ubuntu"
 description = "Quick post how to change Jenkins' home directory in Ubuntu."
 tags = ["hack", "jenkins", "ubuntu"]
 categories = ["Development", "Software"]
+2011 = ["08"]
 +++
 I've started to play around with <a href="http://jenkins-ci.org/">Jenkins</a> yesterday and I kinda don't like that it's default home directory is /var/lib/jenkins so I changed it to /home/jenkins, so I'm throwing the steps needed out here for future reference.
 

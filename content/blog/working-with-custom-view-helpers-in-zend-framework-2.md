@@ -5,6 +5,7 @@ slug = "working-with-custom-view-helpers-in-zend-framework-2"
 description = "Some usage tips on custom view helpers in Zend Framework 2."
 tags = ["zend framework 2", "custom", "php", "view helpers"]
 categories = ["Development", "Programming", "Software"]
+2012 = ["09"]
 +++
 <a href="http://framework.zend.com/">Zend Framework</a> hit a big milestone as <a href="http://framework.zend.com/blog/zend-framework-2-0-0-stable-released.html">version 2 was released last week</a>. Sadly, I didn't have time to contribute to it, or even to poke around it much. I decided to slowly, as time permits, port this blog to ZF2; it should be a good enough learning playground.
 

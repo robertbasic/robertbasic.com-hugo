@@ -5,6 +5,7 @@ slug = "notes-on-shell-scripting"
 description = "A few shell script notes I learned along the way"
 tags = ["bash", "console", "scripting", "shell"]
 categories = ["Development", "Programming"]
+2011 = ["12"]
 +++
 Yesterday I <a href="https://github.com/enygma/usher/commit/c9a74ebedbc58c6b9b99828b45b1325e86bda1dd">did some shell scripting</a> and thought about writing down the few things learned along the way. Amazing how little needs to be done to learn a lot :)
 

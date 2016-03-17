@@ -5,6 +5,7 @@ slug = "login-example-with-zend_auth"
 description = "A login system with Zend Frameworks Zend_Auth component."
 tags = ["authenticate", "authentication", "example", "framework", "login", "php", "zend"]
 categories = ["Development", "Programming"]
+2009 = ["01"]
 +++
 <strong>Happy New Year!</strong> Hope everyone had a blast for New Year's Eve and managed to get some rest :) This is my first working day for this year. I'm still kinda lazy and sleepy. And I wanna eat something all the time. Damn you candies!!!
 

@@ -5,6 +5,7 @@ slug = "benchmarking-pages-behind-a-login-with-ab"
 description = "A short script to make possible benchmarking pages behind a login with ab."
 tags = ["ab", "benchmarking", "console", "cookies", "curl", "script"]
 categories = ["Development", "Free time", "Programming"]
+2011 = ["11"]
 +++
 Tonight I decided to relax a bit and what better way of relaxing is there for a geek then to do some bash scripting?! So for fun and no profit I decided to try and benchmark pages with <a href="http://httpd.apache.org/docs/2.0/programs/ab.html">ab, Apache HTTP server benchmarking tool</a>, which are behind a login. Turns out, it's pretty easy after reading some man pages ;)
 

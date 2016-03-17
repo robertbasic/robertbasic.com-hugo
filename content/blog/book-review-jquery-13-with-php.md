@@ -5,6 +5,7 @@ slug = "book-review-jquery-13-with-php"
 description = "jQuery 1.3 with PHP book review."
 tags = ["book", "jquery", "php", "review"]
 categories = ["Development", "Programming"]
+2010 = ["01"]
 +++
 Although I never wrote about jQuery here, I use it quite often and can pull of nice tricks with it. Also, bending any jQuery plugin to my will, was never a problem. But enough about me, you're here cause of the book.
 

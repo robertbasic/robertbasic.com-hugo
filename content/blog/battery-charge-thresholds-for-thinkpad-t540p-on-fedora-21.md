@@ -5,6 +5,7 @@ slug = "battery-charge-thresholds-for-thinkpad-t540p-on-fedora-21"
 description = "Setting battery charging threshold in Fedora 21 for a Thinkpad T540p"
 tags = ["fedora", "laptop", "thinkpad", "t540p", "tpacpi-bat", "battery"]
 categories = ["Software", "Development"]
+2014 = ["12"]
 +++
 This week I got myself a new laptop, a Thinkpad T540p. One of the features it has is that the battery's life can be prolonged by setting custom charging thresholds.
 

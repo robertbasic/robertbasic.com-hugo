@@ -5,6 +5,7 @@ slug = "gnucash-4-2-with-sqlite3-on-gnu-linux"
 description = "Missing dependencies in 2013. Go figure."
 tags = ["xml", "gnucash", "sqlite3"]
 categories = ["Software", "Development"]
+2013 = ["01"]
 +++
 <img src="http://i.imgur.com/EWJjCjD.png" style="float:right;padding:10px;" unselectable="on">
 

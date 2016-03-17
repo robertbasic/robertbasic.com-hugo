@@ -5,6 +5,7 @@ slug = "smush-your-images"
 description = "A short review of the very useful SmushIt! web application"
 tags = ["image", "optimize", "site", "web"]
 categories = ["Development", "Places on the web"]
+2008 = ["09"]
 +++
 I just found a nice web site where you can &#147;smush&#148; your images &#151; <a href="http://smushit.com" target="_blank">Smushit.com</a>. SmushIt takes an image and removes all unnecessary information about it: when was it last edited, what image editor was used etc., but <b>keeps</b> the quality of the image! This is more than useful for sites where there are lots of images.
 

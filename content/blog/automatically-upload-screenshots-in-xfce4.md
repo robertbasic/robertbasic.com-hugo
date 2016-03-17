@@ -5,6 +5,7 @@ slug = "automatically-upload-screenshots-in-xfce4"
 description = "A short script to automatically upload XFCE4 screenshots to a remote server"
 tags = ["bash", "script", "xfce4", "xfce4-screenshooter"]
 categories = ["Development", "Programming", "Software"]
+2012 = ["02"]
 +++
 XFCE4 has a nice little tool for making screenshots - xfce4-screenshooter. My only gripe with it is that it can't automatically upload the images to a server and give me the URL to the image (to be honest, it can, but it uploads the images to a shady looking website, and I don't like that). And then one day I saw <a href="https://github.com/EvanDotPro/GtkGrab" target="_self">Evan Coury's GtkGrab</a> - a set of scripts which does exactly what I want! But, sadly, that's for Gnome. So, based on Evan's work, I put together <a href="https://gist.github.com/1748455" target="_self">this little script</a>:
 

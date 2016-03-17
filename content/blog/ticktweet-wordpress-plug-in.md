@@ -5,6 +5,7 @@ slug = "ticktweet-wordpress-plug-in"
 description = "A WordPress plug-in that will show any tweet from Twitter public time-line where the searched term is mentioned."
 tags = ["about", "blog", "php", "plugin", "site", "wordpress"]
 categories = ["Blablabla", "Development", "Programming", "Software"]
+2008 = ["11"]
 +++
 Few weeks ago <a href="http://twitter.com/imjustcreative">@imjustcreative</a> mentioned on Twitter that he would like a WordPress plug-in that would scroll (tick) tweets where &#147;soultweet&#148; is mentioned. As I wanted to do a plug-in for some time, but never had any good ideas, I told him that I'll take up the job. So I started to work on this in my free time.
 

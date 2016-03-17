@@ -5,6 +5,7 @@ slug = "quick-netbeans-tip-task-filters"
 description = "A quick tip to make the \"Tasks\" window in Netbeans more usable."
 tags = ["filters", "ide", "netbeans", "tasks", "tip"]
 categories = ["Development", "Software"]
+2010 = ["04"]
 +++
 I'm using Netbeans as my main IDE for PHP and Python projects for over a year now, yet only now I have stumbled upon this feature - creating filters for tasks that show up in the "Tasks" window (Ctrl+6 shortcut to show/hide the window).
 

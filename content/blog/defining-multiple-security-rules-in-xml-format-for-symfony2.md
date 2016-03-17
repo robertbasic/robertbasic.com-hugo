@@ -5,6 +5,7 @@ slug = "defining-multiple-security-rules-in-xml-format-for-symfony2"
 description = "How to define multiple security rules in XML for Symfony2"
 tags = ["rule", "security", "symfony2", "xml"]
 categories = ["Development", "Programming"]
+2011 = ["08"]
 +++
 This one falls into a category of bogus Symfony2 documentation. Or inconsistent behavior. Or whatever. It's a bit frustrating.
 

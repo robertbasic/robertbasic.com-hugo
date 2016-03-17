@@ -5,6 +5,7 @@ slug = "contributing-to-open-source"
 description = "My thoughts on open source and why do I contribute to open source."
 tags = ["contributing", "hack", "hacking", "open source", "random"]
 categories = ["Blablabla"]
+2011 = ["03"]
 +++
 
 Often times people ask me why do I contribute to open source, why do I "waste money and time" on free stuff when I could easily do the same thing for money? Don't have I enough of staring at the computer at work where, well, I do the same thing - hack on code? Ummm. No.

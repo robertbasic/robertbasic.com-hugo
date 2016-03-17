@@ -5,6 +5,7 @@ slug = "speaking-at-webkonf-2011"
 description = "I'll be giving a talk about Zend Framework 2 at Webkonf."
 tags = ["conference", "talk", "webkonf"]
 categories = ["Blablabla", "Development"]
+2011 = ["09"]
 +++
 I'll be giving a talk at this year's Hungarian Web Conference, <a href="http://webkonf.org/">Webkonf</a>, which will be held on October 8th in Budapest. The topic of the talk is Zend Framework 2 and with the recent happenings in the framework world and in the community (thanks <a href="https://twitter.com/#!/padraicb">Paddy</a>!), it will be both interesting and challenging to create a talk worth listening :) Oh, and I'll be presenting in Hungarian :)
 

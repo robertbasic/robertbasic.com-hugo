@@ -5,6 +5,7 @@ slug = "developer-conferences-in-croatia"
 description = "Review of ZgPHP and Webcamp Zagreb conferences."
 tags = ["conference", "zgphp", "webcamp", "croatia", "zagreb"]
 categories = ["Blablabla", "Development"]
+2013 = ["10"]
 +++
 In the past month and a half I had the pleasure of attending not one, but two developer conferences in Croatia's capital Zagreb. Both conferences are community organized, by people who apparently know what they are doing, as I only have words of praise for them.
 

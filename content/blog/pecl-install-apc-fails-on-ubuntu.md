@@ -5,6 +5,7 @@ slug = "pecl-install-apc-fails-on-ubuntu"
 description = ""
 tags = ["apc", "libpcre3", "pecl"]
 categories = ["Development", "Software"]
+2011 = ["04"]
 +++
 I was just installing APC on an Ubuntu server (what else to do on a Sunday morning?) with the standard set of commands:
 

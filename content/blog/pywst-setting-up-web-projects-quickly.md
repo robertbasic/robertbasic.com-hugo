@@ -5,6 +5,7 @@ slug = "pywst-setting-up-web-projects-quickly"
 description = "pywst, a Python script for quickly setting up web projects on Ubuntu"
 tags = ["apache", "lamp", "project", "python", "script", "setup", "svn", "trac", "ubuntu", "web"]
 categories = ["Development", "Programming", "Software"]
+2009 = ["02"]
 +++
 I wrote a Python script for automating the steps required to setup a web project environment on my local dev machine that runs on Ubuntu. Called it pywst: <strong>Py</strong>thon, <strong>W</strong>eb, <strong>S</strong>vn, <strong>T</strong>rac. That's the best I could do, sorry :P
 

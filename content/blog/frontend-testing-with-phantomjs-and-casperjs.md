@@ -5,6 +5,7 @@ slug = "frontend-testing-with-phantomjs-and-casperjs"
 description = "Started writing frontend tests with phantomjs and casperjs"
 tags = ["testing", "frontend", "javascript", "phantomjs", "casperjs", "automating"]
 categories = ["Development", "Programming"]
+2013 = ["01"]
 +++
 
 I am not usually fond of doing much frontend stuff, but I do like to dable in some javascript from time to time. Nothing fancy, no node.js, coffeescript and the likes for me. I still feel like making applications on the server side, and have the client just show things to the user. If needed some 3rd party javascript library or framework to make my life easier, and that's about it.

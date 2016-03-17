@@ -5,6 +5,7 @@ slug = "about-license"
 description = "A review of some of the most popular Open Source licenses"
 tags = ["free", "free software", "licence", "open source", "proprietary"]
 categories = ["Development", "Software"]
+2008 = ["09"]
 +++
 I don't know about you, but I'm not really good with all the legal mumbojumbo. All these licenses and agreements, they sound to me like they are not written to be read by human beings. Not to mention a bunch of terms that sound similar, but are not at all. As a person who makes and uses all kind of software, I feel like I should know more about licenses; what can and what can not be done under a specific license.
 

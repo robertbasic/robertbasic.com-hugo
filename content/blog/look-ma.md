@@ -5,6 +5,7 @@ slug = "look-ma"
 description = ""
 tags = ["about", "introduction", "random"]
 categories = ["Blablabla"]
+2008 = ["09"]
 +++
 <p>... I have a Blog too! Well, it was damn time to get yourself one of those.</p>
 <p>Actually, this is my third blog. The first lasted about a day or two. The second went alright for a time, but then the hosting company started to play around with settings, so the whole thing fell apart. This time, I'm serious. Kinda.</p>

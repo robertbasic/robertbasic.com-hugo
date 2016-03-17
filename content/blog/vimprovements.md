@@ -5,6 +5,7 @@ slug = "vimprovements"
 description = "Some improvements I made to my day-to-day usage of vim"
 tags = ["vim", "plugins", "ctrlp", "movements"]
 categories = ["Blablabla", "Software", "Development"]
+2015 = ["03"]
 +++
 One part where I always felt (and still feel) that I could improve on my Vim usage, is when moving around. I don't use the mouse, I don't use the arrow keys, but for a while now I felt that spamming hjkl to get from one place to another is not really efficient. To be honest, it is kind of easy to just press down jjjjjjj ... to move down lines. Went a bit too far? Just kk back. But there has to be a better way.
 

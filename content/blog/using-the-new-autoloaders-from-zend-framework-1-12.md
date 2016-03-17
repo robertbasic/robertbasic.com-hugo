@@ -5,6 +5,7 @@ slug = "using-the-new-autoloaders-from-zend-framework-1-12"
 description = "A quick post on how to setup a ZF1 application to use the new autoloaders from ZF1.12"
 tags = ["zend framework", "autoloader", "classmaps", "performance"]
 categories = ["Development", "Programming"]
+2012 = ["06"]
 +++
 The latest, and last, release of the Zend Framework 1.x series is just around the corner as <a href="http://zend-framework-community.634137.n4.nabble.com/Zend-Framework-1-12-0RC1-Released-td4655323.html">ZF 1.12.0RC1 was announced this week</a>. As I still have projects running ZF1 I thought about giving the most interesting new feature (for me) a spin - the new autoloaders which are backported from ZF2.
 

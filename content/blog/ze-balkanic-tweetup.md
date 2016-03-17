@@ -5,6 +5,7 @@ slug = "ze-balkanic-tweetup"
 description = "There's an idea to make a Tweetup for Balkan and wider countries."
 tags = ["random", "tweetup", "twitter"]
 categories = ["Blablabla", "Free time"]
+2009 = ["05"]
 +++
 It all started with <a href="http://twitter.com/robertbasic/status/1979854514">this</a>. Just another bored tweet from yours truly after the Sunday lunch. Followed by tweets like <a href="http://twitter.com/VladGeorgescu/status/1979859296">this</a> and <a href="http://twitter.com/anca_foster/status/1979880192">this</a> and <a href="http://twitter.com/bojanpejic/status/1980037924">this</a> and <a href="http://twitter.com/vranac/status/1980111818">this</a> and <a href="http://twitter.com/nikolaplejic/status/1980164728">this</a>. I'll just blame the fact that it's Sunday afternoon for the low response and that we geeks <strong>do have a life!</strong> (well, most of us... some of us...)
 

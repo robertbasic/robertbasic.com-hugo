@@ -5,6 +5,7 @@ slug = "debugging-zend-framework-unit-tests-with-xdebug-and-netbeans"
 description = "Setting up Netbeans and Xdebug to debug Zend Framework unit tests."
 tags = ["netbeans", "tests", "unit testing", "xdebug", "zend dojo", "zend framework"]
 categories = ["Development", "Programming", "Software"]
+2011 = ["07"]
 +++
 I've spent this weekend hacking on some <a href="https://github.com/robertbasic/zf2/tree/dojo">unit tests for Zend\Dojo</a> and I ran into an issue where I need Xdebug to, well, debug. Note, that this is not for debugging a Zend Framework application, but for debugging Zend Framework itself. I am using Netbeans + Xdebug to debug regular code, but debugging unit tests was something completely new for me. Turns out, it's not entirely different from "regular" debugging.
 

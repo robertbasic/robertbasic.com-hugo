@@ -5,6 +5,7 @@ slug = "wordpress-as-cms-tutorial"
 description = "An example how to transform Wordpress into a complete CMS."
 tags = ["blog", "cms", "example", "hack", "php", "tutorial", "wordpress"]
 categories = ["Development", "Programming", "Software"]
+2009 = ["03"]
 +++
 <a href="http://wordpress.org/">Wordpress</a> is one of the best blogging platforms out there &#151; if not the best. It's very powerful, can be easily extended and modified. It's <a href="http://codex.wordpress.org/Main_Page">documentation</a> is very well written and, so far, had answer to all of my crazy questions :)
 

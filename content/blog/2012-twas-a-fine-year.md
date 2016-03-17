@@ -5,6 +5,7 @@ slug = "2012-twas-a-fine-year"
 description = "A recap on 2012."
 tags = ["about", "hex", "life", "random", "longboard", "travel"]
 categories = ["Blablabla", "Free time"]
+2013 = ["01"]
 +++
 
 2012 was a real fine year, filled with travel, friends, work, longboards, books. A couple of beers found their way in my belly, too. The best part is that I honestly can't remember that a single bad thing happened this year. Most likely because it didn't. Pure awesomeness.

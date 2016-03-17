@@ -5,6 +5,7 @@ slug = "configuring-read-only-and-read-write-access-to-bitbucket-repos"
 description = "Setting up read-only and read-write access on bitbucket repositories."
 tags = ["bitbucket", "ssh", "keys", "setup"]
 categories = ["Development"]
+2015 = ["01"]
 +++
 
 Trying to automate things on my server, I ended up needing read-only for one group of my bitbucket repos and read-write access to another group.

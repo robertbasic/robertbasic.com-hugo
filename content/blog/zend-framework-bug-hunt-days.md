@@ -5,6 +5,7 @@ slug = "zend-framework-bug-hunt-days"
 description = "A few words on Zend Framework Bug Hunt Days"
 tags = ["bug", "framework", "hunt", "zend"]
 categories = ["Development", "Programming"]
+2009 = ["11"]
 +++
 On the 19th and 20th of this month, the third Zend Framework Bug Hunt days were held. I joined the party for the first time and I say, it was a jolly good one!
 

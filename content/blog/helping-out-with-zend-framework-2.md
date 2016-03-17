@@ -5,6 +5,7 @@ slug = "helping-out-with-zend-framework-2"
 description = "A few ways you can help out with the development of Zend Framework 2!"
 tags = ["contribute", "contributing", "help", "zend framework", "zend framework 2"]
 categories = ["Development", "Programming"]
+2011 = ["07"]
 +++
 OK, here are some tips and resources so you can start helping out and contributing to Zend Framework 2.0 :)
 

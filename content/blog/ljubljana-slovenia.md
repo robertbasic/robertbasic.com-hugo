@@ -5,6 +5,7 @@ slug = "ljubljana-slovenia"
 description = "My 3 days in Ljubljana, Slovenia."
 tags = ["ljubljana", "slovenia", "vacation", "longboard", "roadtrip"]
 categories = ["Blablabla", "Free time"]
+2012 = ["07"]
 +++
 Last week I was on a vacation for a couple of weeks, and decided to spend a couple of days in Slovenia's capital, Ljubljana. The fact that <a href="https://twitter.com/Swizec">Swizec</a> was on his way home with a car then (he's from Ljubljana, mind you), made the decision easy. Thus, on the 18th of July, I woke up early in the morning, and by 7AM was off on the road for the trip.
 

@@ -5,6 +5,7 @@ slug = "mocking-hard-dependencies-with-mockery"
 description = "Example how to use overloading in Mockery to mock hard dependencies."
 tags = ["mockery", "php", "testing", "unit tests"]
 categories = ["Development", "Programming"]
+2014 = ["12"]
 +++
 One problem with unit testing legacy applications is that the code has <code>new</code> statements all over the place, instantiating new objects in a way that doesn't really makes it easier to test the code.
 

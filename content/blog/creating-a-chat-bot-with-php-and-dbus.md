@@ -5,6 +5,7 @@ slug = "creating-a-chat-bot-with-php-and-dbus"
 description = "A simple chat bot script using DBus, PHP and Pidgin."
 tags = ["bot", "dbus", "events", "php", "pidgin", "signals"]
 categories = ["Development", "Programming"]
+2012 = ["01"]
 +++
 Now that we know how to <a href="http://robertbasic.com/blog/communicating-with-pidgin-from-php-via-d-bus/">use DBus to communicate with Pidgin from PHP</a> and how to <a href="http://robertbasic.com/blog/listening-to-dbus-signals-with-php/">listen to DBus signals</a>, it's time to put it all together by creating a simple chat bot! Nothing fancy, just a simple script that runs somewhere on some server and, by using a Pidgin account, can respond to some basic queries we send it.
 

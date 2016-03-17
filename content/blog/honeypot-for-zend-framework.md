@@ -5,6 +5,7 @@ slug = "honeypot-for-zend-framework"
 description = "A honeypot validator for Zend Form based on Matthew Turland's Honeypot Wordpress plugin."
 tags = ["framework", "honeypot", "php", "validator", "zend"]
 categories = ["Development", "Programming"]
+2010 = ["04"]
 +++
 
 I just hacked up a little code snippet based on <a href="http://twitter.com/elazar">Matthew's</a> <a href="http://matthewturland.com/2010/01/01/im-a-honey-pot/">Honeypot Wordpress plugin</a>. It's basically just a Validator for a Zend Form element which is hidden from the user via CSS. Cause it's hidden, users won't see it, but spambots will, well, cause they are bots.

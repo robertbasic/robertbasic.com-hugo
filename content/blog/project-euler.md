@@ -5,6 +5,7 @@ slug = "project-euler"
 description = ""
 tags = ["euler", "project", "site"]
 categories = ["Free time", "Places on the web", "Programming"]
+2008 = ["10"]
 +++
 A few days ago, I found a really great place, full of excellent math and programming problems: <a href="http://projecteuler.net/" target="_blank">Project Euler</a>.
 

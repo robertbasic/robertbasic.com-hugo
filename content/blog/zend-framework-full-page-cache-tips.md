@@ -5,6 +5,7 @@ slug = "zend-framework-full-page-cache-tips"
 description = "A post on two issues I had with full page caching and how I fixed them."
 tags = ["zend framework", "full page cache", "caching"]
 categories = ["Development", "Programming"]
+2012 = ["02"]
 +++
 When I started rewriting this blog, I knew from start that I want to use Zend Framework's <a href="http://framework.zend.com/manual/en/zend.cache.frontends.html#zend.cache.frontends.page" target="_self">full page caching</a>,
  as, I think, that's the best cache for this purpose. Not much going on 

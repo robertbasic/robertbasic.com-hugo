@@ -5,6 +5,7 @@ slug = "a-quick-note-on-dojos-data-grids-and-dojox-data-htmlstore"
 description = "A quick note on a stupid error I made with dojox.grid.DataGrid and dojox.data.HtmlStore"
 tags = ["data grid", "dojo", "dojo store", "htmlstore"]
 categories = ["Development", "Programming"]
+2011 = ["12"]
 +++
 I'm spending this day trying to create an "universal" administration dashboard with which I'll finally be happy with. I'm using <a href="http://dojotoolkit.org/">Dojo</a> to spice up the UI, because I think it's awesome and it has a lot of stuff in it and plays well with Zend Framework. This post is dedicated to the future stupid me.
 

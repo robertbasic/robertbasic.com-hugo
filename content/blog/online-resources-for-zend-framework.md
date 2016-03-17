@@ -5,6 +5,7 @@ slug = "online-resources-for-zend-framework"
 description = "Zend Framework online resources list - blogs, Twitter, books, forums..."
 tags = ["blog", "book", "framework", "resource", "site", "twitter", "zend"]
 categories = ["Development", "Places on the web", "Programming"]
+2009 = ["03"]
 +++
 Besides the <a href="http://framework.zend.com/manual/en/">official documentation</a> and <a href="http://framework.zend.com/docs/quickstart">the Quickstart</a>, there are many useful resources for <a href="http://framework.zend.com/">Zend Framework</a>, like blogs and Twitter. I did my best to collect them. If you know something that's not listed here, but should be, please leave a comment and I'll update the post :)
 

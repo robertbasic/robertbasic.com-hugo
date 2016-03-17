@@ -5,6 +5,7 @@ slug = "loading-custom-module-plugins"
 description = "A quick post on loading module plugins."
 tags = ["framework", "loading", "php", "plugin", "zend"]
 categories = ["Development", "Programming"]
+2010 = ["07"]
 +++
 OK, here's a quicky one from the office :P
 

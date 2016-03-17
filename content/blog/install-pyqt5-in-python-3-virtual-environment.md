@@ -5,6 +5,7 @@ slug = "install-pyqt5-in-python-3-virtual-environment"
 description = "Get PyQt5 working under a virtualenv with python3.4"
 tags = ["python", "pyqt5", "virtualenv"]
 categories = ["Software", "Development", "Programming"]
+2015 = ["02"]
 +++
 It's been a while since I last made something with <a href="http://www.riverbankcomputing.co.uk/software/pyqt/intro">PyQt</a>, so I decided to check out what's it like nowadays. I'm curious to see what's new in Qt5 and how does it differ from Qt4. Qt5 also can run under python 3 so I figured to give it a try.
 

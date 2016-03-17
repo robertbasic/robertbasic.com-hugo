@@ -5,6 +5,7 @@ slug = "saturday-night-hack-coords"
 description = "A quick hack in pygtk I've done in one night."
 tags = ["hack", "python", "pygtk", "byzanz"]
 categories = ["Development", "Programming", "Software"]
+2013 = ["03"]
 +++
 When I was just starting out learning programming, everything was so simple. I did not care about design patterns and best practices and unit tests and how will users use that piece of code. Hell, I did not even know those things exist. I was having fun, I was learning, I was free to do whatever I wanted to do, I was playing, I was like a child. Not that there is something wrong caring about those things now, but then I was able to put out a piece of code that was fixing a core of one problem I had and that was it. Once I was done with that, I would move on to the next problem. For a long time now I was missing that feeling of not caring, just fix the damn problem and move on. Just to slap together some crappy piece of code, use it once or twice and then forget about it.
 

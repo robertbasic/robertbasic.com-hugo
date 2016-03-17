@@ -5,6 +5,7 @@ slug = "ideas-of-march"
 description = "A community movement to blog more about PHP and share the ideas and knowledge"
 tags = ["community", "ideas of march", "php"]
 categories = ["Blablabla", "Development"]
+2011 = ["03"]
 +++
 Apparently there's this new movement in the PHP community, <a href="http://www.phpdeveloper.org/news/16047">"Ideas of March"</a>, where we all pledge that we will blog more about PHP and web dev and the community in general. So here I am, doing the same :)
 

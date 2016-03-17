@@ -5,6 +5,7 @@ slug = "xdebug-is-full-of-awesome"
 description = "Xdebug is full of awesome."
 tags = ["debugging", "xdebug"]
 categories = ["Development", "Programming"]
+2012 = ["01"]
 +++
 <img alt="" src="http://lh6.googleusercontent.com/-T6KPtpQIrCA/TyaW4TSDKvI/AAAAAAAAAss/dGguCKJ4ONs/s400/400x200.png" title="debugging eval&#039;d code with xdebug" class="alignright" width="400" height="220" style='float:right' />
 

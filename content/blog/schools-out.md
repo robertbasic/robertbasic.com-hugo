@@ -5,6 +5,7 @@ slug = "schools-out"
 description = ""
 tags = ["random"]
 categories = ["Blablabla", "Free time"]
+2008 = ["11"]
 +++
 Today is one big day for me: I passed my last 2 exams at the College. 3 months of learning, a bit of luck and a professor in a good mood &#151; the winning combination! This is a big relief for me, cause I now can fully concentrate on programming, no other stuff to think of, just me and the code.
 

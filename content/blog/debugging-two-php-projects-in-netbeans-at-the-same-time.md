@@ -5,6 +5,7 @@ slug = "debugging-two-php-projects-in-netbeans-at-the-same-time"
 description = "A quick tip how to debug two projects at the same time with netbeans and xdebug."
 tags = ["debugging", "netbeans", "xdebug", "xdebug_break"]
 categories = ["Development", "Programming", "Software"]
+2011 = ["08"]
 +++
 I'm currently working on some Symfony2 bundles and I have one Netbeans project for the main Symfony2 app and one project for the bundle. The bundle files are completely separated from the app and they are just linked (<code>ln -s</code>) together. It works great, except for the case when I need to debug some part of the bundle's code with Netbeans + xdebug. The debugger starts for the "main" project, which is the Symfony2 app, but setting breakpoints with Netbeans (y'know, by clicking the line number) for the bundle doesn't really work, as those are in the other project and not in the debugged one, rendering the whole debugging useless.
 

@@ -5,6 +5,7 @@ slug = "playing-with-zend_navigation-and-routes"
 description = "An example of using Zend_Navigation and routes with Zend Framework"
 tags = ["example", "framework", "navigation", "php", "routing", "zend"]
 categories = ["Development", "Programming"]
+2009 = ["08"]
 +++
 O hai. First things first - someone should slap me for being such a lazy blogger. Somehow I lost all the motivation I had in the beginning, but looks like it's back now :) I finally had the time to play around with the latest <a class="zem_slink freebase/guid/9202a8c04000641f8000000000b66a0f" href="http://framework.zend.com/" title="Zend Framework" rel="homepage">Zend Framework</a> version (v 1.9 now). I managed to skip the whole 1.8.x version, so this whole Zend_Application stuff is quite new to me. I spent a few days poking around the manual and the code to make it work. And it works! Yey for me! And yey for <a href="http://twitter.com/akrabat">Rob Allen</a> for his post on <a href="http://akrabat.com/2009/07/08/bootstrapping-modules-in-zf-1-8/">Bootstrapping modules in ZF 1.8</a>!
 

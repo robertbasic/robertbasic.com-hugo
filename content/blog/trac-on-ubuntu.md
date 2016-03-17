@@ -5,6 +5,7 @@ slug = "trac-on-ubuntu"
 description = "How to install Trac on Ubuntu with SVN and user authentication."
 tags = ["apache", "example", "lamp", "linux", "setup", "svn", "trac", "ubuntu"]
 categories = ["Development", "Software"]
+2009 = ["01"]
 +++
 Today I was messing around with <a href="http://trac.edgewall.org/">Trac</a>, installing it and doing some basic configuration. While my dev machine gets updated, I want to share my process of installing Trac.
 

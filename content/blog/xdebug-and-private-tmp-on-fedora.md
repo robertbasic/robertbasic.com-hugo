@@ -5,6 +5,7 @@ slug = "xdebug-and-private-tmp-on-fedora"
 description = "systemd PrivateTmp makes services have their own private temporary directories"
 tags = ["xdebug", "php", "fedora", "systemd"]
 categories = ["Development", "Software", "Programming"]
+2014 = ["12"]
 +++
 This one was a bit weird and needed some figuring out. Xdebug profiler output files were not being generated in the <code>/tmp</code> directory.<br>
 

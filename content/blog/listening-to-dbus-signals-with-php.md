@@ -5,6 +5,7 @@ slug = "listening-to-dbus-signals-with-php"
 description = ""
 tags = ["dbus", "events", "listen", "php", "pidgin", "signals", "xmpp"]
 categories = ["Development", "Programming"]
+2011 = ["12"]
 +++
 In my previous post I described (tried, at least) <a href="http://robertbasic.com/blog/communicating-with-pidgin-from-php-via-d-bus/">how to communicate with Pidgin from PHP</a>, by using the Dbus PHP extension.
 

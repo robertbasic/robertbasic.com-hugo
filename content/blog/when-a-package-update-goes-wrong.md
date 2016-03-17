@@ -5,6 +5,7 @@ slug = "when-a-package-update-goes-wrong"
 description = "Managed to revert a broken package update with yum"
 tags = ["linux", "fedora", "packages", "yum", "history", "undo"]
 categories = ["Development", "Software"]
+2013 = ["02"]
 +++
 I am running Fedora 17 on my laptop, and yesterday there were some packages to update. Nothing unusual, updates on Fedora are quite frequent and, up until yesterday, there was not a single problem I remember with any update. And it was a small update, four packages in total. What could possibly go wrong, right?
 

@@ -5,6 +5,7 @@ slug = "a-monkey-with-a-banana"
 description = "Bought a new banana board."
 tags = ["longboard", "random", "about", "banana", "banana board"]
 categories = ["Blablabla", "Free time"]
+2013 = ["01"]
 +++
 
 From time to time I browse through the local board shop's website, especially the "Longboard" section, because, well, I have recently developed this passion for longboarding. Few weeks back, just sometimes before Christmas, I was doing the same. Just casually browsing around, nothing that would catch my interest. And then, there it was, at the bottom of the page. <a href="http://www.bananaboards.com/">A banana board</a>. "Oh my, a real beauty", I thought to myself. The price was also in the affordable range. But, a problem was that I really couldn't, justify to buy it.

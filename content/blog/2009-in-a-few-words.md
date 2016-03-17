@@ -5,6 +5,7 @@ slug = "2009-in-a-few-words"
 description = "Few words on the crappy 2009."
 tags = ["about", "fail", "me", "random"]
 categories = ["Blablabla", "Free time"]
+2010 = ["01"]
 +++
 In 2009 some good stuff happened and some bad stuff happened. All in all, a crappy year. Hopefully, this year will be a lot better...
 

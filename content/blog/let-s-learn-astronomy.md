@@ -5,6 +5,7 @@ slug = "let-s-learn-astronomy"
 description = "Decided to take up a course on Astronomy on Coursera."
 tags = ["learning", "astronomy", "coursera", "course"]
 categories = ["Free time", "Blablabla"]
+2012 = ["09"]
 +++
 <p>I've graduated from Subotica Tech back in 2009., and earned a BsC in electrical engineering, or some such. Even though I had the opportunity to continue my academic studies, I decided that I had enough of schools for a while, and that I should start working. Turns out, that was a pretty smart move from my side, as I ended up working for two years with an awesome team, and later on started my own company, which is now <a href="http://robertbasic.com/blog/happy-birthday-hex">over a year old</a>! Yey!</p>
 

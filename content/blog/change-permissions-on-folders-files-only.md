@@ -5,6 +5,7 @@ slug = "change-permissions-on-folders-files-only"
 description = "Change permissions on folders/files only"
 tags = ["permissions", "shell"]
 categories = ["Development"]
+2011 = ["01"]
 +++
 This is just a quick reminder for myself. Should really remember this one. Changes permissions on folders|files only.
 

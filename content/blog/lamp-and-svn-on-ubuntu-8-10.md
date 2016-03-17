@@ -5,6 +5,7 @@ slug = "lamp-and-svn-on-ubuntu-8-10"
 description = "Setup a basic LAMP server and SVN on Ubuntu 8.10 using VirtualBox"
 tags = ["apache", "lamp", "setup", "subversion", "svn", "ubuntu", "virtualbox"]
 categories = ["Development", "Programming", "Software"]
+2008 = ["11"]
 +++
 This post is a rewrite of one of my older posts, <a href="http://robertbasic.com/blog/ubuntu-as-a-dev-machine/">Ubuntu as a dev machine</a>, but this time I'll explain also how to setup a basic SVN besides the LAMP.
 

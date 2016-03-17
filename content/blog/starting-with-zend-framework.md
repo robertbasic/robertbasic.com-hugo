@@ -5,6 +5,7 @@ slug = "starting-with-zend-framework"
 description = "Introduction to Zend Framework with example file structure, bootstrap file and htaccess file, explaining the basics of Zend Framework"
 tags = ["framework", "introduction", "php", "zend"]
 categories = ["Development", "Programming", "Software"]
+2008 = ["10"]
 +++
 <a href="http://framework.zend.com" target="_blank">Zend Framework</a> is a big & heavy object-oriented framework for PHP. I started working with ZF a couple of months ago, I liked it's <a href="http://framework.zend.com/manual/en/" target="_blank">documention</a> (it's very well documented) and decided to stick with this framework. Here is the <a href="http://framework.zend.com/download/latest" target="_blank">latest</a> version of the framework &#151; at the time of writing v1.6.1.
 

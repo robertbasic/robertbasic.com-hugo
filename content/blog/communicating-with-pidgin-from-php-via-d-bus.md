@@ -5,6 +5,7 @@ slug = "communicating-with-pidgin-from-php-via-d-bus"
 description = "Playing around with D-Bus from PHP"
 tags = ["communication", "dbus", "pecl", "php", "pidgin", "xmpp"]
 categories = ["Development", "Programming"]
+2011 = ["12"]
 +++
 Earlier this week I got an idea of trying to communicate with <a href="http://pidgin.im/">Pidgin</a>, a chat client, via the terminal. Sounded like a fun thing to hack on, plus, could be made useful (in my head, at least), for things like logging from a web application directly to IM, or, heck, even creating something like <a href="https://github.com/github/hubot">Github's Hubot</a>, commanding a server or an application just via chat. Surely I wasn't the first one to come up with this idea and after a bit of a googling found out that Pidgin's libpurple has a nice API for that, <a href="http://developer.pidgin.im/wiki/DbusHowto">exposed via D-Bus</a>.
 

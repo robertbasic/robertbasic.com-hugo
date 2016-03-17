@@ -5,6 +5,7 @@ slug = "bad-firebug"
 description = "Some ranting on how Firebug can be used to do bad stuff to a web application."
 tags = ["escaping", "example", "filter", "firebug", "php", "security"]
 categories = ["Development", "Programming", "Software"]
+2009 = ["12"]
 +++
 We all know about <a href="http://www.getfirebug.com/" title="Firebug" rel="homepage">Firebug</a>, probably the best developer add-on out there, and how awesome it is and how many times it helped us debug some nasty Javascript code, mess around with CSS and HTML on-the-fly, to track the time load of every external page element our app loads... It's so cool that it even has it's own add-ons! (<a href="http://www.firephp.org/" title="FirePHP" rel="homepage">FirePHP</a>, <a href="http://developer.yahoo.com/yslow/" title="YSlow" rel="homepage">YSlow</a> and FireCookie). Really, it helps our developer lives to suck a bit less.
 

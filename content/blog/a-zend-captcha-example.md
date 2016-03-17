@@ -5,6 +5,7 @@ slug = "a-zend-captcha-example"
 description = "Example of using Zend Captcha with Zend Form and the basics behind the captcha generation logic"
 tags = ["captcha", "example", "framework", "php", "zend"]
 categories = ["Development", "Programming", "Software"]
+2008 = ["10"]
 +++
 <strong>Update: I made an error in the example code, regarding the CAPTCHA image URL. I'm sorry for any troubles caused by this mistake.</strong>
 

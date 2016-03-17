@@ -5,6 +5,7 @@ slug = "zend-framework-18-web-application-development-book-review"
 description = "My review of Keith Pope's book titled Zend Framework 1.8 Web Application Development"
 tags = ["book", "framework", "php", "review", "zend"]
 categories = ["Development", "Programming"]
+2009 = ["11"]
 +++
 A few days ago I finished reading <a href="http://www.thepopeisdead.com/">Keith Pope</a>'s book titled "<a href="http://www.packtpub.com/zend-framework-1-8-web-application-development/book">Zend Framework 1.8 Web Application Development</a>", so, after letting it "rest" in my mind for a while, here are my thoughts on it... <div id="attachment_804" class="wp-caption alignright" style="width: 300"><a href="http://robertbasic.com/blog/wp-content/uploads/2009/11/zf_book.jpg"><img src="http://robertbasic.com/blog/wp-content/uploads/2009/11/zf_book-300x225.jpg" alt="ZF Web App Development" title="zf_book" width="300" height="225" class="size-medium wp-image-804" /></a><p class="wp-caption-text">ZF Web App Development
 </div></p>

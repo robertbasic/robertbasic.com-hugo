@@ -5,6 +5,7 @@ slug = "backup-script-for-mysql"
 description = "A bash script that backups a database, gzipit and deletes all backups older than 3 days."
 tags = ["backup", "mysql", "script", "shell"]
 categories = ["Development"]
+2010 = ["11"]
 +++
 This post is more of a reminder for myself. Anywayz, a little bash script that backups a database, gzipit and deletes all backups older than 3 days.
 

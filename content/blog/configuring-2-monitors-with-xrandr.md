@@ -5,6 +5,7 @@ slug = "configuring-2-monitors-with-xrandr"
 description = "Fix same image on both screens with xrandr."
 tags = ["monitors", "x11", "xrandr"]
 categories = ["Software"]
+2011 = ["12"]
 +++
 My current, most used set up, includes a laptop and a second screen attached to it. The laptop is always to the left of the second monitor and together they give one big screen with a total resolution of 3046x1050. From time to time, X11 gets confused and shows the same image, with the same resolution, on both monitors.
 

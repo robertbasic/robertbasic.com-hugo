@@ -5,6 +5,7 @@ slug = "wordpress-paging-navigation"
 description = "An example of a Wordpress paging navigation without a plug-in"
 tags = ["example", "navigation", "php", "wordpress"]
 categories = ["Development", "Programming", "Software"]
+2008 = ["10"]
 +++
 As I'm not a big fan of Wordpress plug&#151;ins, and I wanted to use a normal page navigation, not just the default &#147;Previous posts&#148; and &#147;Next posts&#148;, I decided to play around a bit and create my own paging navigation, or pagination.
 

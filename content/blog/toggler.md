@@ -5,6 +5,7 @@ slug = "toggler"
 description = "toggler, a jQuery plugin for togglering elements around..."
 tags = ["jquery", "plugin", "toggler"]
 categories = ["Development", "Programming"]
+2010 = ["02"]
 +++
 At the office we're starting out on a new project, which will require (thanks to our designer) a lot off divs and images and whatnot to slide up and down. All these elements will of course have it's own ID's and classes, so writing one function to slide/toggle them all is impossible, plus the design of these elements is so weird that the built-in animation effects are of no use. So I hacked together my first! jQuery plugin which will hopefully help us with this task.
 

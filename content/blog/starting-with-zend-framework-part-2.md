@@ -5,6 +5,7 @@ slug = "starting-with-zend-framework-part-2"
 description = "Zend Framework basics on controllers, actions, view scripts and view helpers find a small example"
 tags = ["example", "framework", "introduction", "php", "zend"]
 categories = ["Development", "Programming", "Software"]
+2008 = ["10"]
 +++
 This post is the second part of my introductory text on Zend Framework, <a href="http://robertbasic.com/blog/2008/10/07/starting-with-zend-framework/">Starting with Zend Framework</a>. This time I cover the basics about controllers, actions, view scripts and view helpers. On request routing and the Front Controller I will write one (or more) big post(s), so this part won't be explained now. I will also skip explaining the models; they deserve their own post :)
 

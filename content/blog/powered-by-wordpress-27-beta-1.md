@@ -5,6 +5,7 @@ slug = "powered-by-wordpress-27-beta-1"
 description = "A quick look back on upgrading to WordPress 2.7 beta 1"
 tags = ["blog", "upgrade", "wordpress"]
 categories = ["Blablabla", "Free time", "Software"]
+2008 = ["11"]
 +++
 I've decided to upgrade to <a href="http://wordpress.org/development/2008/11/wordpress-27-beta-1/" target="_blank">WordPress 2.7 beta 1</a>, just for fun. For now, no major problems occurred, just a few smaller ones, all which are caused by my hacking of the WordPress core &#151; I wasn't keeping track of all hacks I did, so there were some random errors, but everything should be fine now.
 

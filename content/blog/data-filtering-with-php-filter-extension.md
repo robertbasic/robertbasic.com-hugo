@@ -5,6 +5,7 @@ slug = "data-filtering-with-php-filter-extension"
 description = "A quick look into the PHP's Filter extension that helps filtering and validating data."
 tags = ["data", "example", "filter", "input", "php", "secure"]
 categories = ["Development", "Programming"]
+2008 = ["12"]
 +++
 Today I was catching up on feeds and one of the articles lead me to <a href="http://www.gophp5.org/">GoPHP5.org</a>, where I spent some time lurking. In the <a href="http://www.gophp5.org/faq#n7">FAQ section</a> of that site one sentence made me curios:
 

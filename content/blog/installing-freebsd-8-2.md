@@ -5,6 +5,7 @@ slug = "installing-freebsd-8-2"
 description = "Notes on installing freebsd 8.2 and the struggle with the wireless card."
 tags = ["freebsd", "install", "realtek", "rtl8187", "wireless"]
 categories = ["Development", "Software"]
+2011 = ["03"]
 +++
 As I'm currently in the progress of installing <a href="http://www.freebsd.org/">FreeBSD</a> on my first machine (out of 4), writing the process down for future reference sounds like a pretty good idea :)
 

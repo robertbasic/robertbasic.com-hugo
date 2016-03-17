@@ -5,6 +5,7 @@ slug = "connecting-signals-and-slots-with-pyqt-the-new-style"
 description = "A short story on my troubles with connecting signals and slots with pyqt."
 tags = ["ape", "pyqt", "python", "signals", "slots"]
 categories = ["Development", "Programming"]
+2010 = ["11"]
 +++
 While working on ape I had a problem with figuring out how to properly connect a signal to a slot, where the signal is emitted by a QTreeView widget. As this is not my first app with python and pyqt, I was doing something like (this is, btw, the "old style"):
 

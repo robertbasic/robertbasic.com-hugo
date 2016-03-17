@@ -5,6 +5,7 @@ slug = "azend-framework-2-eventmanager-use-case"
 description = "A use case for Zend Framework 2 Event Manager."
 tags = ["eventmanager", "events", "listeners", "zend framework", "zf2"]
 categories = ["Development", "Programming"]
+2011 = ["10"]
 +++
 With <a href="http://framework.zend.com/zf2/blog/entry/Zend-Framework-2-0-0beta1-Released">Zend Framework 2 beta 1</a> released yesterday and some free time to spare, I decided to finally try and tackle one of the "scariest" additions to the Zend Framework - the EventManager component. Now, I won't go into details about this whole event voodoo, Matthew <a href="http://weierophinney.net/matthew/archives/251-Aspects,-Filters,-and-Signals,-Oh,-My!.html">already did that</a>. <a href="http://weierophinney.net/matthew/archives/266-Using-the-ZF2-EventManager.html">Twice</a>.
 

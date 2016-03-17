@@ -5,6 +5,7 @@ slug = "myurl-view-helper-for-zend-framework"
 description = "Adding the GET query string to the link created by Zend Framework's Url View Helper"
 tags = ["example", "framework", "helper", "link", "php", "url", "view", "zend"]
 categories = ["Development", "Programming"]
+2008 = ["12"]
 +++
 I started writing some boring introduction but I'll just skip to the point.
 

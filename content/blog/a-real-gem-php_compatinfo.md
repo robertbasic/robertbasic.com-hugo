@@ -5,6 +5,7 @@ slug = "a-real-gem-php_compatinfo"
 description = "PHP_CompatInfo is a PEAR package that can tell everything about a PHP file or library."
 tags = ["extensions", "info", "information", "php", "version"]
 categories = ["Development", "Programming"]
+2010 = ["12"]
 +++
 Last night I was pondering how nice would it be to have a tool of some sort, that would simply spit out what version of PHP does my app require. Something like: here are my .php files, what PHP version and/or extensions do I need for it? First I thought about jumping right in and writing it myself, but hey, this kind of a tool sounds way to useful not to be written already! After a bit of a googling there it was: <a href="http://pear.php.net/package/PHP_CompatInfo">PHP_CompatInfo</a>. A nice PEAR package that can tell me everything I want about my code and even a bit more.
 

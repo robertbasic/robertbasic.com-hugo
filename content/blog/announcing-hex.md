@@ -5,6 +5,7 @@ slug = "announcing-hex"
 description = "Post announcing my web dev company, Hex."
 tags = ["about", "hex", "random"]
 categories = ["Blablabla", "Programming"]
+2011 = ["07"]
 +++
 Well, guess it's time to announce it officially here, too. Since last month I'm running my own little web development company called <a href="http://hex.rs/">Hex</a>. After 2 years with the <a href="https://twitter.com/online_team">online_team</a>, it was time to move on and turn to new adventures.
 

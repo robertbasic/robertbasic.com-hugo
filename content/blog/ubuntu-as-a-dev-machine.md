@@ -5,6 +5,7 @@ slug = "ubuntu-as-a-dev-machine"
 description = "A short note on setting up a LAMP server using VirtualBox and Ubuntu 8.04"
 tags = ["apache", "lamp", "linux", "mysql", "php", "setup", "ubuntu", "virtualbox"]
 categories = ["Development", "Software"]
+2008 = ["10"]
 +++
 <em>This post is more of a note to myself, 'cause I keep forgetting all these Linux commands, and spend hours setting up stuff right...</em>
 

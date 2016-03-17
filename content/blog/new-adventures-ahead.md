@@ -5,6 +5,7 @@ slug = "new-adventures-ahead"
 description = "A quick rant on how I announced today that I'll be leaving work in a month from now."
 tags = ["about", "company", "future", "job", "me"]
 categories = ["Blablabla"]
+2011 = ["05"]
 +++
 After a month or two of pondering and thinking and planning and thinking and some more thinking, today I finally told the management at <a href="http://solutions.online.rs/">work</a> that I'll be leaving in a month from today. Actually, I won't be extending my contract with them which will end on June 24th.
 

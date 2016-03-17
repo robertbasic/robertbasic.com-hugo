@@ -5,6 +5,7 @@ slug = "grouping-zend-framework-controllers-in-subdirectories"
 description = "A simple example how controllers can be grouped in subdirectories in Zend Framework"
 tags = ["controllers", "zend framework"]
 categories = ["Development", "Programming"]
+2011 = ["04"]
 +++
 Thanks to a <a href="http://zend-framework-community.634137.n4.nabble.com/subcontroller-path-separator-td3446708.html">discussion</a> on the Zend Framework mailing list I learned about a new feature, a feature that allows for grouping action controllers in subdirectories! Well, this is more of an unknown and <a href="http://framework.zend.com/issues/browse/ZF-3590">undocumented</a> feature than new, as it is the part of the framework for at least 3 years.
 

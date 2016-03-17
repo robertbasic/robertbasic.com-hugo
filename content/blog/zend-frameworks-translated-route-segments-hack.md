@@ -5,6 +5,7 @@ slug = "zend-frameworks-translated-route-segments-hack"
 description = "A dirty hack to work around a translated route segment issue."
 tags = ["locale", "route", "translate", "zend framework"]
 categories = ["Development", "Programming"]
+2011 = ["04"]
 +++
 Today I came across on a little "gotcha" when using the translated route segments in a multilanguage web site and thought about sharing the dirty little hack I used to get around it.
 

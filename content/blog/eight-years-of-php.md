@@ -5,6 +5,7 @@ slug = "eight-years-of-php"
 description = "I've been doing PHP for eight years now."
 tags = ["about", "php", "life", "random"]
 categories = ["Blablabla"]
+2013 = ["04"]
 +++
 This time around eight years ago I was introduced to this thing called <a href="http://www.php.net/">PHP: Hypertext Preprocessor</a>. I studied it in college as a part of classes on "Internet Technologies". It consisted of HTML, CSS, some Javascript and XML, and PHP.
 

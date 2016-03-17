@@ -5,6 +5,7 @@ slug = "a-year-in-review-2011"
 description = "Going through 2011 in a few words."
 tags = ["about", "hex", "life", "random"]
 categories = ["Blablabla", "Development"]
+2012 = ["01"]
 +++
 2011 has been and gone, all in all an excellent year for me; much better than the few clusterfuck years before. Going into 2012 with tons of positive energy and going to make it even better!
 

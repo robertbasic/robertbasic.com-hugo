@@ -5,6 +5,7 @@ slug = "webkonf-2011-recap"
 description = "Few words on the Webkonf 2011 conference."
 tags = ["conference", "talk", "webkonf"]
 categories = ["Blablabla", "Development"]
+2011 = ["10"]
 +++
 This past weekend the <a href="http://webkonf.org/">Hungarian web conference</a> was held in the amazing <a href="http://en.wikipedia.org/wiki/Buda_Castle">Buda Castle</a>, in Budapest. It was a one day conference, with talks being held on 3 tracks, all in all 21 talk. This was my first time here and I attended as a speaker with a talk on Zend Framework 2 (more on that later).
 

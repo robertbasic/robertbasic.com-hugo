@@ -5,6 +5,7 @@ slug = "styling-the-default-zend_form-layout"
 description = "Example to show how to style the default Zend_Form layout that uses definition lists."
 tags = ["css", "example", "form", "framework", "layout", "style", "styling", "zend"]
 categories = ["Development", "Programming"]
+2008 = ["12"]
 +++
 Here's an example for styling <a href="http://framework.zend.com/manual/en/zend.form.html">Zend_Form</a>'s default layout. The default layout is using <a href="http://w3schools.com/tags/tag_dl.asp">definition lists</a>. While there's an option for changing the default layout, the wrapper tags and stuff, I see no reason for it. Create the form, add some CSS and your good to go :)
 

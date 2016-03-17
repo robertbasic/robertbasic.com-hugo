@@ -5,6 +5,7 @@ slug = "moved"
 description = "Moved my stuff over to linode. Hooray!"
 tags = ["about", "me", "moving"]
 categories = ["Blablabla"]
+2010 = ["07"]
 +++
 As I said 2 weeks earlier, I decided to move my stuff over to linode. Well, I did it. Kinda.
 

@@ -5,6 +5,7 @@ slug = "happy-birthday-hex"
 description = "Hex is one year old!"
 tags = ["hex", "company", "about", "birthday"]
 categories = ["Blablabla", "Free time"]
+2012 = ["06"]
 +++
 I can't really believe this - but my little company <a href="http://hex.rs/">Hex</a>  is one year old! I know it sounds cliche, but it really feels like it was last week </span><a href="http://robertbasic.com/blog/announcing-hex">when I started this... adventure</a>. It's been one crazy year, that's for sure.
 

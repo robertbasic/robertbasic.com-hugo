@@ -5,6 +5,7 @@ slug = "one-hundred-kilometers"
 description = "I hit my first milestone on the longboard - one hundred kilometers!"
 tags = ["longboard", "longboarding", "fun"]
 categories = ["Blablabla", "Free time"]
+2012 = ["09"]
 +++
 One hundred and two kilometers, and three hundred-ish meters, to be precise. I just got home from my <a href="http://runkeeper.com/user/robertbasic/activity/115797308">latest "run"</a>, and that is the total number of kilometers I made (and tracked) on my <a href="https://www.facebook.com/media/set/?set=a.332296090194788.76432.100002431986119&amp;type=3&amp;l=5f377323b7">longboard</a>  since I got it back in <a href="http://robertbasic.com/blog/ljubljana-slovenia">July</a>. Maybe it doesn't sound like much, but if someone would have told me 2-3 months ago, that I would do this much physical activity <b>and actually like it and enjoy it</b>, I would probably tell it's just crazy talk. Me, getting up my arse from the chair and doing something outside? No way, dude.
 

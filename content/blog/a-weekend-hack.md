@@ -5,6 +5,7 @@ slug = "a-weekend-hack"
 description = "Wrote an android app in a weekend hack."
 tags = ["hacking", "php", "android", "app", "server", "pictures", "photos"]
 categories = ["Development", "Programming", "Software"]
+2012 = ["08"]
 +++
 For a while now I couldn't really make myself sit down in my spare time and do some programming just for the sake of programming. I'd rather read a book, cruise around on my longboard, or whatever. So, this past weekend I decided to try and "hack" together something in a weekend. To see can I still just sit down and write a piece of software, just because I <strike>like</strike> love doing it, and not because it's my job.
 

@@ -5,6 +5,7 @@ slug = "ape-is-a-php-editor"
 description = "ape - ape is a PHP editor"
 tags = ["ape", "editor", "ide", "php", "pyqt", "python"]
 categories = ["Development", "Programming"]
+2010 = ["11"]
 +++
 A week ago I started working on a simple editor/<a title="Integrated development environment" rel="wikipedia" href="http://en.wikipedia.org/wiki/Integrated_development_environment">IDE</a> for <a title="PHP" rel="homepage" href="http://www.php.net/">PHP</a> called ape. That's my weak try on creating a <a title="Backronym" rel="wikipedia" href="http://en.wikipedia.org/wiki/Backronym">reverse acronym</a> as ape stands for - <strong>a</strong>pe is a <strong>P</strong>HP <strong>e</strong>ditor. This is kind of an introductory post into the whole developing process of it, as my intention is to blog about it a bit more :)
 

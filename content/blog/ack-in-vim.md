@@ -5,6 +5,7 @@ slug = "ack-in-vim"
 description = "Using ack.vim to search with ack from vim"
 tags = ["ack", "vim", "plugins", "rooter"]
 categories = ["Development", "Software", "Programming"]
+2014 = ["12"]
 +++
 I started using vim 3, 4 years ago. The way I use it is that I started out with no plugins and with a handful of lines in .vimrc. It is far too easy to cram all kind of stuff into it and then get lost in the myriads of key combinations. To prevent that, I decided to slowly add in bits and pieces I find lacking in my day to day usage of vim. Also allows me to first learn the editor and later the plugins.
 

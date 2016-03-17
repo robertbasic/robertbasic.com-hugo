@@ -5,6 +5,7 @@ slug = "multiple-dojo-tooltips-on-page-load"
 description = "A quest to extend dijit.Tooltips so that several tooltips can be shown on a page at the same time."
 tags = ["custom tooltips", "dijit.tooltip", "dojo", "tooltips"]
 categories = ["Development"]
+2011 = ["03"]
 +++
 As I said a few days (weeks?) ago, I've decided to learn dojo and not by just doing random examples, but by changing the whole administration panel for <a href="http://phpplaneta.net">phpplaneta.net</a> to use <a href="http://www.dojotoolkit.org/">dojo</a> and the <a href="http://framework.zend.com/manual/en/zend.dojo.html">Zend_Dojo_* components</a>. Maybe it'll become a bit more usable and prettier :)
 

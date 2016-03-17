@@ -5,6 +5,7 @@ slug = "configuring-the-trackpad-and-touchpad-behaviour-for-thinkpad-t540p-on-fe
 description = "Turning off touchpad movements on Thinkpad T540p"
 tags = ["t540p", "thinkpad", "laptop", "fedora", "touchpad", "clickpad", "trackpad"]
 categories = ["Blablabla", "Software"]
+2014 = ["12"]
 +++
 This is the last post about the Thinkpad and Fedora. At least for a while. Promise.
 

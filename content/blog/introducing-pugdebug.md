@@ -5,6 +5,7 @@ slug = "introducing-pugdebug"
 description = "pugdebug is a standalone remote debugger for php"
 tags = ["pugdebug", "python", "pyqt", "qt", "debugging", "xdebug"]
 categories = ["Software", "Programming", "Development"]
+2015 = ["04"]
 +++
 In my spare time in the past few months I was working on a tool that would help
 me in my every day job as a PHP programmer. As you may, or may not, know, I'm

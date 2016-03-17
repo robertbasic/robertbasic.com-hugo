@@ -5,6 +5,7 @@ slug = "playing-with-zend-framework-and-dojo"
 description = "Intro rambling in the world of Zend Framework and Dojo, powered by Zend_Dojo"
 tags = ["dojo", "form", "zend framework", "zend_dojo"]
 categories = ["Programming"]
+2011 = ["03"]
 +++
 Yesterday there was some talk on Twitter including Zend Framework and Dojo. I didn't quite follow it through, something about why Dojo and not jQuery, it's not that popular blablabla. Anyway, who cares? We have Zend_Dojo, we have ZendX_Jquery. I'm using ZendX_Jquery, but only as far as setting it up and loading jquery and jqueryui via the view helpers. Tried to use it on forms, to use tabs and whatnot, but in the end it was easier to write up a separate javascript file and do the jquery stuff there. But, I've never used Zend_Dojo before. Guess I was a bit scared away with all that dojo, dijit, dojox stuff... So, last night, being bored and all, I've decided to try and use it. Oh boy. How wrong was I for not diving into it before. OK, so far I've created only one form with dojo, but damn it's good.
 

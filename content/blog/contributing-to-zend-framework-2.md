@@ -5,6 +5,7 @@ slug = "contributing-to-zend-framework-2"
 description = "Contributing to Zend Framework 2 does not require a CLA any more."
 tags = ["cla", "contributing", "zend framework 2"]
 categories = ["Development", "Programming"]
+2011 = ["11"]
 +++
 <img alt="" src="https://lh6.googleusercontent.com/-_Y348B_wmpE/TrwpnoQPAsI/AAAAAAAAAr4/95Yxsz48Y9U/s725/Screenshot%2B-%2B11102011%2B-%2B08%253A08%253A35%2BPM.png" title="The CLA is not required any more." class="alignright" width="363" height="174" style="float: right;" />
 

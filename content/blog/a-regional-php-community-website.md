@@ -5,6 +5,7 @@ slug = "a-regional-php-community-website"
 description = "About a community website for PHP programmers from Serbia and the region."
 tags = ["community", "php", "phpplaneta"]
 categories = ["Development", "Places on the web", "Programming"]
+2010 = ["10"]
 +++
 This week on Wednesday, finally one of my pet projects has hit the Internets! <a href="http://phpplaneta.net/">PHPPlaneta.net</a> is alive!
 

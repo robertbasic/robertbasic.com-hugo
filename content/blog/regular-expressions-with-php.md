@@ -5,6 +5,7 @@ slug = "regular-expressions-with-php"
 description = "Example of using regular expressions in PHP, parsing links and anchor tags"
 tags = ["example", "pcre", "php", "regex", "regexp"]
 categories = ["Development", "Programming"]
+2008 = ["09"]
 +++
 I just want to write some real examples. These regexps are (and always will be, 'cause I plan to write several posts on this topic) for the PHP's <a href="http://www.php.net/manual/en/book.pcre.php" target="_blank">PCRE</a> library. Here's a good <a href="http://www.phpguru.org/downloads/PCRE%20Cheat%20Sheet/PHP%20PCRE%20Cheat%20Sheet.pdf" target="_blank">PHP PCRE cheat sheet</a>, it's an excellent resource for regexps. If you know nothing about regexps, first read this <a href="http://en.wikipedia.org/wiki/Regular_expression">Wiki page</a>.
 

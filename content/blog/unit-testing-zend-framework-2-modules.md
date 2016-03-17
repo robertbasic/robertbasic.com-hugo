@@ -5,6 +5,7 @@ slug = "unit-testing-zend-framework-2-modules"
 description = "How to unit test Zend Framework 2 modules with the help of Mockery"
 tags = ["zend framework 2", "unit test", "testing", "mockery", "modules"]
 categories = ["Development", "Programming", "Software"]
+2012 = ["09"]
 +++
 Porting this blog to Zend Framework 2, I decided to write some unit tests as well, while I'm at it. Not that the current code base doesn't have unit tests, just it doesn't have much of it... Anyway, I'd like to show how to get unit tests for modules up and running, as well how to throw in <a href="https://github.com/padraic/mockery">Mockery</a> in the mix, as it can help us greatly with mocking out objects. Some of the parts shown here probably could be written in a more cleaner/nicer way, especially the autoloading bit, but so far it works for me.
 

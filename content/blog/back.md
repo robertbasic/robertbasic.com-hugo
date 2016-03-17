@@ -5,6 +5,7 @@ slug = "back"
 description = "A new blog post after months of being uninspired for writing..."
 tags = ["about", "grad work", "python", "random", "ubuntu"]
 categories = ["Blablabla", "Free time"]
+2009 = ["05"]
 +++
 It's been a while since I last wrote something; didn't have anything smart or interesting to say. Not that I do have this time. It's 4AM and I can't sleep. Can't really find the inspiration for work and writing (if you can consider these scribblings as writing). Lots of ssss... stuff happened which had a great impact on my mood and my ability to do something useful. And I just didn't felt like doing something about it. Until recently...
 

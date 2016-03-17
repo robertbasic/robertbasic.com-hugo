@@ -5,6 +5,7 @@ slug = "moblin-linux-for-netbooks"
 description = "A short review of Moblin, Linux for netbooks"
 tags = ["about", "introduction", "linux", "moblin", "netbook", "open source", "random"]
 categories = ["Blablabla", "Free time", "Software"]
+2009 = ["05"]
 +++
 <a href="http://www.moblin.org/" title="Moblin" rel="homepage">Moblin</a> got me curios and I wanted to test it out:
 

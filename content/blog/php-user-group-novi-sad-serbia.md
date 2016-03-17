@@ -5,6 +5,7 @@ slug = "php-user-group-novi-sad-serbia"
 description = "First steps in creating a local PHP user group."
 tags = ["meeting", "pugns", "user group"]
 categories = ["Blablabla", "Free time"]
+2011 = ["03"]
 +++
 For almost a year now, whenever time allows it, I'm working on a side project of creating a community of PHP programmers from around here. One of the first steps was, is, a website called <a href="http://phpplaneta.net/">PHPPlaneta</a> about which I wrote <a href="http://robertbasic.com/blog/a-regional-php-community-website/">back in October</a>. After bringing this website to a relatively steady position, time has come to take another step: creating a PHP User Group! I'm really good at naming things so it is called "<a href="http://phpug.phpplaneta.net/pugns/">PHP User Group Novi Sad</a>", or pugns for short.
 

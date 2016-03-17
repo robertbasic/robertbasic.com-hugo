@@ -5,6 +5,7 @@ slug = "learning-english"
 description = "I started taking English classes to improve my English."
 tags = ["learning", "writing", "english", "language", "reading"]
 categories = ["Blablabla", "Free time"]
+2013 = ["03"]
 +++
 <p>
     Most of my knowledge of the English language is self-taught. I had English classes in elementary school, but that was more or less singing "London bridge is falling down" and reciting a list of irregular verbs. I also had a semester of English in college, but that again consisted of reciting a list of irregular verbs (true, this time the list was longer) and reading and translating engineering texts. Good for learning how to read a technical manual, but not so much when it comes to having a conversation with other people. Other than that, it's all from computers, music, films, books.

@@ -5,6 +5,7 @@ slug = "chaining-routes-in-zend-framework"
 description = "Example of using Zend_Router_Routes_Chain for adding multilanguage support to routes"
 tags = ["example", "framework", "php", "route", "routing", "zend"]
 categories = ["Development", "Programming"]
+2009 = ["11"]
 +++
 On a forum, there was a question today, about adding language "support" to the routes using <a href="http://framework.zend.com/" title="Zend Framework" rel="homepage">Zend Framework</a>. The guy wanted routes like <code>/en/foo/bar</code> or <code>/de/baz</code>. I wrote there an example for that using <a href="http://framework.zend.com/manual/en/zend.controller.router.html#zend.controller.router.routes.chain">Zend_Router_Routes_Chain</a>, so just posting that example here, too :)
 

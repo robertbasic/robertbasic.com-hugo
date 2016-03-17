@@ -5,6 +5,7 @@ slug = "book-review-guide-to-web-scraping-with-php"
 description = "My book review on Matthew Turland's \"Guide to Web Scraping with PHP\""
 tags = ["about", "book", "php", "review", "web scraping"]
 categories = ["Development", "Programming"]
+2011 = ["05"]
 +++
 It took me a while to grab myself a copy of <a href="http://matthewturland.com/">Matthew Turland's</a> "<a href="http://www.phparch.com/books/phparchitects-guide-to-web-scraping-with-php/">Guide to Web Scraping with PHP</a>", but a few weeks ago a copy finally arrived and I had the pleasure of reading it. I planned to buy it right as the print copy was announced, but then realised that php|arch accepts only PayPal as the payment method, which doesn't work from Serbia, so I had to postpone the shopping for some better times. Fast forward 5-6 months and I found a copy on the Book Depository, which has no shipping costs! Yey!
 

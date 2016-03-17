@@ -5,6 +5,7 @@ slug = "passing-arguments-to-custom-slots-in-pyqt"
 description = "Passing programmatically arguments to custom defined slots in PyQt"
 tags = ["ape", "lambda", "pyqt", "python", "signals", "slots"]
 categories = ["Programming"]
+2010 = ["11"]
 +++
 While hacking on ape, I came to a situation where I need to pass some arguments to a custom defined slot. The slot is being called from different signals, one where the argument is passed by PyQt itself and a second one where I need to programmatically pass the argument to the slot.
 

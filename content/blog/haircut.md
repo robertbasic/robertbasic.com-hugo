@@ -5,6 +5,7 @@ slug = "haircut"
 description = "I got a haircut."
 tags = ["about", "random"]
 categories = ["Blablabla"]
+2011 = ["08"]
 +++
 <img alt="Result" src="https://lh4.googleusercontent.com/-LpH3V_ej1zM/TkO_atsOShI/AAAAAAAAApU/9PUfUAEZnVU/s144/IMG_20110811_131857.jpg" title="Result" class="alignright" width="108" height="144" style="float: right;" />
 

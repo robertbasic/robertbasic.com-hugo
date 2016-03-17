@@ -5,6 +5,7 @@ slug = "upgrading-to-fedora-16"
 description = "Some notes on my upgrade to Fedora 16."
 tags = ["fedora", "grub2", "upgrade", "xfce"]
 categories = ["Development", "Software"]
+2011 = ["11"]
 +++
 Decided today to upgrade my laptop to <a href="http://fedoraproject.org/">Fedora 16</a>, which was released a few days ago. I first switched to Fedora (with XFCE as the desktop environment) from Ubuntu in August, I think. An excellent decision as it is working really great for me. <a href="http://xfce.org/">XFCE</a> is also great, really happy that I made this switch.
 
