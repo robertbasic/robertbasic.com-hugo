@@ -1,0 +1,11 @@
+{{ partial "header.html" . }}
+
+<h1>Archives for {{ .Date.Format "January, 2006" }}</h1>
+
+{{ range (.Paginator 5).Pages }}
+    {{ partial "post.html" . }}
+{{ end }}
+
+{{ partial "pagination.html" . }}
+
+{{ partial "footer.html" . }}
