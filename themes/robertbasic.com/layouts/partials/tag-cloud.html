@@ -1,4 +1,16 @@
 <h2>Tags</h2>
 
-<ul id="all-tags">
-</ul>
+<div class="Zend_Tag_Cloud">
+{{ range $index, $tag := .Site.Taxonomies.tags.ByCount }}
+    {{ if lt $index 40 }}
+        {{ if lt $index 8 }}
+        {{ $fontSize := sub 20 $index }}
+        <span style="font-size: {{ $fontSize }}px;">
+        {{ else }}
+        <span style="font-size: 12px;">
+        {{ end }}
+            <a href="/tags/{{ $tag.Name | urlize }}">{{ $tag.Name }}</a>,
+        </span>
+    {{ end }}
+{{ end }}
+</div>
