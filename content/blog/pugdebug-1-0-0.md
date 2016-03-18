@@ -6,7 +6,6 @@ description = "Announcing pugdebug 1.0.0 version"
 tags = ["pugdebug", "python", "pyqt", "qt", "debugging", "xdebug", "stable"]
 categories = ["Programming", "Software", "Development"]
 2015 = ["07"]
-2015 = ["07"]
 +++
 After 3 months since <a href="http://robertbasic.com/blog/introducing-pugdebug">announcing</a>  that I'm working on <a href="https://github.com/robertbasic/pugdebug">pugdebug</a>, and some <a href="https://github.com/robertbasic/pugdebug/commit/9ea2b01ea439068bbecfbaa9a248d94936f2b6fa">5 months</a>  since I actually started working on it, it is finally time to let <a href="https://github.com/robertbasic/pugdebug/releases/tag/v1.0.0">version 1.0.0</a>  out in the wild.
 

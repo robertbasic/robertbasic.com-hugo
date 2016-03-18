@@ -6,7 +6,6 @@ description = "Vim setup to get tags support for PHP"
 tags = ["vim", "tags", "gutentags", "tagbar", "lightline", "php"]
 categories = ["Software", "Programming", "Development"]
 2016 = ["03"]
-2016 = ["03"]
 +++
 One thing I was missing for a long time in Vim is to be able to "jump to definition" in an easy and painless way.
 
