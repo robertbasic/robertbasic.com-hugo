@@ -11,9 +11,9 @@ categories = ["Development", "Programming", "Software"]
 
 I took the skeleton application, made it even skinnier by throwing out some (for me) unneeded parts and just put it all besides my old ZF1 code. <i>Note: I think it could be possible to have a ZF1 and a ZF2 app run side by side, something like <a href="https://twitter.com/skoop">Stefan</a> did for <a href="http://www.leftontheweb.com/message/Introducing_IngewikkeldWrapperBundle">Symfony1 and Symfony2</a>. Need to investigate on this.</i> The first problem I ran into was using custom view helpers, especially view helpers that are more general and don't fit into one specific module. Where to put the code? How to access them in views? The second problem was how to access the service manager from a view helper? And the third problem was how to tell the helper to use a specific value when inside a specific module?
 
-<h3>Custom view helpers</h3>
-
 <img unselectable="on" src="/img/posts/zf2viewhelpermodule.png" style="float: right; padding: 5px;">
+
+<h3>Custom view helpers</h3>
 
 As I found out, custom view helpers can live in different places (at least two) - in the <code>vendor/</code> directory, or in the <code>module/</code> directory as a part of a module. Both ways are probably good solutions, but for me it's way easier to use the custom view helpers when they are "packaged" as a module:
 
