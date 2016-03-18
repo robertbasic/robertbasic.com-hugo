@@ -10,7 +10,7 @@ categories = ["Blablabla", "Free time"]
 
 From time to time I browse through the local board shop's website, especially the "Longboard" section, because, well, I have recently developed this passion for longboarding. Few weeks back, just sometimes before Christmas, I was doing the same. Just casually browsing around, nothing that would catch my interest. And then, there it was, at the bottom of the page. <a href="http://www.bananaboards.com/">A banana board</a>. "Oh my, a real beauty", I thought to myself. The price was also in the affordable range. But, a problem was that I really couldn't, justify to buy it.
 
-<a href="https://www.facebook.com/photo.php?fbid=391597737597956&amp;l=900b79d0ca"><img unselectable="on" style="float:right;padding:5px;" src="http://robertbasic.com/static/img/posts/bananaboard.jpg"></a>
+<img unselectable="on" style="float:right;padding:5px;" src="/img/posts/bananaboard.jpg">
 
 Whenever I find something to buy for myself, I really give it a lot of thought and wait for a while, just to see if I really need it. Doing my best to avoid buying stuff in the heat of the moment, which prevents me from having lots of regretable purchases. And it works quite well, can't think of anything that I regret ever buying. It's also a very good tactic for saving money.
 
@@ -28,7 +28,7 @@ And today, just after getting back to the office from the lunch break, the dude 
 
 Once I saw the board, I knew I did a right thing ordering it. It's just fuckin' gorgeous! I tried it a little in the shop, paid for it, and hurried out to the streets to give it a test ride back to the office.
 
-<a href="https://www.facebook.com/photo.php?fbid=391681914256205&amp;l=60cfffe583"><img unselectable="on" style="float:right;padding:5px;" src="http://robertbasic.com/static/img/posts/bananaboardsign.jpg"></a>
+<img unselectable="on" style="float:right;padding:5px;" src="/img/posts/bananaboardsign.jpg">
 
 It's fun riding it, extremely fun. It's much smaller, and feels much different than my longboard. The wheels are smaller, but softer than on the longboard. I was expecting the banana board to be slower, but two-three pushes and it rides like the wind. Oh, and it's light as a feather!
 

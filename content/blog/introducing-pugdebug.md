@@ -19,7 +19,7 @@ PHP, that work on Linux.
 In February this year I started to work on a desktop application that would help
 me address this issue. <br>
 
-<a href="http://robertbasic.com/static/img/posts/pugdebug.png"><img alt="pugdebug" style="cursor: default; float: right; margin: 0px 0px 10px 10px;" unselectable="on" src="http://robertbasic.com/static/img/posts/pugdebug-small.png"></a>
+<img alt="pugdebug" style="cursor: default; float: right; margin: 0px 0px 10px 10px;" unselectable="on" src="/img/posts/pugdebug-small.png">
 
 <a href="https://github.com/robertbasic/pugdebug">pugdebug</a>&nbsp; is a PyQt desktop application meant to be used as a remote debugger for PHP,
 that communicates with <a href="http://xdebug.org">xdebug</a>.

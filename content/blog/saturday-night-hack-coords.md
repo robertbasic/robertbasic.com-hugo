@@ -11,7 +11,7 @@ When I was just starting out learning programming, everything was so simple. I d
 
 And that was exactly what I did last night. I sat down and in some five or six hours I put together <a href="https://github.com/robertbasic/coords">coords</a>. It is an ugly as hell little pygtk application, void of any good practices, no tests, just a few comments here and there and that's it. And I had fun writing it! I completely lost track of time while hacking, got into the zone and today, after some six hours of sleep I woke up feeling like I was on a vacation for a week.
 
-<img unselectable="on" style="float:right;padding:10px;" src="http://robertbasic.com/static/img/posts/coords.gif">
+<img unselectable="on" style="float:right;padding:10px;" src="/img/posts/coords.gif">
 
 The application itself doesn't do much, it helps determine coordinates on your desktop. Start the application, click "track", drag the mouse from the top-left corner you're interested in to the bottom-left one and that's it. The entire functionality is shown in this ten second long gif that runs somewhere here on the page. The best part is that it actually solves a problem I had, it helps me determine coordinates on my desktop and then I can use those coordinates for <a href="https://git.gnome.org/browse/byzanz/">byzanz-record</a>. I loved every second I spent hacking on this.
 

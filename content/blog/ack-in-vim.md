@@ -11,7 +11,7 @@ I started using vim 3, 4 years ago. The way I use it is that I started out with 
 
 Today was an exceptional day as I added not one, but two plugins to vim! And that is a big change for me as the total number of plugins I now use is 4.
 
-<img style="cursor: default; width: 450px; float:right;padding:10px" unselectable="on" src="http://robertbasic.com/static/img/posts/ack-vim.png">
+<img style="cursor: default; width: 450px; float:right;padding:10px" unselectable="on" src="/img/posts/ack-vim.png">
 
 The first one I added is <a href="https://github.com/mileszs/ack.vim">ack.vim</a>. It's a nice little plugin to run ack from within vim and show the results in a split window. It's rather easy to use, one just basically types <code>:Ack search_string</code> and that's it. The one thing I immediately disliked is that it sort of gets lost in the subdirectories of a project.
 

@@ -43,7 +43,7 @@ Move to the method name you're interested in, hit <code><leader>jd</code> and it
 
 <h3>Where the hell am I?</h3>
 
-<img unselectable="on" style="cursor: default; float: right; margin: 0px 0px 10px 10px;" src="http://robertbasic.com/static/img/posts/vim-lightline-tagbar.png">
+<img unselectable="on" style="cursor: default; float: right; margin: 0px 0px 10px 10px;" src="/img/posts/vim-lightline-tagbar.png">
 
 My second requirement for displaying the current class and method name was a bit more difficult to fulfill. It takes the <a href="https://github.com/majutsushi/tagbar">tagbar</a>, <a href="https://github.com/vim-php/tagbar-phpctags.vim">tagbar-phpctags</a>  and <a href="https://github.com/itchyny/lightline.vim">lightline</a>  plugins as well as the <a href="https://github.com/vim-php/phpctags">phpctags</a>  tag generator to accomplish that.
 

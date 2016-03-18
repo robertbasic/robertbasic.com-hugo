@@ -12,7 +12,7 @@ I am not usually fond of doing much frontend stuff, but I do like to dable in so
 
 For a while I was reluctant on writing any frontend tests, integration tests, or whatever you want to call them, because, y'know, *refresh-click-click-click* and the testing is done. Easy. Except when it's not. From time to time some piece of user interface gets wild on javascript and it turns out after a couple of weeks, half a dozen of bugs reported, and hundreds of refreshes and thousands of clicks, that whole thing becomes tiresome. Thus, I decided to dabble my toes deeper in the waters of the javascript world and try writing some tests for all this.
 
-<img unselectable="on" style="float:right;padding:10px;" src="http://robertbasic.com/static/img/posts/frontend-testing.png">
+<img unselectable="on" style="float:right;padding:10px;" src="/img/posts/frontend-testing.png">
 
 What I found first is that there's a lot of testing libraries out there for javascript. Won't even try listing them all. When I set out for the hunt I knew what I wanted and needed. I wanted a tool that will help me automate all my refreshclicks, or at least to some extent. Tell the tool through my tests: "go to that page, check what and how is rendered, do some things with the UI, test again". The less dependencies it has on other things, the better. I asked around among people who are bit more fluent in javascript than I am, what are they using and what would they recommend. Not too much to my surprise, everyone recommended a different thing, whatever fits their problem. So I ended up picking the tools that fit my problem.
 

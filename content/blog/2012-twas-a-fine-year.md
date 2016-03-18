@@ -12,7 +12,7 @@ categories = ["Blablabla", "Free time"]
 
 Can't really remember what I did from <b>January till March</b>, besides working. Odd. I should probably blog more often (HA!) on the things that happen. Oh well.
 
-<img unselectable="on" src="http://robertbasic.com/static/img/posts/longboard.jpg" style="float:right; padding: 5px;">
+<img unselectable="on" src="/img/posts/longboard.jpg" style="float:right; padding: 5px;">
 
 <b>April</b> was the month that kicked off the travels for this year. I spent a weekend in Budapest, doing nothing just roaming around the city. I stayed in a 5 star hotel in downtown. Never stayed in a fancy place like that before, and I wanted to try it out. Definitely not my thing, and did get the strange looks from the employees there as I stubmled in in a leather jacket and a military backpack on my back. I probably looked like a hobo. But I had fun and that's what counts.
 
@@ -27,8 +27,6 @@ On our way back to Novi Sad, we stopped in Ljubljana to grab lunch with <a href=
 <b>August</b> was spent with me longboarding around Novi Sad. Work and beers were also characteristic for that month.
 
 <b>September</b> started with me going to a mountainboarding event, as a spectator only. I ended up going down <a href="https://www.facebook.com/photo.php?fbid=340572299367167&amp;l=319339718b">this hill</a>. And falling. Twice. I also made a total of over <a href="http://robertbasic.com/blog/one-hundred-kilometers">a hundred kilometers</a> longboarding.
-
-<img unselectable="on" src="http://robertbasic.com/static/img/posts/mohawk.jpg" style="float:right; padding:5px">
 
 In <b>October</b> Jouzas was in Novi Sad for a couple of days. Vranac and I did our best to make his stay enjoyable. Hope we succeeded at that. I ended up shaving my head, whilst having a severe hangover, and making a mohawk. Fun times!
 

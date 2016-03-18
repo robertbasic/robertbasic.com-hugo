@@ -15,7 +15,7 @@ First of all, a big thanks goes out to <a href="https://twitter.com/ihabunek">Iv
 
 One of the biggest news is that there are binaries built for Linux and Windows operating systems, using <a href="https://github.com/pyinstaller/pyinstaller">pyinstaller</a>. These binaries include everything pugdebug needs to work so there is no need to install anything. Just download the binary for your system and run it. That's it. It makes me incredibly happy that it's possible to have it this simple to run and use pugdebug.
 
-<a href="http://robertbasic.com/static/img/posts/pugdebug100-big.png"><img src="http://robertbasic.com/static/img/posts/pugdebug100.png" unselectable="on" style="cursor: default; float: right; margin: 0px 0px 10px 10px;" alt="pugdebug" width="480"></a>
+<img src="/img/posts/pugdebug100.png" unselectable="on" style="cursor: default; float: right; margin: 0px 0px 10px 10px;" alt="pugdebug" width="480">
 
 The user interface has improved a great deal. It is using dockable widgets for different pieces of the UI, making the layout of the application configurable by just dragging the widgets around. It's not all great though, there's still room for improvement, but it will be better over time.
 
