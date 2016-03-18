@@ -13,7 +13,7 @@ I took the skeleton application, made it even skinnier by throwing out some (for
 
 <h3>Custom view helpers</h3>
 
-<img unselectable="on" src="/static/img/posts/zf2viewhelpermodule.png" style="float: right; padding: 5px;">
+<img unselectable="on" src="/img/posts/zf2viewhelpermodule.png" style="float: right; padding: 5px;">
 
 As I found out, custom view helpers can live in different places (at least two) - in the <code>vendor/</code> directory, or in the <code>module/</code> directory as a part of a module. Both ways are probably good solutions, but for me it's way easier to use the custom view helpers when they are "packaged" as a module:
 
