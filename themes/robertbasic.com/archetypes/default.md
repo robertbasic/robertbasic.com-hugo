@@ -1,2 +1,6 @@
 +++
+slug = ""
+description = ""
+tags = [""]
+categories = [""]
 +++
