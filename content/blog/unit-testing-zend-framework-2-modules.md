@@ -11,7 +11,8 @@ Porting this blog to Zend Framework 2, I decided to write some unit tests as wel
 
 The <code>phpunit.xml</code> file is rather simple:
 
-{{< highlight xml >}}<phpunit bootstrap='./bootstrap.php' colors='true'>
+``` xml
+<phpunit bootstrap='./bootstrap.php' colors='true'>
     <testsuite name='ZF2 Module Test Suite'>
         <directory>.</directory>
     </testsuite>
@@ -25,13 +26,14 @@ The <code>phpunit.xml</code> file is rather simple:
             file="Mockery/Adapter/Phpunit/TestListener.php"></listener>
     </listeners>
 </phpunit>
-{{< /highlight >}}
+```
 
 The Mockery TestListener, as <a href="https://github.com/padraic/mockery/issues/83">I found out the hard way</a>, is needed for Mockery to work properly. You might add in some more stuff, like generating code coverage reports, and the like.
 
 In the <code>bootstrap.php</code> we set up the autoloading for the modules, the ZF2 library, and Mockery:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 putenv('ZF2_PATH=' . __DIR__ . '/../../../vendor/ZF2/library');
 include_once __DIR__ . '/../../../init_autoloader.php';
 set_include_path(implode(PATH_SEPARATOR, array(
@@ -50,7 +52,7 @@ spl_autoload_register(function($class) {
 });
 $loader = new \Mockery\Loader;
 $loader->register();
-{{< /highlight >}}
+```
 
 It assumes that the currently tested module lives inside a ZF2 application. If not, you'll probably need to adjust the paths accordingly. It also assumes that the Mockery files are in the <code>vendor/</code> directory.
 
@@ -60,7 +62,8 @@ Don't want to get into a fight about terminology, but the service layer for me, 
 
 Let's assume that we have a "post" service, which we can use to get the recent posts. The post service itself does not interact with the databse, but calls an <code>AbstractTableGateway</code> which does all the database work. A test case for this post service, to avoid database calls, should mock the AbstractTableGateway, and use the ServiceManager to replace the concrete implementation with the mock object. An example test case for this post service could look something like this:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 namespace BlogModule\Service;
 use PHPUnit_Framework_TestCase as TestCase;
 use Zend\ServiceManager\ServiceManager;
@@ -98,7 +101,7 @@ class PostTest extends TestCase
         $this->assertSame($posts, $resultSet);
     }
 }
-{{< /highlight >}}
+```
 
 On line 18 we set the service manager to be used with the post service, on line 22 we create a mock object, and on line 23 we set that mock object in the service manager. We set some expectations on the mock object - what method should be called, how many times and what should it return. Finally we call the actual method that is being tested on the post service and assert that the returned result is correct.
 
@@ -106,7 +109,8 @@ On line 18 we set the service manager to be used with the post service, on line 
 
 For testing the database layer, that is the AbstractTableGateway implementations, I use a little... trick. I don't actually test what is returned from the database, but that the correct <code>Sql\Select</code> objects are being called, with the correct parameters in a correct order. This, in turn, means that I trust the underlying <code>Zend\Db</code> code that in the end, it will assemble the correct SQL queries, but I also don't have to bother with setting up a test database, and also the tests run faster, as they don't actually call the database. An example test case, continuing our example of getting recent posts:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 namespace Blog\Model\Table;
 use PHPUnit_Framework_TestCase as TestCase;
 use Zend\ServiceManager\ServiceManager;
@@ -145,7 +149,7 @@ class PostTest extends TestCase
         $this->postTable->getRecentPosts();
     }
 }
-{{< /highlight >}}
+```
 
 Here we create a mock adapter (the getAdapterMock method can be seen in <a href="https://gist.github.com/3717485">this gist</a>), and use that mock adapter in our AbstractTableGateway implementation. We also create a mock <code>Sql\Select</code> object and we set expectations on that mock Select object. As I said, this way of testing might not be the best way out there, but it did help me catch a bug where I failed to add the <i>where</i> clause on the actual Select object. Yey for Mockery! Oh, and please do note that the adapter mock might not work in all cases, but again, so far it worked nicely for me.
 

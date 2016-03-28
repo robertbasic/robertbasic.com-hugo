@@ -43,12 +43,13 @@ I learned about <code>:m[ove]</code> to move and <code>:co[py]</code> to copy li
 
 Finally, I added the following bit to my <code>.vimrc</code> to highlight the current line:
 
-{{< highlight bash >}}augroup CursorLine
+``` bash
+augroup CursorLine
     au!
     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
 augroup End
-{{< /highlight >}}
+```
 
 So, that's pretty much it. I don't think that I'm super fast navigating around in vim, but it's definitely better than some 3 months ago.
 

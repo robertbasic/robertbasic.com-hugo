@@ -47,7 +47,7 @@ A <strong>view helper</strong> script is to help to do some automating in the vi
 
 Here's an example of a file structure for a ZF based application &#151; after the # sign are comments:
 
-{{< highlight bash >}}
+``` bash
 /
 |--library/
 |  |--Zend/ # Zend core
@@ -90,7 +90,7 @@ Here's an example of a file structure for a ZF based application &#151; after th
    |--js/
    |--.htaccess
    |--index.php
-{{< /highlight >}}
+```
 
 With this file structure, <code>http://example.com/</code> should point to the <strong>public</strong> folder; this way, the application or the library can not be accessed through the browser, which improves security of the application.
 
@@ -98,17 +98,17 @@ With this file structure, <code>http://example.com/</code> should point to the <
 
 The .htaccess file's responsibility is to route requests to existing resources (existing symlinks, non-empty files, or non-empty directories) accordingly, and all other requests to the front controller. Example:
 
-{{< highlight php >}}
+``` php
 RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule .* index.php
-{{< /highlight >}}
+```
 
 <h2>The bootstrap file</h2>
 
 The biggest problem is setting up correctly the bootstrap file. Here's an example of my bootstrap file, I use it on several projects, never had any problems :)
 
-{{< highlight php >}}
+``` php
 <?php
 /**
 * This is a general bootstrap file, change it to fit your needs
@@ -169,7 +169,7 @@ $frontcontroller->setControllerDirectory(array(
         'dummy'       =>  '../application/dummy/controllers'
         ));
 $frontcontroller->dispatch(); // GO!!!
-{{< /highlight >}}
+```
 
 This kind of bootstrap file should be enough in most cases; it is for me.
 

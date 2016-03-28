@@ -27,7 +27,7 @@ I hope you read the part on <a href="http://codex.wordpress.org/Pages#Creating_Y
 
 Create 3 new files in your template directory (if you're using my theme, these files are already there): home.php, portfolio.php and blog.php. Contents of these files are:
 
-{{< highlight php >}}
+``` php
 // home.php
 <?php
 /*
@@ -59,7 +59,7 @@ $more = 0;
 //load index to show blog
 load_template(TEMPLATEPATH . '/index.php');
 ?>
-{{< /highlight >}}
+```
 
 To understand the contents of the blog.php file, please take a look at <a href="http://codex.wordpress.org/Making_Your_Blog_Appear_in_a_Non-Root_Folder">this</a>.
 
@@ -81,7 +81,7 @@ Go to Settings->Reading and where it says "First page displays" choose "A static
 
 Now, go to Settings->Permalinks and change the "Custom structure" to <code>/blog/%postname%/</code> or whatever is your preferred permalinks structure, but it must start with <code>/blog/</code>! If Wordpress can't write to your .htaccess file (I hope it can't!), open it up in your editor and type the following (or similar, depends on your setup):
 
-{{< highlight php >}}
+``` php
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /blog/
@@ -89,7 +89,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]
 </IfModule>
-{{< /highlight >}}
+```
 
 The point is in the <code>RewriteBase</code>, with that we're telling WP where to find the blog. On default setups, when http://example.com/ points to the blog, the RewriteBase is simply / but with the blog located at http://example.com/blog/ we need to change the RewriteBase. If all is well, we're done with organizing the links.
 
@@ -99,7 +99,7 @@ While you're still in the dashboard, write some new static pages with content. F
 
 Here are two functions I wrote for retrieving content from static pages which will be then included in other static pages:
 
-{{< highlight php >}}
+``` php
 // functions.php
 <?php
 
@@ -164,13 +164,13 @@ function wpascms_get_parent_page_ID($parent_page)
 }
 
 ?>
-{{< /highlight >}}
+```
 
 The first function, <code>wpascms_get_subpages()</code> returns the given number of subpages from a specific parent page. By default it will break the content on the <!--more--> tag and append a "Read more..." link. The first parameter can be either a string containing the slug of the parent page, or the ID of the parent page. The second parameter is the number of subpages we want returned. If it's zero, all subpages will be returned. The second function is merely a helper function, to get the id of the parent page based on it's slug. To read more on querying the database, <a href="http://codex.wordpress.org/Function_Reference/wpdb_Class">read this page</a>.
 
 Here's how I'm calling this function on my example Home page:
 
-{{< highlight php >}}
+``` php
 <?php
 /*
 Template name: Home
@@ -216,13 +216,13 @@ get_header();
 <?php
 get_footer();
 ?>
-{{< /highlight >}}
+```
 
 In words: including the header, then showing any content of the home page. After that getting the subpages: by default, <code>wpascms_get_subpages()</code> is getting the newest 2 subpages of the portfolio page. I'm showing the content of the subpages in 2 columns. What we got with this? Add a new subpage to the portfolio and it will automagically show up on the left side column. In the end, including the footer.
 
 Here's another example from the portfolio page:
 
-{{< highlight php >}}
+``` php
 <?php
 /*
 Template name: Portfolio
@@ -260,7 +260,7 @@ get_header();
 <?php
 get_footer();
 ?>
-{{< /highlight >}}
+```
 
 Same thing is happening here: including the header, showing the content of the portfolio page. Getting the subpages, but now all of the subpages that are childs of the portfolio page, and showing them one under the other.
 

@@ -11,10 +11,10 @@ Here's an example for styling <a href="http://framework.zend.com/manual/en/zend.
 
 Note: Be sure to provide a Document Type in your view scripts like this:
 
-{{< highlight php >}}
+``` php
 <?php
 <?= $this->doctype('XHTML1_STRICT') ?>
-{{< /highlight >}}
+```
 
 because when the form is generated, ZF is looking at the doctype to see how to create the form elements. Forgetting the doctype will probably generate invalid markup. I learned the hard way. Don't do the same mistake, k? :)
 
@@ -22,7 +22,7 @@ because when the form is generated, ZF is looking at the doctype to see how to c
 
 So, here's what Zend_Form makes for us (this markup is after submitting the form, but whit generated error, to show the error markup, too):
 
-{{< highlight html >}}
+``` html
 <form enctype="application/x-www-form-urlencoded" method="post" action="">
 <dl class="zend_form">
     <dt>
@@ -43,11 +43,11 @@ So, here's what Zend_Form makes for us (this markup is after submitting the form
     </dd>
 </dl>
 </form>
-{{< /highlight >}}
+```
 
 The PHP code which generates this form (without the error, of course) goes like this:
 
-{{< highlight php >}}
+``` php
 <?php
 $input1 = new Zend_Form_Element_Text('input1');
 $input1->setLabel('Input field #1:')
@@ -61,7 +61,7 @@ $form = new Zend_Form();
 $form->setMethod('post')
        ->addElement($input1)
        ->addElement($submit);
-{{< /highlight >}}
+```
 
 Now, the generated form looks kinda good with no styling (which is good, if some maniac comes to visit with CSS support disabled).
 
@@ -73,7 +73,7 @@ As you can see I've shortened the HTML and the PHP in the example codes...
 
 I like my forms a bit different: form elements and their labels side by side with element descriptions and eventual errors showing up under the element. Here's the CSS to achieve this:
 
-{{< highlight css >}}
+``` css
 .zend_form{
 background:#fff;
 width:460px;
@@ -115,7 +115,7 @@ float:right;
 .required:before{content:'* '}
 
 .optional:before{content:'+ '}
-{{< /highlight >}}
+```
 
 Of course, this CSS takes care only of the layout; things like font types and sizes, colors, borders, backgrounds, etc. are not essential for this.
 

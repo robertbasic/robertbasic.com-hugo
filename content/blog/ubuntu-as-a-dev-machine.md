@@ -15,34 +15,34 @@ Anyway... The installation itself is no trouble, so I'll skip that. I always kee
 
 First, need to install the Guest Additions. In Virtualbox go to Devices &#151;> Install Guest Additions. In the console run:
 
-{{< highlight bash >}}
+``` bash
 sudo /media/cdrom/VBoxLinuxAdditions.run
-{{< /highlight >}}
+```
 
 After it's finished, we need to mount the shared folder:
 
-{{< highlight bash >}}
+``` bash
 sudo mount -t vboxsf name_of_the_sharing_folder /path/to/mount_point
-{{< /highlight >}}
+```
 
 Now, for me, this command shows some error. Here's what I have to do:
 
-{{< highlight bash >}}
+``` bash
 sudo modprobe vboxfs
 sudo mount -t vboxsf name_of_the_sharing_folder /path/to/mount_point
-{{< /highlight >}}
+```
 
 Something with some modules not being loaded into the kernel, not bothered with it really... Now I can copy the apt-cache to where it needs to be:
 
-{{< highlight bash >}}
+``` bash
 sudo cp -r /path/to/mount_point/apt-cache /var/cache/apt/archives
-{{< /highlight >}}
+```
 
 Now do the system update. If the system update includes a kernel update, you'll have to install Guest Additions once more...
 
 Next installing the LAMP:
 
-{{< highlight bash >}}
+``` bash
 sudo apt-get install apache2
 sudo apt-get install php5 libapache2-mod-php5
 sudo /etc/init.d/apache2 restart
@@ -51,13 +51,13 @@ sudo apt-get install libapache2-mod-auth-mysql php5-mysql phpmyadmin
 sudo /etc/init.d/apache2 restart
 sudo a2enmod rewrite
 sudo /etc/init.d/apache2 restart
-{{< /highlight >}}
+```
 
 That should do it. But hey! mod_rewrite still doesn't work!
 
-{{< highlight bash >}}
+``` bash
 sudo gvim /etc/apache2/sites-available/default
-{{< /highlight >}}
+```
 
 And change <code>AllowOverride None</code> to <code>AllowOverride All</code>.
 

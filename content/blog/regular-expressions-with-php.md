@@ -14,14 +14,14 @@ I just want to write some real examples. These regexps are (and always will be, 
 A common case is when you have a source of some web page and you want to parse out all the links from it.<br />
 An anchor tag goes something like this:
 
-{{< highlight php >}}
+``` php
 <a href="http://example.com/" title="Some website">Website</a>
-{{< /highlight >}}
+```
 
 Also it can have more attributes, like <b>class</b>, <b>target</b> etc. Knowing how it's built up, we can start writing a pattern, depending on what we want.<br />
 Here are some examples, some explanations are in the comments:
 
-{{< highlight php >}}
+``` php
 <?php
 // Regexp examples for <a> tags
 
@@ -71,7 +71,7 @@ preg_match_all(
 );
 
 ?>
-{{< /highlight >}}
+```
 
 Play around with these patterns, see what's for what, experiment, that's the best way to learn regexps.
 

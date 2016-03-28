@@ -9,7 +9,8 @@ categories = ["Development"]
 +++
 This post is more of a reminder for myself. Anywayz, a little bash script that backups a database, gzipit and deletes all backups older than 3 days.
 
-{{< highlight bash >}}#!/bin/bash
+``` bash
+#!/bin/bash
 
 DBUSER="user"
 DBPASS="pass"
@@ -23,6 +24,6 @@ mysqldump -u$DBUSER -p$DBPASS $DBDB > "$BACKUPSQL"
 gzip -c $BACKUPSQL > $BACKUPGZIP
 rm $BACKUPSQL
 find $BACKUPROOTDIR -type f -name "mysqlbackup\*" -mtime +3 | xargs rm
-{{< /highlight >}}
+```
 
 Kudos to <a href="http://twitter.com/zsteva">@zsteva</a> for looking at it to spot any errors I might have made.

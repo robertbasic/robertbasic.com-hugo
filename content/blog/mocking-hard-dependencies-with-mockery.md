@@ -17,7 +17,7 @@ One prerequisite to make this work is that the code we are trying to test uses a
 
 Let's take the following code for an example:
 
-{{< highlight php >}}
+``` php
 <?php
 namespace App;
 class Service
@@ -29,11 +29,11 @@ class Service
         return $externalService->getSomething();
     }
 }
-{{< /highlight >}}
+```
 
 The way we can test this without doing any changes to the code itself is by creating <a href="http://docs.mockery.io/en/latest/reference/instance_mocking.html">instance mocks</a> by using the <code>overload</code> prefix.
 
-{{< highlight php >}}
+``` php
 <?php
 namespace AppTest;
 use Mockery as m;
@@ -57,7 +57,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertSame('Tested!', $result);
     }
 }
-{{< /highlight >}}
+```
 
 If we run this test now, it should pass. Mockery does it's job and our <code>App\Service</code> will use the mocked external service instead of the real one.
 
@@ -69,7 +69,7 @@ To make this possible, we'll tell PHPUnit to run the tests that have overloaded 
 
 Our test example from above now becomes:
 
-{{< highlight php >}}
+``` php
 <?php
 namespace AppTest;
 use Mockery as m;
@@ -97,7 +97,7 @@ class ServiceTest extends \PHPUnit_Framework_TestCase {
         $this->assertSame('Tested!', $result);
     }
 }
-{{< /highlight >}}
+```
 
 And that should be pretty much it. If nothing else, it should make parts of old code easier to test.
 

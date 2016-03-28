@@ -13,15 +13,15 @@ The tool which can help fix this is <a href="http://www.x.org/wiki/Projects/XRan
 
 First, query X11 to find out what monitors there are:
 
-{{< highlight bash >}}
+``` bash
 $ xrandr -q
-{{< /highlight >}}
+```
 
 Once the monitor IDs are known, this fixes things for me:
 
-{{< highlight bash >}}
+``` bash
 $ xrandr --output VGA1 --auto --right-of LVDS1
-{{< /highlight >}}
+```
 
 Where LVDS1 is the laptop's screen and VGA1 is the second screen.
 

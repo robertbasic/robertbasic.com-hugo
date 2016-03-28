@@ -19,15 +19,15 @@ There is also <a href="http://linrunner.de/en/tlp/docs/tlp-linux-advanced-power-
 
 After git cloning the repository, run the install perl script, and if all went OK, set the start threshold like:
 
-{{< highlight bash >}}
+``` bash
 ./tpacpi-bat -s ST 1 40
-{{< /highlight >}}
+```
 
 and the stop threshold:
 
-{{< highlight bash >}}
+``` bash
 ./tpacpi-bat -s SP 1 70
-{{< /highlight >}}
+```
 
 Where 1 is the battery number, starting from 1, and 40 and 70 are the start and the stop thresholds in percentage.
 

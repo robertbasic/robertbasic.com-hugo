@@ -17,10 +17,10 @@ Example: If I'm on a page like:<br />
 <code>http://project/foo/bar/?param1=value1</code><br />
 and in the bar.phtml I use the Url helper like this:
 
-{{< highlight php >}}
+``` php
 <?php
 <?= $this->url(array('param2' => 'value2')); ?>
-{{< /highlight >}}
+```
 
 I expect this:<br />
 <code>http://project/foo/bar/param2/value2/?param1=value1</code><br />
@@ -33,7 +33,7 @@ But no, it gives:<br />
 
 After working on several workarounds, currently this is the best one I can think of &#151; take the link that is created by the built-in Url helper and add the query string on that link:
 
-{{< highlight php >}}
+``` php
 <?php
 
 // Usage:
@@ -75,7 +75,7 @@ class Zend_View_Helper_MyUrl
         }
     }
 }
-{{< /highlight >}}
+```
 
 The second parameter, <code>$toAdd</code>, should be an array of parameters that we want to add to the URL. Say, if I have a query string like:<br />
 <code>?param1=value1&someotherparam=anditsvalue</code><br />

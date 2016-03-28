@@ -14,23 +14,23 @@ On bitbucket, if read-only access is required for a repository, a <a href='https
 
 Create one ssh key that will be a deployment, read-only key:
 
-{{< highlight bash >}}
+``` bash
 user@server$ ssh-keygen -f ~/.ssh/id_rsa_ro -t rsa -C "email@domain.com"
-{{< /highlight >}}
+```
 
 and add it to repositories needing read-only access.
 
 Create a second ssh key that will be used for repositories needing read and write access:
 
-{{< highlight bash >}}
+``` bash
 user@server$ ssh-keygen -f ~/.ssh/id_rsa_rw -t rsa -C "email@domain.com"
-{{< /highlight >}}
+```
 
 and add it as an ssh key under your bitbucket account.
 
 Next, configure ssh a bit, telling it what identity to use for what host by adding something like this to the <code>~/.ssh/config</code> file:
 
-{{< highlight bash >}}
+``` bash
 Host bitbucket.org-ro
     HostName bitbucket.org
     IdentityFile ~/.ssh/id_rsa_ro
@@ -39,18 +39,18 @@ Host bitbucket.org-rw
     HostName bitbucket.org
     IdentityFile ~/.ssh/id_rsa_rw
 Host
-{{< /highlight >}}
+```
 
 With all that in place, for repositories where read-only access is needed, set the remote url for the origin like:
 
-{{< highlight bash >}}
+``` bash
 git remote set-url origin git@bitbucket.org-ro:user/repo_with_ro_access.git
-{{< /highlight >}}
+```
 
 and where read-write access is needed:
 
-{{< highlight bash >}}
+``` bash
 git remote set-url origin git@bitbucket.org-rw:user/repo_with_rw_access.git
-{{< /highlight >}}
+```
 
 Now for repositories with the <code>bitbucket.org-ro</code> hostname I have read-only access and for repositories with the <code>bitbucket.org-rw</code> hostname read and write access. Neat.

@@ -19,7 +19,8 @@ As I found out, custom view helpers can live in different places (at least two) 
 
 On the image you can see I put the helpers in a module called <code>Hex</code>. The <code>module.config.php</code> file is something like:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 return array(
     'view_helpers' => array(
         'invokables' => array(
@@ -28,18 +29,20 @@ return array(
         )
     )
 );
-{{< /highlight >}}
+```
 
 The <code>Module.php</code> file is completely basic, it just has the <code>Module</code> class, implementing the <code>getConfig()</code> and the <code>getAutoloaderConfig()</code> methods. Include the module in the application's main configuration file (<code>config/application.config.php</code>) and now the <code>customHelper</code> can be simply called from the view files as:
 
-{{< highlight php >}}<php echo $this->customHelper(); ?>
-{{< /highlight >}}
+``` php
+<php echo $this->customHelper(); ?>
+```
 
 <h3>Service manager in a view helper</h3>
 
 To access the service manager in a view helper, it needs to implement the <code>ServiceLocatorAwareInterface</code> and two methods, <code>setServiceLocator()</code> and <code>getServiceLocator()</code>. In code, this would be something like:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 namespace Hex\View\Helper;
 use Zend\View\Helper\AbstractHelper;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
@@ -72,22 +75,24 @@ class CustomHelper extends AbstractHelper implements ServiceLocatorAwareInterfac
         // use it at will ...
     }
 }
-{{< /highlight >}}
+```
 
 Now, if you call <code>getServiceLocator()</code>, you'll actually get the <code>Zend\View\HelperPluginManager</code> which gives access to other view helpers. If you want to access the "application wide" service locator, you need to call <code>getServiceLocator()</code> again on the HelperPluginManager. Confused yet?
 
-{{< highlight php >}}<?php
+``` php
+<?php
 // first one gives access to other view helpers
 $helperPluginManager = $this->getServiceLocator();
 // the second one gives access to... other things.
 $serviceManager = $helperPluginManager->getServiceLocator();
-{{< /highlight >}}
+```
 
 <h3>Module specific values in view helpers</h3>
 
 The problem (a bit simplified): how to tell the view helper to show "Welcome to my site!" on all routes/modules, except for the blog module, where it should show "Welcome to my blog!". This one was the trickiest, as it can be solved in way too many ways. I first tried 2-3 different approaches, but they either didn't work at all, or were just plain ugly hacky solutions. The final solution came to me when I answered a different question: <b>what would be the easiest way to unit test this code?</b> First, the custom view helper:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 namespace Hex\View\Helper;
 use Zend\View\Helper\AbstractHelper;
 use Zend\ServiceManager\ServiceLocatorAwareInterface;
@@ -135,11 +140,12 @@ class Greeter extends AbstractHelper implements ServiceLocatorAwareInterface
         $message = $this->getMessage();
         return $message;
     }
-{{< /highlight >}}
+```
 
 And the blog module specific part, where we hook to the "preDispatch" event:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 namespace Blog;
 class Module
 {
@@ -160,7 +166,7 @@ class Module
             $helper->setMessage($moduleConfig['message']);
         }
     }
-{{< /highlight >}}
+```
 
 And that would be it. I think.
 

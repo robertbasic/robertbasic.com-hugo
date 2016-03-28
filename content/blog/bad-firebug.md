@@ -15,12 +15,13 @@ We all know about <a href="http://www.getfirebug.com/" title="Firebug" rel="home
 
 OK, let's take this one step further. On a site where the user can register an account and afterwards can edit his or hers profile. I register, go to the user panel, the usual stuff - change email, password, location, DoB (Date of Birth)... A quick inspection of the source - a hidden field "id" with a number in it. Hmm... Quickly, I register another account, note the "id" on that second account, go back to the first account, change the "id" of the first account to the "id" of the second account, change the DoB (just to see any actual information changing), click submit... "Your profile has been updated successfully." Mine? Not really, the DoB is like it was in the first place... Go to the second account... Oh boy. I successfully changed the DoB of the second account, with my first account. Now, I haven't seen their source code, but I can imagine what was going on. Something like this:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 $id = (int)$_POST['id'];
 $dob = $_POST['dob'];
 
 $sql = "UPDATE users SET dob = '" . $dob . "' WHERE id = " . $id;
-{{< /highlight >}}
+```
 
 On the positive side, when I entered letters in that hidden field, I was told by the app that I haven't filled all the fields correctly, which means they filtered even the hidden field, but skipped to check if that "id" is actually me.
 

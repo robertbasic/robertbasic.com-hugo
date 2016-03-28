@@ -15,7 +15,7 @@ If anyone is into writing a guest-post on models, <a href="http://robertbasic.co
 
 The Controllers are the heart of every MVC based application. They control the execution of the application, what to do with the data, what to show the user, what to write to the database, etc. The Controllers that you will write all the time, are called <a href="http://framework.zend.com/manual/en/zend.controller.action.html" target="_blank">Action Controllers</a>. These Controllers subclass the Zend_Controller_Action <a href="http://www.php.net/oop5.abstract" target="_blank">abstract class</a>. Every application module must have a default Controller, which will be accessed if no specific Controller is requested. The default name for this default Controller is Index. Examples of the IndexController and FooController:
 
-{{< highlight php >}}
+``` php
 <?php
 
 // The IndexController class must be placed in the controllers folder
@@ -51,13 +51,13 @@ class FooController extends Zend_Controller_Action
     {
     }
 }
-{{< /highlight >}}
+```
 
 <!--more-->
 
 The Controllers must contain at least the <code>indexAction()</code> function; the others are arbitrary. I always have an <code>init()</code> function, in which I setup the cache object, call up the models, etc. Controller names that are not in the &#147;default&#148; module, must be prefixed with the Title-cased name of the module and an underscore:
 
-{{< highlight php >}}
+``` php
 <?php
 
 // An example of the IndexController in the
@@ -73,7 +73,7 @@ class Dummy_IndexController extends Zend_Controller_Action
 class Dummy_FooController extends Zend_Controller_Action
 {
 }
-{{< /highlight >}}
+```
 
 <h2>The actions</h2>
 
@@ -81,12 +81,12 @@ Actions are methods of the Controller class. Use them to do some specific task: 
 
 Assigning variables to the view scripts is simple:
 
-{{< highlight php >}}
+``` php
 public function indexAction()
 {
     $this->view->someVariable = "some value...";
 }
-{{< /highlight >}}
+```
 
 <h2>The view scripts</h2>
 
@@ -94,16 +94,16 @@ View scripts are, well, for viewing. This is the only place where you should hav
 
 Getting variables that are assigned from the action:
 
-{{< highlight php >}}
+``` php
 // Output: some value...
 <?= this->someVariable ?>
-{{< /highlight >}}
+```
 
 <h2>The view helpers</h2>
 
 The view helpers are simple classes that help in view scripts with things like formatting dates, creating links, etc. Here's an example view helper that I use to show dates in &#147;Serbian&#148; format:
 
-{{< highlight php >}}
+``` php
 File name: views/helpers/SrDateFormat.php
 <?php
 /**
@@ -118,20 +118,20 @@ class Zend_View_Helper_SrDateFormat
         return date('d.m.Y.', strtotime($dateToFormat));
     }
 }
-{{< /highlight >}}
+```
 
 Usage is quite simple:
 
-{{< highlight php >}}
+``` php
 // somewhere in some view script...
 <?= $this->srDateFormat($someDateToShow); ?>
-{{< /highlight >}}
+```
 
 <h2>Bringing it all together</h2>
 
 Just for an overview, here is an example of a Foo Controller in the Dummy module with index and bar actions and their view scripts.
 
-{{< highlight php >}}
+``` php
 <?php
 // File name: application/dummy/controllers/FooController.php
 class Dummy_FooController extends Zend_Controller_Action
@@ -146,11 +146,11 @@ class Dummy_FooController extends Zend_Controller_Action
         $this->view->sayHelloAgain = "Hi here :)";
     }
 }
-{{< /highlight >}}
+```
 
 And the view scripts:
 
-{{< highlight php >}}
+``` php
 <!-- File name: application/dummy/views/scripts/foo/index.phtml -->
 <h1>Saying hello</h1>
 <?= $this->sayHello ?>
@@ -158,7 +158,7 @@ And the view scripts:
 <!-- File name: application/dummy/views/scripts/foo/bar.phtml -->
 <h1>Saying hello again</h1>
 <?= $this->sayHelloAgain ?>
-{{< /highlight >}}
+```
 
 So if you direct your browser to &#147;http://example.com/dummy/foo/&#148; or to &#147;http://example.com/dummy/foo/bar&#148; you should get the &#147;Saying hello&#148; or the &#147;Saying hello again&#148; page...
 

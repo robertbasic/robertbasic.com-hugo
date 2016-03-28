@@ -13,15 +13,17 @@ The latest, and last, release of the Zend Framework 1.x series is just around th
 
 I decided using the classmap autoloader as the main autoloader, and the good ol' standard autoloader as the fallback autoloader. For the classmap autoloader to work we need to create a classmap. ZF1.12 comes with a tool, located in the <code>bin</code> directory, called <code>classmap_generator.php</code>, which will generate the classmap for us:
 
-{{< highlight bash >}}$ cd /path/to/project/library
+``` bash
+$ cd /path/to/project/library
 $ php /path/to/zf1.12/bin/classmap_generator.php 
-{{< /highlight >}}
+```
 
 This will generate a PHP file called <code>autoload_classmap.php</code> in the <code>library</code> directory and it will have classname - filename mappings of the classes/files from that directory.
 
 Next, need to change the <code>index.php</code> a bit to tell ZF to use the new autoloaders:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 // normal setting up of APPLICATION_PATH and other constants here ...
 // Ensure library/ is on include_path
 set_include_path(implode(PATH_SEPARATOR, array(
@@ -48,7 +50,7 @@ Zend_Loader_AutoloaderFactory::factory(
     )
 );
 // set up Zend_Application as normal here ...
-{{< /highlight >}}
+```
 
 and that's about it - the autoloader will load classes from the classmaps, but if it fails to do so, it will fall back to the standard autoloader.
 
@@ -56,13 +58,14 @@ and that's about it - the autoloader will load classes from the classmaps, but i
 
 The Zend Framework manual has a section on <a href="http://framework.zend.com/manual/en/performance.classloading.html">how to improve performance of the framework</a>  itself, and one of the suggestion is to strip out the <code>require_once</code> calls from the library. I had to alter that find/sed command combination a bit in order to make it work with the classmaps:
 
-{{< highlight bash >}}$ find . -name '*.php' \
+``` bash
+$ find . -name '*.php' \
   -not -wholename '*/Application.php' \
   -not -wholename '*/Loader*' \
   -print0 | xargs -0 \
   sed --regexp-extended \
   --in-place 's/(require_once)/\/\/ \1/g'
-{{< /highlight >}}
+```
 
 If I'm not wrong in reading my "debugging" echo statements, the standard autoloader gets called only once - to load the classmap autoloader itself - everything else is loaded via the classmaps. Pretty cool.
 

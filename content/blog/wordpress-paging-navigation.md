@@ -17,7 +17,7 @@ First, I wrote on a piece of paper which links I need: first page, last page, ne
 
 So, let's take a look at the code. I called the function simply <code>get_pagination</code>; it's quite self&#151;describing. I put it in the <code>link-template.php</code> file, that way, all functions for navigation are in one place.
 
-{{< highlight php >}}
+``` php
 <?php
 /**
 * A pagination function
@@ -88,7 +88,7 @@ function get_pagination($range = 4){
     }
   }
 }
-{{< /highlight >}}
+```
 
 The &#147;range&#148; is the range of the sliding effect, i.e. how many numbers are shown besides the current number: if the range is 4, and the current page is 5, then the numbers 3, 4, 5, 6 and 7 are visible.
 

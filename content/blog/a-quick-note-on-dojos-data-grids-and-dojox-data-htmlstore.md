@@ -13,7 +13,7 @@ Anyway, when using <a href="http://dojotoolkit.org/reference-guide/dojox/data/Ht
 
 Let's take for example this is the given HTML table:
 
-{{< highlight html >}}
+``` html
 <table id="datastore">
 <thead>
     <tr>
@@ -25,25 +25,25 @@ Let's take for example this is the given HTML table:
     <!-- body comes here -->
 </tbody>
 </table>
-{{< /highlight >}}
+```
 
 I was defining the structure for the columns as:
 
-{{< highlight javascript >}}
+``` javascript
 var struct = [[
    { field: 'id', name: 'ID', width: 'auto' },
    { field: 'name', name: 'Name', width: 'auto'}
 ]];
-{{< /highlight >}}
+```
 
 which was wrong. This is the correct one:
 
-{{< highlight javascript >}}
+``` javascript
 var struct = [[
    { field: 'ID', name: 'ID', width: 'auto' },
    { field: 'Name', name: 'Name', width: 'auto'}
 ]];
-{{< /highlight >}}
+```
 
 Use what's in the <strong>TH tags</strong> for the <strong>field</strong> properties! I was trying to be clever and use the name of the fields in the database. The worst part is that there will be no errors, the grid will render correctly the header row and a correct number of rows for the data, but! it will show "..." in each column, instead of the actual data.
 

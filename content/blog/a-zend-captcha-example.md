@@ -17,11 +17,11 @@ OK, this was a bit tricky and I found no examples about it, so I thought to blog
 
 First of all, we'll use sessions, so we need to change the bootstrap file a little:
 
-{{< highlight php >}}
+``` php
 <?php
 // Put this line somewhere after the Zend_Loader::registerAutoload(); line
 Zend_Session::start();
-{{< /highlight >}}
+```
 
 We need to start the session to use it, putting it close to the top will assure that there will be no &#147;Headers already sent by...&#148; errors caused by a wrongly placed session start.
 
@@ -31,7 +31,7 @@ How does this work? When a captcha is generated, it generates a unique ID (e.g. 
 
 Awesome. Now, to the fun part. I use the <code>Zend_Form_Element_Captcha</code> class, so no additional fooling around is needed to put the captcha in the form. Here's the code:
 
-{{< highlight php >}}
+``` php
 <?php
 public function indexAction()
 {
@@ -65,11 +65,11 @@ $form->setAction('/index/captcha/')
 // Pass the form to the view...
 $this->view->form = $form;
 }
-{{< /highlight >}}
+```
 
 On the other side, it goes something like this:
 
-{{< highlight php >}}
+``` php
 <?php
 public function captchaAction()
 {
@@ -101,7 +101,7 @@ public function captchaAction()
   // NOK
   }
 }
-{{< /highlight >}}
+```
 
 Easy, ain't it?
 

@@ -21,15 +21,15 @@ Once you forked and cloned the github repo, cd to the zf2/tests directory and si
 
 Anyway, once you're in the tests directory, just type:
 
-{{< highlight bash >}}
+``` bash
 robert@odin:~/www/zf2/tests$ phpunit --verbose Zend/Dojo
-{{< /highlight >}}
+```
 
 or:
 
-{{< highlight bash >}}
+``` bash
 robert@odin:~/www/zf2/tests$ phpunit --verbose Zend/Dojo/DojoTest.php
-{{< /highlight >}}
+```
 
 and watch the tests pass or fail. If they pass, good, if they fail, try to fix them and make them pass! I tell you, it's fun! By using the "--verbose" flag you'll get more (helpful) info about the tests.
 

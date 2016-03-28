@@ -15,7 +15,8 @@ Here's what I did: added the path to the plugin and it's namespace to the Zend_A
 
 Code is better, here's some:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 class News_Bootstrap extends Zend_Application_Module_Bootstrap
 {
     /**
@@ -53,7 +54,7 @@ class News_Bootstrap extends Zend_Application_Module_Bootstrap
         $fc->registerPlugin(new News_Controller_Plugin_Scheduler());
     }
 }
-{{< /highlight >}}
+```
 
 If anyone knows a better way for doing this, please do share it with me.
 

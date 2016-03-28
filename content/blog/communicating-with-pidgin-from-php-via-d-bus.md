@@ -15,15 +15,15 @@ I first planned to write some scripts for this in Python or C, but when I finall
 
 As the extension requires the <code>dbus-devel</code> package, first make sure it is installed:
 
-{{< highlight bash >}}
+``` bash
 $ yum install dbus-devel
-{{< /highlight >}}
+```
 
 The installation of the extension itself is pretty easy:
 
-{{< highlight bash >}}
+``` bash
 $ pecl install dbus-beta
-{{< /highlight >}}
+```
 
 Add the <code>extension=dbus.so</code> line to your php.ini, restart Apache if needed and have a look at the <code>phpinfo();</code>, there should be an entry for D-Bus listed.
 
@@ -37,7 +37,7 @@ What I learned by looking at the examples, is that the Dbus class is used for cr
 
 This can easily be found out by <strong>introspection</strong>. Create a proxy to an object which implements the <code>Introspectable</code> interface and call the <code>Introspect</code> method on that proxy:
 
-{{< highlight php >}}
+``` php
 <?php
 
 $dbus = new Dbus;
@@ -49,22 +49,22 @@ $proxy = $dbus->createProxy("im.pidgin.purple.PurpleService",
 $data = $proxy->Introspect();
 
 file_put_contents('introspect.xml', $data);
-{{< /highlight >}}
+```
 
 As the result of the introspection is returned in an XML and can be quite big, putting it in a file for easier viewing.
 
 By looking at the XML file, it's pretty easy to figure out what's going on; method names, method arguments, their names and types, and the returned result:
 
-{{< highlight xml >}}
+``` xml
 <method name="PurpleAccountGetUsername">
   <arg name="account" type="i" direction="in"></arg>
   <arg name="RESULT" type="s" direction="out"></arg>
 </method>
-{{< /highlight >}}
+```
 
 With all this information at our disposal, it's easy to write a script which does something useful, like, listing all the connected accounts and the protocols they are using:
 
-{{< highlight php >}}
+``` php
 <?php
 
 $dbus = new Dbus;
@@ -84,7 +84,7 @@ foreach ($accounts->getData() as $account) {
                        . " (" . $protocolId . ") protocol.\n";
     }
 }
-{{< /highlight >}}
+```
 
 A sample output would be something like: "robertbasic@irc.freenode.net is connected on the IRC (prpl-irc) protocol."
 

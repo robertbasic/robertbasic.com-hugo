@@ -15,7 +15,8 @@ Zend_Tool is an awesome tool. Creating a new project is like "zf create project 
 
 I wanted to set up routes in such way that when a user requests a page, all requests for non-existing controllers/modules are directed to a specific controller (not the error controller). In other words, if we have controllers IndexController, FooController and PageController, anything but http://example.com/index and http://example.com/foo is directed to the PageController. This can be useful for CMSs or blogs to make pretty links. Here's where the <a href="http://twitter.com/jaspertandy/status/3205493310">Zend_Controller_Router_Route_Regex</a> stuff comes in:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 $route = new Zend_Controller_Router_Route_Regex(
     '(?(?=^index$|^foo$)|([a-z0-9-_.]+))',
     array(
@@ -30,7 +31,7 @@ $route = new Zend_Controller_Router_Route_Regex(
     );
 
 $router->addRoute('viewPage', $route);
-{{< /highlight >}}
+```
 
 Basically the regex does the following: if it's index or foo don't match anything, thus calling up those controllers, in any other case match what's requested and pass it to the PageController's viewAction as the slug parameter. The fourth parameter, the '%s', is needed so that ZF can rebuild the route in components like the Zend_Navigation.
 
@@ -40,7 +41,8 @@ Now, when the PageController, viewAction get's called up, we can check, for exam
 
 Oh the joy when I saw Zend_Navigation in the library! And it even includes view helpers to help us render links and menus and breadcrumbs! Yey! There are a <a href="http://blog.ekini.net/2009/05/25/zend-framework-making-the-built-in-breadcrumb-helper-work/">several</a> <a href="http://blog.ekini.net/2009/06/10/zend-framework-navigation-and-breadcrumbs-with-an-xml-file-in-zf-18/">blog posts</a> which go in details <a href="http://www.zendcasts.com/zend_navigation-dynamically-creating-a-menu-a-sitemap-and-breadcrumbs/2009/06/">about Zend_Navigation</a>, so I won't be bothering with that. What I wanted to make with Zend_Navigation is to have a menu of all the pages rendered everywhere. Here's where action helpers kick in. I made an action helper which makes up the structure of the links/pages. Something like this:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 class Zend_Controller_Action_Helper_LinkStructure extends
         Zend_Controller_Action_Helper_Abstract{
 function direct(){
@@ -64,7 +66,7 @@ $structure = array(
 return new Zend_Navigation($structure);
 }
 }
-{{< /highlight >}}
+```
 
 This is a simple example of the structure; I'm actually making it out from the database, with all the categories, subcategories and pages.
 
@@ -72,14 +74,16 @@ This is a simple example of the structure; I'm actually making it out from the d
 
 To have this menu on all pages, we need to render it in the layout.phtml. Rendering is quite simple:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 // somewhere in layout.phtml
 <?php echo $this->navigation()->menu(); ?>
-{{< /highlight >}}
+```
 
 Of course, we need to pass the menu to the navigation helper somehow. To avoid doing <code>$this->navigation($this->_helper->linkStructure());</code> in all the controllers, we could do that once in the bootstrap (any other ways to make it happen?):
 
-{{< highlight php >}}<?php
+``` php
+<?php
 // in Bootstrap.php somewhere in the Bootstrap class
 function _initView(){
 
@@ -99,7 +103,7 @@ function _initView(){
 
         return $view;
 }
-{{< /highlight >}}
+```
 
 There. Now we have our menu rendered on all pages. Sexy isn't it? :)
 

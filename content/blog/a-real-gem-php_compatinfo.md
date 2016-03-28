@@ -13,7 +13,7 @@ It tells what's the minimum overall PHP version needed, all the PHP extensions u
 
 Installing PHP_CompatInfo is easy: <code>pear install php_compatinfo</code> and that's about it. Using it isn't much harder:
 
-{{< highlight php >}}
+``` php
 <?php
 
 require_once 'PHP/CompatInfo.php';
@@ -25,7 +25,7 @@ $driverOptions = array();
 
 $info = new PHP_CompatInfo($driverType, $driverOptions);
 $info->parseDir($source);
-{{< /highlight >}}
+```
 
 Include the main PHP_CompatInfo file, set the path to the file or directory you want to check and then just run it. By default it'll just var_dump the results, which is pretty much OK for a few files and directories. For a library like Zend Framework, I found the XML output to be the best. Besides the var_dumping and XML, there are other options for the output like CSV, a simple HTML table and Text, which is used when using the CLI. Oh, right, you can run it either from the console or from your web browser. <a href="http://pear.php.net/manual/en/package.php.php-compatinfo.tutorial.php">PHP_CompatInfo's documentation</a> is very well written and describes all part of it, so I won't be bugging you with that.
 

@@ -23,7 +23,7 @@ But! If the user's first visit is on the <code>http://example.com/vesti</code> U
 
 I hacked up a front controller plugin which in the postDispatch hook, if needed, changes the web sites locale to Serbian and dispatches the request all over again. If all goes well, the router will now route correctly the URL and the user will get the content.
 
-{{< highlight php >}}
+``` php
 <?php
 
 class App_Plugin_TranslatedRoute extends Zend_Controller_Plugin_Abstract
@@ -61,7 +61,7 @@ class App_Plugin_TranslatedRoute extends Zend_Controller_Plugin_Abstract
         }
     }
 }
-{{< /highlight >}}
+```
 
 <h3>The hack for the hack</h3>
 

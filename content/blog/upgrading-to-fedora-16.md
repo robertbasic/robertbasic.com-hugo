@@ -15,25 +15,25 @@ I did the post upgrade steps from the above linked article, but the <code>yum di
 
 The second thing that "wasn't working" is that Apache and MySQL were not starting on bootup, so I ran chkconfig for both of 'em:
 
-{{< highlight bash >}}
+``` bash
 $ chkconfig --levels 235 mysqld on
 $ chkconfig --levels 235 httpd on
-{{< /highlight >}}
+```
 
 Lastly, grub was upgraded to grub2. It was working fine, just that it was showing the grub menu on startup, which is a bit silly given that I'm running only one OS on this machine. Anyway, added the following lines to <code>/etc/default/grub</code>:
 
-{{< highlight bash >}}
+``` bash
 GRUB_DISABLE_RECOVERY=true
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=true
 GRUB_TIMEOUT=0 # I actually edited this line, from 5 to 0
-{{< /highlight >}}
+```
 
 and ran:
 
-{{< highlight bash >}}
+``` bash
 $ grub2-mkconfig -o /boot/grub2/grub.cfg
-{{< /highlight >}}
+```
 
 I also thought for a while that there was an issue with my wifi, that it's dropping connection randomly, but it only happened once, so I don't know what to do with it.
 

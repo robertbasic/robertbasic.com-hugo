@@ -13,7 +13,8 @@ For what chains are for, is described in the manual, so I won't be covering that
 
 Basically, we're prepending the language route to the other routes. This way, we have defined the route for the languages in one place only, plus, the other routes don't have to worry about the language, too.
 
-{{< highlight php >}}// this goes in the bootstrap class
+``` php
+// this goes in the bootstrap class
 <?php
 public function _initRoutes()
 {
@@ -47,17 +48,17 @@ public function _initRoutes()
     $router->addRoute('defaultRoute', $defaultRoute);
     $router->addRoute('contactRoute', $contactRoute);
 }
-{{< /highlight >}}
+```
 
 Assuming that we have an Index controller, with actions index and contact and a Foo controller with actions index and bar, paired with the routes from the above example, we could do requests like:
 
-{{< highlight php >}}
+``` php
 / => /index/index/lang/en
 /de => /index/index/lang/de
 /sr/contact => /index/contact/lang/sr
 /en/foo => /foo/index/lang/en
 /fr/foo/bar => /foo/bar/lang/fr
-{{< /highlight >}}
+```
 
 Requesting a page like, e.g. <code>/de/baz</code>, would give us a 404 page, cause we don't have a Baz controller.
 

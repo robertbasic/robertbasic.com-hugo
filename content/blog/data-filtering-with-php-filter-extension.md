@@ -21,7 +21,7 @@ The filter extension is an extension that comes by default in PHP 5.2. It is her
 
 Here are some examples about what this extension is capable of. Lets assume that we get some data from a form with POST method. The 3 input fields are name, email and age (I'm not creating a real validator, but var_dump-ing the results of the filtering, to show what filter gives what kind of output). 
 
-{{< highlight php >}}
+``` php
 <?php
 // $_POST['name'] = "Robert <b>hello</b>";
 var_dump(filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING));
@@ -37,13 +37,13 @@ var_dump(filter_input(INPUT_POST, 'age', FILTER_VALIDATE_INT,
                                                 'max_range' => 28)
                         )));
 // Output: int(22)
-{{< /highlight >}}
+```
 
 With the first filter I'm using the <code>FILTER_SANITIZE_STRING</code> which strips down all tags and unwanted characters from our string. The second filter validates the provided E-mail address: pass it a malformed E-mail address and it will result with a boolean <code>false</code>. The third filter validates the age: it must be an integer and in the range between 18 and 28 (the min and max ranges are optional, I added them just for the example).
 
 Besides input filtering it can filter variables, too:
 
-{{< highlight php >}}
+``` php
 <?php
 $string = "Some funky string with <b>html</b> code and 'quotes'";
 var_dump(filter_var($string, FILTER_SANITIZE_STRING));
@@ -56,7 +56,7 @@ var_dump(filter_var($string, FILTER_SANITIZE_MAGIC_QUOTES));
 
 var_dump(filter_var($string, FILTER_SANITIZE_ENCODED));
 // Output: string(80) "Some%20funky%20string%20with%20%3Cb%3Ehtml%3C%2Fb%3E%20code%20and%20%27quotes%27"
-{{< /highlight >}}
+```
 
 Play around with it, get familiar, cause this is one nice extension that will help you make more secure web sites and web apps.
 

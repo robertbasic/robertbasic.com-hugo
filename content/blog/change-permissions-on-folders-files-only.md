@@ -9,7 +9,7 @@ categories = ["Development"]
 +++
 This is just a quick reminder for myself. Should really remember this one. Changes permissions on folders|files only.
 
-{{< highlight bash >}}
+``` bash
 $ find /path/to -type d -exec chmod 775 {} \;
 $ find /path/to -type f -exec chmod 664 {} \;
-{{< /highlight >}}
+```

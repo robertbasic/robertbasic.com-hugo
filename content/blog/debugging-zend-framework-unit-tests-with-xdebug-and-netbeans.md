@@ -13,9 +13,9 @@ Greatest help to figure out this was Raphael Dohms' blog post <a href="http://bl
 
 Starting the debug session stays the same as explained in Raphael's post: click "Debug project" (CTRL+F5), go to the terminal and just type something like:
 
-{{< highlight bash >}}
+``` bash
 robert@odin:~/www/zf2/tests$ /path/to/phpunit-debug Zend/Dojo/DojoTest.php
-{{< /highlight >}}
+```
 
 Netbeans will pick up the connection and debugging can start!
 

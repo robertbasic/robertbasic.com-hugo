@@ -36,7 +36,7 @@ This is where, I hope, the EventManager can help. Call the <code>save</code> met
 
 Let's see some code:
 
-{{< highlight php >}}
+``` php
 <?php
 
 // This is the Post object
@@ -67,12 +67,12 @@ class Post
         echo 'data saved! ' . json_encode($response->last());
     }
 }
-{{< /highlight >}}
+```
 I just set a "save" event to be triggered and attached two listeners to that event, the <code>slugify</code> and the <code>validate</code> methods. When the save method gets called, the event is triggered and the EventManager calls our listeners. One fairly important point here is the <code>prepareArgs</code> method call, which prepares the event arguments in such way, that when these arguments (the $data array in this case) are modified in one listener, this modification is reflected for the other listeners, too. If you don't want to modify the arguments in the listeners, this call can be omitted. As for the rest of the code, it's explained in Matthew's posts and in the ZF2 docs.
 
 And here's how the slugify method modifies the data:
 
-{{< highlight php >}}
+``` php
 <?php
 
 class SlugifyPost
@@ -86,10 +86,10 @@ class SlugifyPost
         return $data;
     }
 }
-{{< /highlight >}}
+```
 Calling the save method itself remains as it was before introducing the EventManager, which means I could add this to my models without changing the API and not break anything! Genius! Theoretically, anyway...
 
-{{< highlight php >}}
+``` php
 <?php
 
 $post = new Post;
@@ -103,7 +103,7 @@ try {
 } catch(\InvalidArgumentException $e) {
     echo $e->getMessage();
 }
-{{< /highlight >}}
+```
 You can find this complete example <a href="https://github.com/robertbasic/blog-examples/blob/master/zf2-event-manager/index.php">on Github</a>.
 
 <h3>Thoughts?</h3>

@@ -21,7 +21,8 @@ With pygtk one can only subscribe to events that happen inside the application i
 
 The interesting parts are:
 
-{{< highlight python >}}def start_tracking(self, widget, data=None):
+``` python
+def start_tracking(self, widget, data=None):
     mask = gtk.gdk.POINTER_MOTION_MASK | gtk.gdk.BUTTON_PRESS_MASK | gtk.gdk.BUTTON_RELEASE_MASK
     self.root_window = gtk.gdk.get_default_root_window()
     gtk.gdk.pointer_grab(self.root_window, False, mask)
@@ -44,7 +45,7 @@ def track_region(self, event, region):
         gtk.gdk.pointer_ungrab()
         self.show_region_values(region)
     return gtk.gdk.FILTER_CONTINUE
-{{< /highlight >}}
+```
 
 Isn't it ugly? Very. But it works and it solves the problem I had. Btw you can check out the <a href="https://github.com/robertbasic/coords/blob/master/coords.py">code on github</a> to have a bit more context for all this.
 

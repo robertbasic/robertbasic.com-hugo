@@ -11,12 +11,12 @@ I started to work on/figuring out the <a href="http://symfony.com/doc/current/bo
 
 Once I put some thinking into it, it's pretty easy actually. Simply import the needed security file in your main config file. Something like this will work:
 
-{{< highlight bash >}}
+``` bash
 # app/config/config.yml
 imports:
     - { resource: parameters.ini }
     - { resource: '@AcmeDemoBundle/Resources/config/security.xml' }
-{{< /highlight >}}
+```
 
 where the security.xml file is the same as already <a href="http://symfony.com/doc/current/book/security.html#basic-example-http-authentication">described in the documentation</a>.
 

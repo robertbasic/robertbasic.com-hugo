@@ -17,7 +17,7 @@ The PHP Dbus extension allows us to watch for one exact signal on an interface, 
 
 Once we know the interface and/or the specific signal we're interested in, we can add a watch on it. This is done by calling the <code>addWatch</code> method on the Dbus object, were the first parameter is the interface, and the second, <strong>optional</strong> parameter is the exact signal we want to listen to.
 
-{{< highlight php >}}
+``` php
 <?php
 
 $dbus = new Dbus(Dbus::BUS_SESSION);
@@ -28,11 +28,11 @@ $dbus->addWatch("im.pidgin.purple.PurpleInterface", "ReceivedImMsg");
 // $dbus->addWatch("im.pidgin.purple.PurpleInterface");
 // also can listen to different interfaces at the same time
 $dbus->addWatch("org.freedesktop.Hal.Device");
-{{< /highlight >}}
+```
 
 Next, we need a way to actually get these signals when the events occur. For this we are using the <code>waitLoop</code> method of the Dbus class. That method accepts a number as a parameter, which is the number of miliseconds it should wait between requests. If an event happened on the interface we're watching, it will return the signal, which is a <code>DbusSignal</code>; otherwise we'll get a null:
 
-{{< highlight php >}}
+``` php
 <?php
 do {
     $signal = $dbus->waitLoop(1000);
@@ -47,7 +47,7 @@ do {
         }
     }
 } while (true);
-{{< /highlight >}}
+```
 
 Once we got the signal, to make sure that the signal is really the one we're interested in, we call the <code>matches</code> method on it. The first parameter is the interface and the second is the signal.
 

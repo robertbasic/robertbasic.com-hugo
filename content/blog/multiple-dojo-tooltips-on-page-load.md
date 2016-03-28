@@ -21,7 +21,7 @@ To achieve what I wanted to, I had to make it possible to have several tooltips 
 
 Making it possible to have multiple tooltips: the "offending" code that was stopping me from showing multiple tooltips is in dijit/Tooltip.js, around lines 83-93. Be warned, dojo code is a bit cryptic in places and figuring it out takes time. A whole lot of it. That piece of code there is responsible for creating a new tooltip instance each and every time. Luckily, that part can be easily overwritten in our dojo.addOnLoad function:
 
-{{< highlight javascript >}}
+``` javascript
 var ttids = Array();
 dijit.showTooltip=function(_a,_b,_c,_d){
     if(!ttids[_b.id]){
@@ -35,11 +35,11 @@ dijit.hideTooltip=function(_e){
     }
     return ttids[_e.id].hide(_e);
 };
-{{< /highlight >}}
+```
 
 Showing those tooltips programatically is a bit harder. I hoped that there's some built-in method which when called will just happily show the tooltip, but I was foolish for having such hopes. Anyway, by looking at how dijit.Tooltip was created/declared, I've wrote my own tooltip which extends dijit.Tooltip and adds the "missing method":
 
-{{< highlight javascript >}}
+``` javascript
 dojo.declare("app.errorTooltip", dijit.Tooltip, {
     show: function() {
         var elem = dojo.byId(this.connectId[0]);
@@ -52,13 +52,13 @@ dojo.declare("app.errorTooltip", dijit.Tooltip, {
         }
     }
 });
-{{< /highlight >}}
+```
 
 Now, when creating a tooltip, instead of dijit.Tooltip I need to use app.errorTooltip (error, as I'm currently using it for showing errors). The contents of the show() method are a different story and they belong to that rant post about dojo I promised earlier :D All that code is actually doing there is firing the "onfocus" event on the element to which our tooltip is connected to.
 
 Finally, querying the DOM for all elements which contain the actual error messages I was first interested in, creating a app.errorTooltip for each of those error message and showing those tooltips with the method I created.
 
-{{< highlight javascript >}}
+``` javascript
 var errors = dojo.query("form ul.errors").forEach(function(node, idx, nodes){
     var id = node.parentNode.firstChild.getAttribute('for');
     var label = "<ul class='errors'>" + node.innerHTML + "</ul>";
@@ -73,7 +73,7 @@ var errors = dojo.query("form ul.errors").forEach(function(node, idx, nodes){
     dijit.byId(id).state = "Error";
     dijit.byId(id)._setStateClass();
 }).style({"display":"none"});
-{{< /highlight >}}
+```
 
 There. Multiple dojo tooltips shown on page load. Mission accomplished. As I said, it's not easy, but it's not hard either.
 

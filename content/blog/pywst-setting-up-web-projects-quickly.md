@@ -25,9 +25,9 @@ After these steps I have http://projectName.lh/ which points to /var/www/project
 
 As I have this ability to forget things, I always forget a step or 2 of this process. Thus, I wrote <a href="http://robertbasic.com/downloads/pywst.txt">pywst</a> (note, this is a txt file, to use it, save it to your HDD and rename it to pywst.py). It's not the best and nicest Python script ever wrote, but gets the job done. All that is need to be done to setup a project with pywst is:
 
-{{< highlight bash >}}
+``` bash
 sudo ./pywst.py projectName
-{{< /highlight >}}
+```
 
 2 things are required: to run it with sudo powers and to provide a name for the project.
 

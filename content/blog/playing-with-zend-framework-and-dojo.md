@@ -15,7 +15,7 @@ In short: set up the Zend_Dojo view helpers, pick a theme, make the forms extend
 
 All I did was to set up dojo is:
 
-{{< highlight php >}}
+``` php
 <?php
 
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
@@ -36,7 +36,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
                         ->addStyleSheetModule('dijit.themes.claro')
                         ->useCdn();
     }
-{{< /highlight >}}
+```
 
 and then just called <code>echo $this->dojo();</code> in the layout and added class="cairo" to the body element. I think this body thing can also be done via the helpers. The biggest struggle I had with the theme. Where do I download it? There's no "download theme x" on the dojo website. How do I set it up? What is this madness? Then I realized it can pull not just the javascript files from the CDN, but also the CSS and images! Very cool.
 
@@ -44,7 +44,7 @@ and then just called <code>echo $this->dojo();</code> in the layout and added cl
 
 Next step: spice up the forms with Zend_Dojo_Form:
 
-{{< highlight php >}}
+``` php
 <?php
 class My_Form extends Zend_Dojo_Form
 {
@@ -73,7 +73,7 @@ class My_Form extends Zend_Dojo_Form
                 )
             )
         );
-{{< /highlight >}}
+```
 
 With these ~20 lines I've got some basic client side validation with a pretty nice look and feel to it while still having all of the Zend_Form power to do the validation and filtering on the server side. Still need to figure out what those "constraints" are and how and for what to use them (they're in the ZF manual, so they gotta be good for something), how to add for example a dojox.validate.isEmailAddress validator to the element, but for starters, this is quite impressive. 
 

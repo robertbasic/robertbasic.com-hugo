@@ -11,19 +11,19 @@ While hacking on ape, I came to a situation where I need to pass some arguments 
 
 First I tried with something like:
 
-{{< highlight python >}}
+``` python
 action = QAction("My action", parent)
 action.triggered.connect(my_slot(my_argument))
-{{< /highlight >}}
+```
 
 which ended in an error: <em>TypeError: connect() slot argument should be a callable or a signal, not 'NoneType'</em>
 
 After a bit of poking around I passed a lambda function to the connect() method:
 
-{{< highlight python >}}
+``` python
 action = QAction("My action", parent)
 action.triggered.connect(lambda arg=my_argument: my_slot(arg))
-{{< /highlight >}}
+```
 
 Works like a charm.
 

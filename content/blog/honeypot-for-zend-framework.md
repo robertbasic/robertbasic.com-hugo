@@ -14,7 +14,8 @@ If the element is left empty, it's valid, otherwise it's not.
 
 So, here's the code:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 class App_Validate_Honeypot extends Zend_Validate_Abstract
 {
     const SPAM = 'spam';
@@ -36,11 +37,12 @@ class App_Validate_Honeypot extends Zend_Validate_Abstract
         return false;
     }
 }
-{{< /highlight >}}
+```
 
 I add the element to the form like this:
 
-{{< highlight php >}}<?php
+``` php
+<?php
 $this->addElement(
     'text',
     'honeypot',
@@ -56,7 +58,7 @@ $this->addElement(
         )
     )
 );
-{{< /highlight >}}
+```
 
 There. Done.
 

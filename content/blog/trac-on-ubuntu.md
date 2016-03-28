@@ -35,53 +35,53 @@ First, I installed a Python tool, called Easy Install. It's here to make our ins
 
 Fire up a console and type:
 
-{{< highlight bash >}}
+``` bash
 sudo sh setuptools-0.6c9-py2.5.egg
-{{< /highlight >}}
+```
 
 Of course, you need to match this to your own setuptools file.
 
 Next, type:
 
-{{< highlight bash >}}
+``` bash
 sudo easy_install Trac
-{{< /highlight >}}
+```
 
 EasyInstall will now locate Trac and it's dependencies, download and install them.
 
 Download the mod_wsgi:
 
-{{< highlight bash >}}
+``` bash
 sudo apt-get install libapache2-mod-wsgi
-{{< /highlight >}}
+```
 
 It will install and enable mod_wsgi. And, in my case, it only tried to restart Apache, but for an unknown reason it fails to do so. If that happens, just do a quick:
 
-{{< highlight bash >}}
+``` bash
 sudo /etc/init.d/apache2 restart
-{{< /highlight >}}
+```
 
 If you want Subversion with your Trac, you'll need the python-subversion package:
 
-{{< highlight bash >}}
+``` bash
 sudo apt-get install python-subversion
-{{< /highlight >}}
+```
 
 If you have it already, it'll just skip it. If you want SVN, but you don't have this package, later on it will show an error message like: Unsupported version control system "svn".
 
 Now to make a folder for Trac, where it will keep all the Trac projects and stuff.
 
-{{< highlight bash >}}
+``` bash
 sudo mkdir /var/trac /var/trac/sites /var/trac/eggs /var/trac/apache
 sudo chown -R www-data /var/trac
-{{< /highlight >}}
+```
 
 Under <code>/var/trac/sites</code> will be the files for Trac projects. The <code>/var/trac/eggs</code> folder will be used as a cache folder for Python eggs. <code>/var/trac/apache</code> will hold a wsgi script file.
 
 The wsgi script is actually a Python script, but with the .wsgi extension, used by mod_wsgi. With this script, Trac will be able to run as a WSGI application.<br />
 File: <code>/var/trac/apache/trac.wsgi</code>
 
-{{< highlight bash >}}
+``` bash
 import sys
 sys.stdout = sys.stderr
 
@@ -92,13 +92,13 @@ os.environ['PYTHON_EGG_CACHE'] = '/var/trac/eggs'
 import trac.web.main
 
 application = trac.web.main.dispatch_request
-{{< /highlight >}}
+```
 
 With this kind of script, one single Trac installation will be able to manage multiple projects (you can see <a href="http://code.google.com/p/modwsgi/wiki/IntegrationWithTrac">here</a> some other scripts).
 
 Configure Apache, add this to your <code>httpd.conf</code> file:
 
-{{< highlight bash >}}
+``` bash
 WSGIScriptAlias /trac /var/trac/apache/trac.wsgi
 
 <Directory /var/trac/apache>
@@ -106,13 +106,13 @@ WSGIScriptAlias /trac /var/trac/apache/trac.wsgi
     Order deny,allow
     Allow from all
 </Directory>
-{{< /highlight >}}
+```
 
 Restart Apache:
 
-{{< highlight bash >}}
+``` bash
 sudo /etc/init.d/apache2 restart
-{{< /highlight >}}
+```
 
 If you go to <a href="http://localhost/trac/">http://localhost/trac/</a> in your browser, you should see an empty list of Available Projects. It's empty, cause we haven't added any project yet.
 
@@ -120,9 +120,9 @@ Now, let's asume that we have a project called &#147;testProject&#148; with it's
 
 In console type:
 
-{{< highlight bash >}}
+``` bash
 sudo trac-admin /var/trac/sites/testProject initenv
-{{< /highlight >}}
+```
 
 Note that you need to provide the full path to <code>/var/trac/sites</code>, cause it will create a Trac project in the current folder you're in.
 
@@ -137,34 +137,34 @@ It will ask you now a few things:
 
 It will start to print out a bunch of lines, about what is it doing. In the end you'll get a message like &#147;Project environment for 'testProject' created.&#148; and a few more lines. One more thing. We need to add the whole project to www-data user, so it can manage the files:
 
-{{< highlight bash >}}
+``` bash
 sudo chown -R www-data /var/trac/sites/testProject
-{{< /highlight >}}
+```
 
 If you direct your browser again to <a href="http://localhost/trac/">http://localhost/trac/</a>, you will now see a link for the <code>testProject</code>. Click it. There, a fully working basic Trac environment for your project. A wiki, a ticket/bug tracking system, a repo browser in only a few minutes. How cool is that? Very.
 
 This Trac environment can now be accessible by everyone. If we do not want that, we need to add this to the <code>httdp.conf</code> file:
 
-{{< highlight bash >}}
+``` bash
 <Location /trac>
     AuthType Basic
     AuthName "Trac login"
     AuthUserFile /var/trac/.htpasswd
     Require valid-user
 </Location>
-{{< /highlight >}}
+```
 
 Create the <code>.htpasswd</code> file:
 
-{{< highlight bash >}}
+``` bash
 sudo htpasswd -bcm /var/trac/.htpasswd your_username your_password
-{{< /highlight >}}
+```
 
 All set. You'll now have to login to Trac to be able to work on it. As I'm the big boss on my localhost, I gave myself some super-power privileges for Trac: TRAC_ADMIN. It's like root on *NIX.
 
-{{< highlight bash >}}
+``` bash
 sudo trac-admin /var/trac/sites/testProject permission add robert TRAC_ADMIN
-{{< /highlight >}}
+```
 
 Read more about <a href="http://trac.edgewall.org/wiki/TracPermissions">privileges</a>.
 

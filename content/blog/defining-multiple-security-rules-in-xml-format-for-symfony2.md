@@ -15,12 +15,12 @@ Symfony2's security stuff let's you define rules based on URL matching witch is,
 
 The example says:
 
-{{< highlight xml >}}
+``` xml
 <access-control>
     <rule path="^/admin/users" role="ROLE_SUPER_ADMIN"></rule>
     <rule path="^/admin" role="ROLE_ADMIN"></rule>
 </access-control>
-{{< /highlight >}}
+```
 
 which will actually die in a fire with an ugly as hell exception: <code>InvalidConfigurationException: Unrecognized options "0, 1" under "security.access_control.rule"</code>. Thanks, that's helpful. The funny thing is that if you have <strong>only one</strong> rule defined, it works!
 
@@ -28,10 +28,10 @@ After an hour of hunting up and down, I finally found the solution in the <a hre
 
 The solution is to omit the <code>access-control</code> tags:
 
-{{< highlight xml >}}
+``` xml
 <rule path="^/admin/users" role="ROLE_SUPER_ADMIN"></rule>
 <rule path="^/admin" role="ROLE_ADMIN"></rule>
-{{< /highlight >}}
+```
 
 I thought about submitting an issue against the code, but as the fixtures use this format, I'll open up a ticket against the docs. A real WTF moment.
 
@@ -41,16 +41,16 @@ Update, August 26th, 2011:
 
 Defining roles suffers from the same bug. So, instead of using:
 
-{{< highlight xml >}}
+``` xml
 <role-hierarchy>
     <role id="ROLE_ADMIN" >Admin</role>
     <role id="ROLE_SUPER_ADMIN">Super admin</role>
 </role-hierarchy>
-{{< /highlight >}}
+```
 
 use:
 
-{{< highlight xml >}}
+``` xml
 <role id="ROLE_ADMIN" >Admin</role>
 <role id="ROLE_SUPER_ADMIN">Super admin</role>
-{{< /highlight >}}
+```

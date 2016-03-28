@@ -4,6 +4,7 @@ title = "Robert Basic's blog"
 theme = "robertbasic.com"
 
 pygmentsstyle = "monokai"
+pygmentscodefences = "true"
 
 [params]
     description = "Robert Basic is a web developer from Serbia."

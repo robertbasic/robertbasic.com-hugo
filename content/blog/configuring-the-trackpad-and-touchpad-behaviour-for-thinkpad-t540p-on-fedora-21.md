@@ -19,13 +19,14 @@ You're left now with the trackpad and touchpad for movement, and the clickpad fo
 
 After quite some time searching the internet for a fix, I found a forum post explaining how to get this thing usable (sadly, I can't find that post again to link to it):
 
-{{< highlight bash >}}Section "InputClass"
+``` bash
+Section "InputClass"
     Identifier "TrackPad with buttons only"
     MatchDriver "synaptics"
     Option "SoftButtonAreas" "65% 0 0 0 50% 65% 0 0" # emulate right and middle buttons
     Option "AreaBottomEdge" "1" # disable moving but not buttons
 EndSection
-{{< /highlight >}}
+```
 
 Save this as <code>99-thinkpad-clickpad.conf</code> in <code>/etc/X11/xorg.conf.d/</code>. The touch parts of the touchpad are disabled so we have the trackpad for movements and the clickpad for buttons. I just need to tweak the left/middle/right button clicks a bit more, because there are times when I accidentally do a middle click.
 

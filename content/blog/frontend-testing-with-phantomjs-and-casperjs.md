@@ -34,7 +34,8 @@ When writing tests with phantomjs and casperjs, all one need to do is think in s
 
 Let's have a look at the first part of the <code>tests.js</code> file:
 
-{{< highlight javascript >}}casper.start('http://localhost/frontend-testing', function () {
+``` javascript
+casper.start('http://localhost/frontend-testing', function () {
     this.test.assertUrlMatch(/login.php$/, 'Redirected to login page');
     this.test.assertExist("#login_form", 'Login form exists');
     this.fill('#login_form', {
@@ -45,7 +46,7 @@ Let's have a look at the first part of the <code>tests.js</code> file:
 casper.thenClick('#login', function () {
     this.test.assertUrlMatch(/index.php$/, 'Redirected to index page after login');
 });
-{{< /highlight >}}
+```
 
 The tests are surprisingly self-explanatory: <i>start</i> by opening up the home page. <i>Assert</i> that we are (redirected to) on the login page and that the login form <i>exists</i>. Then <i>fill</i> the email field of the login form with a given value. <i>Assert</i> that the field was indeed filled with that value. Once that's done, <i>then click</i> on the login button, and <i>assert</i> that we end up on the index page.
 
@@ -55,7 +56,8 @@ And practically that goes on in the entire test. Start, assert, then do this, as
 
 Testing ajax calls isn't difficult either:
 
-{{< highlight javascript >}}casper.thenClick('#do_ajax', function () {
+``` javascript
+casper.thenClick('#do_ajax', function () {
     this.waitForResource('http://localhost/frontend-testing/ajax.php');
 });
 casper.then(function () {
@@ -65,7 +67,7 @@ casper.then(function () {
 casper.then(function () {
     this.test.assertTextExist('Just some ajax response.', 'Ajax request was made');
 });
-{{< /highlight >}}
+```
 
 Do some action that triggers an ajax request, <i>wait for that ajax request</i> to finish and assert that something was done with the response from that ajax call. Of course, in real life examples you will have a bit more complicated setup, but hey... As for faking ajax requests I hear that can be done with this cool <a href="http://sinonjs.org/">sinonjs</a> library, but I haven't managed to get that working, yet. Mostly because I didn't need to fake any ajax calls.
 
@@ -73,14 +75,15 @@ The most voodoo-like thing in these tests is probably the <code>evaluate()</code
 
 For example, I had to use <code>evaluate()</code> to determine is the checkbox checked or not:
 
-{{< highlight javascript >}}casper.thenClick('#enable_ajax', function () {
+``` javascript
+casper.thenClick('#enable_ajax', function () {
     // I could swear I had this one working
     // this.test.assertEquals(this.getElementAttribute('#enable_ajax', 'checked'), 'checked', 'Checkbox is checked');
     this.test.assertTrue(this.evaluate(function () { 
         return document.getElementById("enable_ajax").checked;
     }), 'Checkbox is checked');
 });
-{{< /highlight >}}
+```
 
 Not sure how, but the <code>this.getElementAttribute()</code> way does actually work in my other tests. Honest. Not sure why it didn't work in this example. Maybe some other factors not present here, affected my other tests? I don't know.
 
@@ -90,14 +93,16 @@ What I found extremely helpful while writing the tests is the <code>this.debugHt
 
 The other helpful debugging function I used a lot is <code>this.getElementAttribute(&lt;selector&gt;)</code>. It retrieves a bunch of helpful information on an element, which you can then dump to the terminal, to further figure out things:
 
-{{< highlight javascript >}}casper.then(function () {
+``` javascript
+casper.then(function () {
     require('utils').dump(this.getElementAttribute('#enable_ajax'));
 });
-{{< /highlight >}}
+```
 
 Will result in an output like this:
 
-{{< highlight javascript >}}{
+``` javascript
+{
     "attributes": {
         "id": "enable_ajax",
         "name": "enable_ajax",
@@ -113,7 +118,7 @@ Will result in an output like this:
     "x": 12,
     "y": 58
 }
-{{< /highlight >}}
+```
 
 I mean, it even gives the positions of the checkbox on the page! Super helpful.
 
