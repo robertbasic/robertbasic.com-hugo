@@ -11,8 +11,7 @@
     </div>
 
     <div class="entry">
-        {{ $age := sub (int .Now.Year) (int (.Date.Format "2006")) }}
-        {{ if gt $age 2 }}
+        {{ if lt .Date ($.Now.AddDate -2 0 0) }}
         <div class="old_entry_warn">
         <strong>Heads-up!</strong> You're reading an old post and the information in it is quite probably outdated.
         </div>
