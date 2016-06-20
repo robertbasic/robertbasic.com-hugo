@@ -42,7 +42,7 @@ let g:plugin_path = expand('<sfile>:p:h')
 
 And here comes the kicker: the `<sfile>` needs to be expanded outside of our Vim function where it is used, otherwise the `<sfile>` points to the path of the file that called the Vim function.
 
-In code, this would be incorrect:
+In code, getting the path to the sourced file from within the Vim function would be incorrect:
 
 ``` vim
 " ./plugin/my-vim-plugin.vim
@@ -51,7 +51,7 @@ python << endpython
 
 import vim
 
-vim.command("let a:plugin_path = expand('<spath>:p:h')
+vim.command("let a:plugin_path = expand('<sfile>:p:h')
 plugin_path = vim.eval("a:plugin_path")
 print plugin_path
 
@@ -61,18 +61,18 @@ endfunction
 
 because it would end up printing the current working directory from where the `MyVimPlugin` function is called.
 
-The correct way to do is:
+The correct way to do is to get the path to the sourced file outside of the Vim function:
 
 ``` vim
 " ./plugin/my-vim-plugin.vim
-let g:plugin_path = expand('<spath>:p:h')
+let g:plugin_path = expand('<sfile>:p:h')
 
 function! MyVimPlugin()
 python << endpython
 
 import vim
 
-vim.command("let a:plugin_path = expand('<spath>:p:h')
+vim.command("let a:plugin_path = expand('<sfile>:p:h')
 plugin_path = vim.eval("a:plugin_path")
 print plugin_path
 
@@ -80,11 +80,13 @@ endpython
 endfunction
 ```
 
+This way the path is set at the time the plugin is sourced and not at the time when function is called.
+
 Finally, to be able to import the `mypymodule` from the lib, we need to point to the `lib` directory and add it to the system paths. Complete example:
 
 ``` vim
 " ./plugin/my-vim-plugin.vim
-let g:plugin_path = expand('<spath>:p:h')
+let g:plugin_path = expand('<sfile>:p:h')
 
 function! MyVimPlugin()
 python << endpython
@@ -107,6 +109,6 @@ endpython
 endfunction
 ```
 
-By the way, the here's the [documentation for the Vim](http://vimdoc.sourceforge.net/htmldoc/if_pyth.html) Python module.
+By the way, here's the [documentation for the Vim](http://vimdoc.sourceforge.net/htmldoc/if_pyth.html) Python module.
 
 Happy hackin'!
