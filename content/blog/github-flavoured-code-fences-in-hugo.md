@@ -14,7 +14,7 @@ This was an undocumented feature [until today](https://github.com/spf13/hugo/pul
 
 I like this a lot because it makes highlighting code in posts easier. Typing the <code>&#123;&#123;< highlight >&#125;&#125;</code> shortcode is just awkward and I always end up forgetting either the angle brackets or add too much or too little currly brackets. Backticks are much nicer.
 
-The code fences are not enabled by default, though. You need to set `PygmentsCodeFences` to `true` in Hugo's configuration file and that's about it. Everything else about [syntax highlighting](http://gohugo.io/extras/highlighting/) stays the same.
+The code fences are not enabled by default, though. We need to set `PygmentsCodeFences` to `true` in Hugo's configuration file and that's about it. Everything else about [syntax highlighting](http://gohugo.io/extras/highlighting/) stays the same.
 
 ### Change to backticks in old posts
 

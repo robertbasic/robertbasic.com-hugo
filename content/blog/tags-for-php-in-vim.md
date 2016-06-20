@@ -33,13 +33,13 @@ That's it.
 
 <h3>Jump to definition</h3>
 
-Pair gutentags with <a href="https://github.com/ctrlpvim/ctrlp.vim">CtrlP</a>  and it's <code>CtrlPTag</code> method and you get jump to definition.
+Pair gutentags with <a href="https://github.com/ctrlpvim/ctrlp.vim">CtrlP</a>  and it's <code>CtrlPTag</code> method and we get jump to definition.
 
 ``` bash
 map <silent> <leader>jd :CtrlPTag<cr><c-\>w
 ```
 
-Move to the method name you're interested in, hit <code><leader>jd</code> and it will jump to it's definition. Tip: <code><C-\>w</code> means "insert word under cursor".
+Move to the method name we're interested in, hit <code>&lt;leader>jd</code> and it will jump to it's definition. Tip: <code>&lt;C-\>w</code> means "insert word under cursor".
 
 <h3>Where the hell am I?</h3>
 
