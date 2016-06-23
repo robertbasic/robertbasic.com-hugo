@@ -1,6 +1,6 @@
 +++
 draft = false
-date = "2016-06-21T14:34:23+02:00"
+date = "2016-06-23T08:20:14+02:00"
 title = "Helping juniors debug"
 slug = "helping-juniors-debug"
 description = "My thoughts on the process of teaching junior developers how to debug"
