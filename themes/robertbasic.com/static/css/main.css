@@ -1,33 +1,32 @@
 body {
-    background: #161D32;
-    color: #8D95AA;
-    font-family: 'Trebuchet MS', Verdana, Arial, sans-serif;
-    font-size: 16px;
+    background: #EAECF4;
+    color: #000000;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
     font-weight: normal;
     text-decoration: none;
     line-height: 1.5;
 }
 
 h1, h2, h3 {
-    color: #44537F;
+    color: #000000;
 }
 
 a {
     text-decoration: none;
-    color: #f7e98c;
+    color: #23527C;
 }
 
 a:hover {
-    color: #FFFFFF;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 acronym {
-    border-bottom: 1px dotted #6c7388;
+    border-bottom: 1px dotted #23527C;
 }
 
 blockquote {
-    border-left: 1px solid #f7e98c;
+    border-left: 1px solid #23527C;
     margin: 0 20px 20px 20px;
     padding-left: 20px;
     display: block;
@@ -35,7 +34,7 @@ blockquote {
 
 #page {
     float: none;
-    margin: 0 auto;
+    margin: 60px auto;
 }
 
 #top h1{
@@ -50,6 +49,14 @@ blockquote {
 
 #sidebar li {
     list-style: none;
+}
+
+#about {
+    text-align: center;
+}
+
+#about p {
+    font-size: 16px;
 }
 
 .Zend_Tag_Cloud {
@@ -102,11 +109,11 @@ blockquote {
 }
 
 .navigation a:hover {
-    background: #6C7388;
+    background: #FFFFFF;
 }
 
 .current{
-    background: #6C7388;
+    background: #FFFFFF;
 }
 
 .aligncenter, div.aligncenter {
@@ -118,19 +125,16 @@ blockquote {
 #my_contact{
     font-size: 90%;
     text-align: left;
-    background: #1f2946;
+    color: #000000;
     margin: 0 50px 20px 50px;
     padding: 5px;
     border: 1px solid #6c7388;
-    -moz-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
 }
 
 #my_contact dd{
     margin: 0 0 0 30px;
-    color: #f7e98c;
+    color: #000000;
 }
 
 pre {
@@ -138,16 +142,17 @@ pre {
     color: #8d95aa;
 }
 
+code {
+    background: #FFFFFF;
+}
+
 div.old_entry_warn {
     font-size: 90%;
     text-align: left;
-    background: #1f2946;
+    background: #23527C;
+    color: #FFFFFF;
     margin: 0 50px 20px 50px;
     padding: 5px;
     border: 1px solid #6c7388;
-    -moz-border-radius: 5px;
-    -khtml-border-radius: 5px;
-    -webkit-border-radius: 5px;
     border-radius: 5px;
-
 }
