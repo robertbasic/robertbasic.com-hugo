@@ -34,7 +34,7 @@ blockquote {
 
 #page {
     float: none;
-    margin: 0 auto;
+    margin: 60px auto;
 }
 
 #top h1{
@@ -49,6 +49,14 @@ blockquote {
 
 #sidebar li {
     list-style: none;
+}
+
+#about {
+    text-align: center;
+}
+
+#about p {
+    font-size: 16px;
 }
 
 .Zend_Tag_Cloud {
