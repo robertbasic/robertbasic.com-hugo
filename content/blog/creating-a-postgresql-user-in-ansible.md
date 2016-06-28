@@ -1,15 +1,15 @@
 +++
 draft = true
-date = "2016-06-27T06:19:28+02:00"
+date = "2016-06-28T17:18:22+02:00"
 title = "Creating a PostgreSQL user in Ansible"
 slug = "creating-a-postgresql-user-in-ansible"
-description = ""
-tags = [""]
-categories = [""]
+description = "How to create the first PostgreSQL user in Vagrant with Ansible provisioning"
+tags = ["ansible", "vagrant", "provisioning", "postgresql"]
+categories = ["Programming", "Development", "Software"]
 2016 = ["06"]
 
 +++
-Lately I've been playing around with provisioning a PostgreSQL server with Ansible in a local Vagrant machine that runs a Fedora 23 image.
+Lately I've been playing around with provisioning a [PostgreSQL](https://www.postgresql.org/) server with [Ansible](https://www.ansible.com/) in a local [Vagrant](https://www.vagrantup.com/) machine that runs a Fedora 23 image.
 
 The first task after installing and starting the PostgreSQL server is to create a database user and a database. So far I have found an ugly way, a really ugly way and a nice way to do this.
 
@@ -31,6 +31,8 @@ But this fails because `sudo` expects us to enter the password:
 TASK [postgresql : Create user] ************************************************
 fatal: [default]: FAILED! => {"changed": false, "failed": true, "module_stderr": "", "module_stdout": "sudo: a password is required\r\n", "msg": "MODULE FAILURE", "parsed": false}
 ```
+
+You can read more about privilege escalation in Ansible in their [documentation](http://docs.ansible.com/ansible/become.html).
 
 ## The really ugly way
 
