@@ -34,12 +34,11 @@ blockquote {
 
 #page {
     float: none;
-    margin: 60px auto;
+    margin: 0 auto;
 }
 
 #top h1{
-    font-size: 38pt;
-    margin: 40px 0;
+    margin: 40px 0 20px 0;
     text-align: center;
 }
 
