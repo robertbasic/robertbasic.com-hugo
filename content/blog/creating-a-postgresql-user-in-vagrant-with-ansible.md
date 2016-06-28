@@ -1,8 +1,8 @@
 +++
-draft = true
+draft = false
 date = "2016-06-28T17:18:22+02:00"
-title = "Creating a PostgreSQL user in Ansible"
-slug = "creating-a-postgresql-user-in-ansible"
+title = "Creating a PostgreSQL user in Vagrant with Ansible"
+slug = "creating-a-postgresql-user-in-vagrant-with-ansible"
 description = "How to create the first PostgreSQL user in Vagrant with Ansible provisioning"
 tags = ["ansible", "vagrant", "provisioning", "postgresql"]
 categories = ["Programming", "Development", "Software"]
