@@ -94,3 +94,5 @@ The Ansible tasks are now:
 For added bonus we can cleanup the sudoers file after we are done by removing the line we added.
 
 Happy hackin'!
+
+P.S.: If you want to use a good quality Ansible role for PostgreSQL [take a look at this one](https://github.com/ANXS/postgresql). Thanks to [Gilles Cornu](https://github.com/gildegoma) for pointing it out!
