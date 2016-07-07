@@ -92,3 +92,30 @@ add_header Strict-Transport-Security max-age=31536000;
 This blog post explains [HTTP Strict Transport Security](https://scotthelme.co.uk/hsts-the-missing-link-in-tls/) nicely.
 
 All this and my website gets an A+ rating on the [Qualys SSL Server Test](https://www.ssllabs.com/ssltest/analyze.html).
+
+Thanks to [Goran Jurić](http://gogs.info/) for pointing out to enable [OCSP stapling](https://www.digicert.com/enabling-ocsp-stapling.htm). I did so by adding this to the nginx `server` config:
+
+``` nginx
+ssl_stapling on;
+ssl_stapling_verify on;
+```
+
+According to the [nginx documentation](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#ssl_stapling) the `ssl_trusted_certificate` directive is needed only when the `ssl_certificate` file does not contain intermediate certificates, but the `fullchain.pem` created by Let's Encrypt does contain them, so I'm skipping that.
+
+To test whether OCSP stapling is enabled, reload nginx, and from a local terminal run the following:
+
+``` bash
+openssl s_client -connect domain.tld:443 -status
+```
+
+The output should have something like:
+
+``` bash
+OCSP response:
+======================================
+OCSP Response Data:
+    OCSP Response Status: successful (0x0)
+    Response Type: Basic OCSP Response
+    Version: 1 (0x0)
+    Responder Id: C = US, O = Let's Encrypt, CN = Let's Encrypt Authority X3
+```
