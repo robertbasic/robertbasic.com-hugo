@@ -93,6 +93,8 @@ This blog post explains [HTTP Strict Transport Security](https://scotthelme.co.u
 
 All this and my website gets an A+ rating on the [Qualys SSL Server Test](https://www.ssllabs.com/ssltest/analyze.html).
 
+## Enable OCSP stapling
+
 Thanks to [Goran Jurić](http://gogs.info/) for pointing out to enable [OCSP stapling](https://www.digicert.com/enabling-ocsp-stapling.htm). I did so by adding this to the nginx `server` config:
 
 ``` nginx
