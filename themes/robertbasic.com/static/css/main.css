@@ -139,6 +139,7 @@ blockquote {
 pre {
     background: none !important;
     color: #8d95aa;
+    border: none;
 }
 
 code {
@@ -154,4 +155,21 @@ div.old_entry_warn {
     padding: 5px;
     border: 1px solid #6c7388;
     border-radius: 5px;
+}
+
+div.highlight {
+    border-radius: 0 0 4px 4px;
+}
+
+div.filename {
+    background: #FFFFFF !important;
+    padding: 0 0;
+    margin: 10px 0 -10px 0;
+    color: #c7254e;
+    font-family: monospace;
+    font-size: 12px;
+    text-align: center;
+    border: #272822 solid 1px;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
 }
