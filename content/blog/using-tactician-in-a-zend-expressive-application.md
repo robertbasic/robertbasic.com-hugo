@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = "2016-07-13T21:59:21+02:00"
 title = "Using Tactician in a Zend Expressive application"
 slug = "using-tactician-in-a-zend-expressive-application"
