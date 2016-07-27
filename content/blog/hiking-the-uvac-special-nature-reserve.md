@@ -1,6 +1,6 @@
 +++
-draft = true
-date = "2016-07-26T07:26:45+02:00"
+draft = false
+date = "2016-07-27T14:51:39+02:00"
 title = "Hiking the Uvac special nature reserve"
 slug = "hiking-the-uvac-special-nature-reserve"
 description = "My wife and I went to Uvac special nature reserve for our 10th hike"
@@ -23,7 +23,7 @@ We chose Uvac as we agreed to see more of our country, the entire region is just
 
 ## Choosing the trail
 
-<a href='/img/posts/uvac-trail-big.jpg' target='_blank'><img style='float:left;padding:10px' src='/img/posts/uvac-trail-small.jpg' /></a>
+<a href='/img/posts/uvac-trail-big.jpg' target='_blank'><img style='float:right;padding:10px' src='/img/posts/uvac-trail-small.jpg' /></a>
 
 There are only a handful of resources online about the [camping](http://www.camping.rs/en/) and [hiking](http://stazeibogaze.info/) possibilities around here (this is mostly true for all of Serbia, not just the Uvac region). We found a couple of hiking trails that we liked and a detailed inspection of one of the trails on Open Street Map and Google Maps revealed there's a camping site by the trail, on the banks of the Sjenica lake. I got in contact with the reserve's custodians who got me in touch with the ranger who is responsible for that area. They were all very helpful over the phone and answered all my questions in a couple of minutes.
 
@@ -35,13 +35,13 @@ The drive from Novi Sad to the camp took us some 7 hours, with one stop. The rou
 
 ## Arriving at the camp
 
-The path to the camp is not clearly marked on the road. There is a junction at which we had to go off the main road and there's maybe a kilometer or so of gravel road to get to the camp. I was hoping to arrive there while there was still some daylight left, but we ended up arriving just as the Sun set. We were welcomed by the campers and I'm not even sure there was an "official" person from the camp or from the reserve there. They helped us pick a spot for our tent and invited us for a barbecue dinner after we were all set up. A bottle of rakija was also going around.
+The path to the camp is not clearly marked on the road. There is a junction at which we had to go off of the main road and there's maybe a kilometer or so of gravel road to get to the camp. I was hoping to arrive there while there was still some daylight left, but we ended up arriving just as the Sun set. We were welcomed by the campers and I'm not even sure there was an "official" person from the camp or from the reserve there. They helped us pick a spot for our tent and invited us for a barbecue dinner after we were all set up. A bottle of rakija was also going around.
 
 <img style='float:right;padding:10px' src='/img/posts/uvac-camp.jpg' />
 
 The camp is not like the camps we stayed at before. It has no showers or toilette facilities. There's one fountain with spring water and one of those wooden field toilets. There are no visible tent spots, it's more of a who settles where kind of a camp. A bit chaotic, but it does have it's charm. In the mornings the camp site and the surounding area was covered in a mist, really pretty sight while the Sun comes up over the hills.
 
-All in all for the two nights we were there, it was good enough. We only paid the 100 dinar entry fee to the park and that's it. The actual camping was free, so we can't complain about a single thing.
+All in all for the two nights we were there, it was good enough. We only paid the 100 dinars (less than 1 euro) entry fee to the park and that's it. The actual camping was free, so we can't complain about a single thing.
 
 ## The hike
 
