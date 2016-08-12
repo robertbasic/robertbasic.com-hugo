@@ -180,6 +180,8 @@ class Ping
     public function __invoke(ContainerInterface $container)
     {
         // Grab some dependencies from the $container
+        // And return self
+        return new self();
     }
 
     public function onPingCommandHandled(Event $event)
