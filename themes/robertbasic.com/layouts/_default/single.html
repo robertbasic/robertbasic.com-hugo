@@ -1,8 +1,4 @@
 {{ partial "header.html" . }}
 {{ partial "post.html" . }}
 
-{{ if gt .Date ($.Now.AddDate -2 0 0) }}
-{{ template "_internal/disqus.html" . }}
-{{ end }}
-
 {{ partial "footer.html" . }}
