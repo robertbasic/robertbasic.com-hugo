@@ -1,8 +1,8 @@
 +++
 draft = false
 date = "2016-12-12T12:07:56+01:00"
-title = "Verbose commits"
-slug = "verbose-commits"
+title = "Verbose commiting"
+slug = "verbose-commiting"
 description = "Supply -v to git commit to see a diff when writing the commit message"
 tags = ["git", "message", "verbose", "diff"]
 categories = ["Software", "Development"]
@@ -21,4 +21,4 @@ template. Taken directly from `man git commit`:
 I keep double checking the code that I commit, so prior to discovering this flag, I was constantly switching between writing the commit message and seeing what's in the diff. This now
 gives me the diff inside `vim`, as that is my specified `$EDITOR`. I can navigate the diff using vim motions, use search, etc, which greatly improves my workflow.
 
-P.S.: I know I saw this from someone on Twitter, but I can't find the original tweet now. Whoever you are, thank you :)
+Happy hackin'!
