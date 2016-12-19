@@ -2,6 +2,6 @@
 
 <ul>
   {{ range $cat, $tax := .Site.Taxonomies.categories }}
-    <li><a href="/categories/{{ $cat | urlize }}">{{ replace $cat "-" " " | title }}</a> </li>
+    <li><a href="/categories/{{ $cat | urlize }}">{{ replace $cat "-" " " | title }}</a></li>
   {{ end }}
 </ul>

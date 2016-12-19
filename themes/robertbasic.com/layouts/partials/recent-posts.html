@@ -2,10 +2,6 @@
 
 <ul>
 {{ range first 10 . }}
-<li>
-    <a href="{{ .Permalink }}">
-    {{ .Title }}
-    </a>
-</li>
+<li><a href="{{ .Permalink }}"> {{ .Title }} </a></li>
 {{ end }}
 </ul>
