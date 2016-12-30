@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = "2016-12-30T20:27:45+01:00"
 title = "Things I learned in the past four years"
 slug = "things-i-learned-in-the-past-four-years"
