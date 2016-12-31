@@ -18,7 +18,7 @@ Things I learned about being a better listener, a better communicator, a better 
 
 This is probably one of the hardest and most important lessons I learned. I'm happy that I learned it early into the project.
 
-Ego gets into the way of the actual programming, there is no place for it. People get defensive about their code, become deaf to advice, don't take criticism well. This slows down the
+Ego gets into the way of the actual programming. There is no place for it. People get defensive about their code, become deaf to advice, don't take criticism well. This slows down the
 development process, makes communicating difficult, if not impossible.
 
 Criticism of my code is not criticism of me. If I submit a pull request and the reviewer deems the code not fit for inclusion into the project, there is nothing to get upset about. The
@@ -29,7 +29,7 @@ code needs improvement. If I know how, I'll improve it, if not, I'll ask for hel
 [Joe](https://twitter.com/juokaz) wrote an excellent piece on [the blame game](https://juokaz.com/blog/the-blame-game) more than 3 years ago.
 
 Removing the blame from the entire process is liberating. When dealing with a problem, don't focus on trying to find the person, or persons, responsible for the issue at hand, but try
-and understand what caused the problem, what is the best and fastest way to solve it, and how to prevent it from happening again in the future.
+to understand what caused the problem, what is the best and fastest way to solve it, and how to prevent it from happening again in the future.
 
 I know I was lucky to be working on a project where this blame game was not being played and that there are a lot of teams and companies where there's a ton of office politics and
 everyone wants to survive... But that stuff really isn't helping any one. If possible, at least try to not play it within your team, with your closest coworkers.
@@ -61,7 +61,7 @@ give us a solution which we need to translate into code, takes away the problem 
 experience we gained so far.
 
 Understanding the core domain makes it possible to give ideas, work together with other people (not necessarily programmers) to come up with better solutions. Everyone will benefit
-from this. The business gains by having yet another smart person helping out and you by learning new things.
+from this. The business gains by having yet another smart person helping out, and you by learning new things.
 
 Not everything we learn need to be exclusively about code.
 
@@ -79,7 +79,7 @@ explanations much easier.
 
 Working on this huge project for this long is something I'm truly grateful for. Not everyone gets an opportunity like this, especially this early in their professional career.
 
-I learned a lot from my friend, partner and mentor, [Srdjan](https://twitter.com/vranac), as well as from [Luka](https://twitter.com/lmuzinic) who joined our small team recently.
+I learned a lot from my friend, partner and mentor, [Srdjan](https://twitter.com/vranac), as well as from [Luka](http://luka.muzinic.net/) who joined our small team recently.
 
 I'm certain the new year will bring us exciting new challenges. If you have, or know of a project where the three of us could help out, let us know.
 
