@@ -2,31 +2,35 @@
 {{ if lt $cp 4 }}
     {{ $.Scratch.Set "p" (first 5 .Paginator.Pagers) }}
     {{ $.Scratch.Set "first" true }}
+    {{ $.Scratch.Set "last" false }}
 {{ else if gt $cp (sub .Paginator.TotalPages 2) }}
     {{ $.Scratch.Set "p" (last 5 .Paginator.Pagers) }}
+    {{ $.Scratch.Set "first" false }}
     {{ $.Scratch.Set "last" true }}
 {{ else }}
     {{ $.Scratch.Set "p" (first 5 (after (sub $cp 3) .Paginator.Pagers)) }}
+    {{ $.Scratch.Set "first" false }}
+    {{ $.Scratch.Set "last" false }}
 {{ end }}
 
 <div class="navigation">
     {{ if .Paginator.HasPrev }}
-        <a href="{{ .Paginator.Prev.URL }}"> Prev </a>
+        <a href="/blog/page/{{ sub $cp 1 }}/"> Prev </a>
     {{ end }}
 
     {{ if (not ($.Scratch.Get "first")) }}
-    <a href="{{ .URL }}" {{ if eq .Paginator.PageNumber 1 }}class="current"{{ end }}> 1 </a> <span>...</span>
+        <a href="/blog/" {{ if eq $cp 1 }}class="current"{{ end }}> 1 </a> <span>...</span>
     {{ end }}
 
     {{ range $.Scratch.Get "p" }}
-        <a href="{{ .URL }}" {{ if eq $cp .PageNumber }}class="current"{{ end }}> {{ .PageNumber }} </a>
+        <a href="/blog/page/{{ .PageNumber }}/" {{ if eq $cp .PageNumber }}class="current"{{ end }}> {{ .PageNumber }} </a>
     {{ end }}
 
     {{ if (not ($.Scratch.Get "last")) }}
-    <span>...</span> <a href="{{ .URL }}page/{{ .Paginator.TotalPages }}" {{ if eq .Paginator.PageNumber .Paginator.TotalPages }}class="current"{{ end }}> {{ .Paginator.TotalPages }} </a>
+    <span>...</span> <a href="/blog/page/{{ .Paginator.TotalPages }}/" {{ if eq $cp .Paginator.TotalPages }}class="current"{{ end }}> {{ .Paginator.TotalPages }} </a>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a href="{{ .Paginator.Next.URL }}"> Next </a>
+        <a href="/blog/page/{{ add $cp 1 }}/"> Next </a>
     {{ end }}
 </div>
