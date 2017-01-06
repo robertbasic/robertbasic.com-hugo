@@ -6,6 +6,9 @@ theme = "robertbasic.com"
 pygmentsstyle = "monokai"
 pygmentscodefences = "true"
 
+[permalinks]
+    blog = "/blog/:slug/"
+
 [params]
     description = "Robert Basic is a software engineer, business owner and open source contributor from Serbia."
 
