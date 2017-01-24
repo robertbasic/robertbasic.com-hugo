@@ -1,0 +1,14 @@
+[[projects]]
+name = "pugdebug"
+url = "https://github.com/robertbasic/pugdebug"
+description = "pugdebug is a standalone debugging client for PHP applications that uses XDebug as the debugging engine."
+
+[[projects]]
+name = "Vim Hugo helper"
+url = "https://github.com/robertbasic/vim-hugo-helper"
+description = "A small Vim plugin with a set of helpers for [Hugo](https://gohugo.io)."
+
+[[projects]]
+name = "Vim Hugo helper"
+url = "https://github.com/robertbasic/vim-argument-swapper"
+description = "A VIM plugin to swap 2 arguments in a method call/definition."

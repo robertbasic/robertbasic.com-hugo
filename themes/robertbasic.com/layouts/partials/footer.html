@@ -12,6 +12,7 @@
                             <a href="https://robertbasic.com/index.xml">Get the feed</a>
                         </li>
                     </ul>
+                    {{ partial "projects.html" ($.Site.Data.projects.projects) }}
                     {{ partial "recent-posts.html" .Site.Pages }}
                     {{ partial "tag-cloud.html" . }}
                     {{ partial "categories.html" . }}

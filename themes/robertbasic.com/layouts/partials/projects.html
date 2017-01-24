@@ -1,0 +1,10 @@
+<h2>OSS projects</h2>
+
+<p>Some of my open source projects:</p>
+
+<dl>
+    {{ range . }}
+    <dt><a href="{{ .url }}">{{ .name }}</a></dt>
+    <dd>{{ .description | markdownify }}</dd>
+    {{ end }}
+</dl>

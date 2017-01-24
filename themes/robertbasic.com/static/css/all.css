@@ -56,6 +56,10 @@ blockquote {
     list-style: none;
 }
 
+#sidebar dd {
+    margin-bottom: 10px;
+}
+
 #about {
     text-align: center;
 }
