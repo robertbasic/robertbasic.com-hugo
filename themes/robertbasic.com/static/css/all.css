@@ -56,6 +56,10 @@ blockquote {
     list-style: none;
 }
 
+#sidebar dt {
+    font-weight: normal;
+}
+
 #sidebar dd {
     margin-bottom: 10px;
 }
