@@ -14,6 +14,6 @@ url = "https://github.com/robertbasic/vim-argument-swapper"
 description = "A Vim plugin to swap 2 arguments in a method call/definition."
 
 [[projects]]
-name = "Vim-PHPStan"
-url = "https://github.com/robertbasic/vim-phpstan"
+name = "vim-phpstan"
+url = "https://github.com/phpstan/vim-phpstan"
 description = "A Vim plugin for [PHPStan](https://github.com/phpstan/phpstan)."
