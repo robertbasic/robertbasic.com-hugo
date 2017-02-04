@@ -9,6 +9,11 @@ url = "https://github.com/robertbasic/vim-hugo-helper"
 description = "A small Vim plugin with a set of helpers for [Hugo](https://gohugo.io)."
 
 [[projects]]
-name = "Vim Hugo helper"
+name = "Vim argument swapper"
 url = "https://github.com/robertbasic/vim-argument-swapper"
-description = "A VIM plugin to swap 2 arguments in a method call/definition."
+description = "A Vim plugin to swap 2 arguments in a method call/definition."
+
+[[projects]]
+name = "Vim-PHPStan"
+url = "https://github.com/robertbasic/vim-phpstan"
+description = "A Vim plugin for [PHPStan](https://github.com/phpstan/phpstan)."
