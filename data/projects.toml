@@ -17,3 +17,8 @@ description = "A Vim plugin to swap 2 arguments in a method call/definition."
 name = "vim-phpstan"
 url = "https://github.com/phpstan/vim-phpstan"
 description = "A Vim plugin for [PHPStan](https://github.com/phpstan/phpstan)."
+
+[[projects]]
+name = "snipbar"
+url = "https://github.com/robertbasic/snipbar"
+description = "A Vim plugin to show all the [UltiSnips](https://github.com/SirVer/ultisnips) snippets in a scratch buffer."
