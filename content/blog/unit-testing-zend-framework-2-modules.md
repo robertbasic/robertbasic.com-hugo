@@ -3,7 +3,7 @@ date = "2012-09-15T15:13:07+02:00"
 title = "Unit testing Zend Framework 2 modules"
 slug = "unit-testing-zend-framework-2-modules"
 description = "How to unit test Zend Framework 2 modules with the help of Mockery"
-tags = ["zend framework 2", "unit test", "testing", "mockery", "modules"]
+tags = ["zend framework 2", "unit test", "testing", "mockery", "modules", "zf"]
 categories = ["Development", "Programming", "Software"]
 2012 = ["09"]
 +++

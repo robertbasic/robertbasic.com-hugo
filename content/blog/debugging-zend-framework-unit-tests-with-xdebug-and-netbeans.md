@@ -3,7 +3,7 @@ date = "2011-07-24T13:38:20+02:00"
 title = "Debugging Zend Framework unit tests with Xdebug and NetBeans"
 slug = "debugging-zend-framework-unit-tests-with-xdebug-and-netbeans"
 description = "Setting up Netbeans and Xdebug to debug Zend Framework unit tests."
-tags = ["netbeans", "tests", "unit testing", "xdebug", "zend dojo", "zend framework"]
+tags = ["netbeans", "tests", "unit testing", "xdebug", "zend dojo", "zend framework", "zf"]
 categories = ["Development", "Programming", "Software"]
 2011 = ["07"]
 +++

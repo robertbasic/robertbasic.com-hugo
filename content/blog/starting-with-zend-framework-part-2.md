@@ -3,7 +3,7 @@ date = "2008-10-20T15:42:58+02:00"
 title = "Starting with Zend Framework - part 2"
 slug = "starting-with-zend-framework-part-2"
 description = "Zend Framework basics on controllers, actions, view scripts and view helpers find a small example"
-tags = ["example", "framework", "introduction", "php", "zend"]
+tags = ["example", "framework", "introduction", "php", "zend", "zf"]
 categories = ["Development", "Programming", "Software"]
 2008 = ["10"]
 +++

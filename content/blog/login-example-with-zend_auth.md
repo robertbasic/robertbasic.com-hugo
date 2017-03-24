@@ -3,7 +3,7 @@ date = "2009-01-05T20:25:38+02:00"
 title = "Login example with Zend_Auth"
 slug = "login-example-with-zend_auth"
 description = "A login system with Zend Frameworks Zend_Auth component."
-tags = ["authenticate", "authentication", "example", "framework", "login", "php", "zend"]
+tags = ["authenticate", "authentication", "example", "framework", "login", "php", "zend", "zf"]
 categories = ["Development", "Programming"]
 2009 = ["01"]
 +++

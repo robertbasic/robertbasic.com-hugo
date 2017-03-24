@@ -3,7 +3,7 @@ date = "2011-03-02T07:14:18+02:00"
 title = "Playing with Zend Framework and Dojo"
 slug = "playing-with-zend-framework-and-dojo"
 description = "Intro rambling in the world of Zend Framework and Dojo, powered by Zend_Dojo"
-tags = ["dojo", "form", "zend framework", "zend_dojo"]
+tags = ["dojo", "form", "zend framework", "zend_dojo", "zf"]
 categories = ["Programming"]
 2011 = ["03"]
 +++

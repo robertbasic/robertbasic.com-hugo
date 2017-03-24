@@ -3,7 +3,7 @@ date = "2012-06-22T11:10:02+02:00"
 title = "Using the new autoloaders from Zend Framework 1.12"
 slug = "using-the-new-autoloaders-from-zend-framework-1-12"
 description = "A quick post on how to setup a ZF1 application to use the new autoloaders from ZF1.12"
-tags = ["zend framework", "autoloader", "classmaps", "performance"]
+tags = ["zend framework", "autoloader", "classmaps", "performance", "zf"]
 categories = ["Development", "Programming"]
 2012 = ["06"]
 +++

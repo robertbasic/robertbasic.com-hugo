@@ -3,7 +3,7 @@ date = "2011-04-14T16:47:31+02:00"
 title = "A hack for Zend Framework's translated route segments"
 slug = "zend-frameworks-translated-route-segments-hack"
 description = "A dirty hack to work around a translated route segment issue."
-tags = ["locale", "route", "translate", "zend framework"]
+tags = ["locale", "route", "translate", "zend framework", "zf"]
 categories = ["Development", "Programming"]
 2011 = ["04"]
 +++

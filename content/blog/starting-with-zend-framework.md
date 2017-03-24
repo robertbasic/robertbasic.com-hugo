@@ -3,7 +3,7 @@ date = "2008-10-07T13:13:02+02:00"
 title = "Starting with Zend Framework"
 slug = "starting-with-zend-framework"
 description = "Introduction to Zend Framework with example file structure, bootstrap file and htaccess file, explaining the basics of Zend Framework"
-tags = ["framework", "introduction", "php", "zend"]
+tags = ["framework", "introduction", "php", "zend", "zf"]
 categories = ["Development", "Programming", "Software"]
 2008 = ["10"]
 +++

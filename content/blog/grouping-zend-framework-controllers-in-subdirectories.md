@@ -3,7 +3,7 @@ date = "2011-04-16T07:29:57+02:00"
 title = "Grouping Zend Framework controllers in subdirectories"
 slug = "grouping-zend-framework-controllers-in-subdirectories"
 description = "A simple example how controllers can be grouped in subdirectories in Zend Framework"
-tags = ["controllers", "zend framework"]
+tags = ["controllers", "zend framework", "zf"]
 categories = ["Development", "Programming"]
 2011 = ["04"]
 +++

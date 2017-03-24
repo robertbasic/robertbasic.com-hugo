@@ -4,7 +4,7 @@ date = "2016-08-04T16:50:48+02:00"
 title = "Events in a Zend Expressive application"
 slug = "events-in-a-zend-expressive-application"
 description = "An example on how to use the Zend EventManager in a Zend Expressive application"
-tags = ["container", "php", "zend expressive", "events", "event manager", "event listener"]
+tags = ["container", "php", "zend expressive", "events", "event manager", "event listener", "zf"]
 categories = ["Programming", "Development"]
 2016 = ["08"]
 

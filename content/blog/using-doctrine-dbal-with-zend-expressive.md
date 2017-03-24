@@ -4,7 +4,7 @@ date = "2016-12-22T16:46:29+01:00"
 title = "Using Doctrine DBAL with Zend Expressive"
 slug = "using-doctrine-dbal-with-zend-expressive"
 description = "How to configure Doctrine DBAL to be used with Zend Expressive"
-tags = ["zend expressive", "doctrine", "dbal"]
+tags = ["zend expressive", "doctrine", "dbal", "zf"]
 categories = ["Programming", "Development", "Software"]
 2016 = ["12"]
 

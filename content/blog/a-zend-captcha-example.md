@@ -3,7 +3,7 @@ date = "2008-10-22T20:27:46+02:00"
 title = "A Zend_Captcha example"
 slug = "a-zend-captcha-example"
 description = "Example of using Zend Captcha with Zend Form and the basics behind the captcha generation logic"
-tags = ["captcha", "example", "framework", "php", "zend"]
+tags = ["captcha", "example", "framework", "php", "zend", "zf"]
 categories = ["Development", "Programming", "Software"]
 2008 = ["10"]
 +++

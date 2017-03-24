@@ -3,7 +3,7 @@ date = "2008-10-13T19:31:45+02:00"
 title = "Optimizing MySQL and a Zend_Db_Profiler example"
 slug = "optimizing-mysql-and-a-zend_db_profiler-example"
 description = "A very good example on optimizing MySQL and using Zend DB Profiler"
-tags = ["framework", "mysql", "optimizing", "profiler", "zend"]
+tags = ["framework", "mysql", "optimizing", "profiler", "zend", "zf"]
 categories = ["Development", "Places on the web"]
 2008 = ["10"]
 +++

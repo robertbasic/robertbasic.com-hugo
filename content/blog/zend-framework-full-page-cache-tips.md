@@ -3,7 +3,7 @@ date = "2012-02-11T10:06:14+02:00"
 title = "Zend Framework full page cache tips"
 slug = "zend-framework-full-page-cache-tips"
 description = "A post on two issues I had with full page caching and how I fixed them."
-tags = ["zend framework", "full page cache", "caching"]
+tags = ["zend framework", "full page cache", "caching", "zf"]
 categories = ["Development", "Programming"]
 2012 = ["02"]
 +++

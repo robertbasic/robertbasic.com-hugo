@@ -3,7 +3,7 @@ date = "2011-10-19T22:31:31+02:00"
 title = "A Zend Framework 2 EventManager use case"
 slug = "azend-framework-2-eventmanager-use-case"
 description = "A use case for Zend Framework 2 Event Manager."
-tags = ["eventmanager", "events", "listeners", "zend framework", "zf2"]
+tags = ["eventmanager", "events", "listeners", "zend framework", "zf2", "zf"]
 categories = ["Development", "Programming"]
 2011 = ["10"]
 +++

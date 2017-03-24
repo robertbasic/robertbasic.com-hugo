@@ -3,7 +3,7 @@ date = "2011-11-10T19:51:16+02:00"
 title = "Contributing to Zend Framework 2"
 slug = "contributing-to-zend-framework-2"
 description = "Contributing to Zend Framework 2 does not require a CLA any more."
-tags = ["cla", "contributing", "zend framework 2"]
+tags = ["cla", "contributing", "zend framework 2", "zf"]
 categories = ["Development", "Programming"]
 2011 = ["11"]
 +++

@@ -3,7 +3,7 @@ date = "2008-12-22T22:17:21+02:00"
 title = "Styling the default Zend_Form layout"
 slug = "styling-the-default-zend_form-layout"
 description = "Example to show how to style the default Zend_Form layout that uses definition lists."
-tags = ["css", "example", "form", "framework", "layout", "style", "styling", "zend"]
+tags = ["css", "example", "form", "framework", "layout", "style", "styling", "zend", "zf"]
 categories = ["Development", "Programming"]
 2008 = ["12"]
 +++

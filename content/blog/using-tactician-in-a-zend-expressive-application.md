@@ -4,7 +4,7 @@ date = "2016-07-13T21:59:21+02:00"
 title = "Using Tactician in a Zend Expressive application"
 slug = "using-tactician-in-a-zend-expressive-application"
 description = "An example how to get started using Tactician in a Zend Expressive application"
-tags = ["tactician", "command bus", "zend expressive", "php", "container"]
+tags = ["tactician", "command bus", "zend expressive", "php", "container", "zf"]
 categories = ["Programming", "Development"]
 2016 = ["07"]
 

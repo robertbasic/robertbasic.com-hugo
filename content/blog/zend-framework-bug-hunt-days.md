@@ -3,7 +3,7 @@ date = "2009-11-22T21:37:03+02:00"
 title = "Zend Framework bug hunt days"
 slug = "zend-framework-bug-hunt-days"
 description = "A few words on Zend Framework Bug Hunt Days"
-tags = ["bug", "framework", "hunt", "zend"]
+tags = ["bug", "framework", "hunt", "zend", "zf"]
 categories = ["Development", "Programming"]
 2009 = ["11"]
 +++

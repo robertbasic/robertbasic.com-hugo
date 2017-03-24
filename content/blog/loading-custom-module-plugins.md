@@ -3,7 +3,7 @@ date = "2010-07-20T12:24:28+02:00"
 title = "Loading custom module plugins"
 slug = "loading-custom-module-plugins"
 description = "A quick post on loading module plugins."
-tags = ["framework", "loading", "php", "plugin", "zend"]
+tags = ["framework", "loading", "php", "plugin", "zend", "zf"]
 categories = ["Development", "Programming"]
 2010 = ["07"]
 +++

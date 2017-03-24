@@ -3,7 +3,7 @@ date = "2009-03-03T12:21:26+02:00"
 title = "Online resources for Zend Framework"
 slug = "online-resources-for-zend-framework"
 description = "Zend Framework online resources list - blogs, Twitter, books, forums..."
-tags = ["blog", "book", "framework", "resource", "site", "twitter", "zend"]
+tags = ["blog", "book", "framework", "resource", "site", "twitter", "zend", "zf"]
 categories = ["Development", "Places on the web", "Programming"]
 2009 = ["03"]
 +++

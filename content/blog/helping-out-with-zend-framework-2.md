@@ -3,7 +3,7 @@ date = "2011-07-27T19:45:24+02:00"
 title = "Helping out with Zend Framework 2"
 slug = "helping-out-with-zend-framework-2"
 description = "A few ways you can help out with the development of Zend Framework 2!"
-tags = ["contribute", "contributing", "help", "zend framework", "zend framework 2"]
+tags = ["contribute", "contributing", "help", "zend framework", "zend framework 2", "zf"]
 categories = ["Development", "Programming"]
 2011 = ["07"]
 +++

@@ -3,7 +3,7 @@ date = "2012-09-11T21:49:31+02:00"
 title = "Working with custom view helpers in Zend Framework 2"
 slug = "working-with-custom-view-helpers-in-zend-framework-2"
 description = "Some usage tips on custom view helpers in Zend Framework 2."
-tags = ["zend framework 2", "custom", "php", "view helpers"]
+tags = ["zend framework 2", "custom", "php", "view helpers", "zf"]
 categories = ["Development", "Programming", "Software"]
 2012 = ["09"]
 +++

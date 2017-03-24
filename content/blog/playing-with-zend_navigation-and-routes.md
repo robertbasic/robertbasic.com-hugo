@@ -3,7 +3,7 @@ date = "2009-08-09T17:05:20+02:00"
 title = "Playing with Zend_Navigation and routes"
 slug = "playing-with-zend_navigation-and-routes"
 description = "An example of using Zend_Navigation and routes with Zend Framework"
-tags = ["example", "framework", "navigation", "php", "routing", "zend"]
+tags = ["example", "framework", "navigation", "php", "routing", "zend", "zf"]
 categories = ["Development", "Programming"]
 2009 = ["08"]
 +++

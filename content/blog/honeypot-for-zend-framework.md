@@ -3,7 +3,7 @@ date = "2010-04-21T10:43:14+02:00"
 title = "Honeypot for Zend Framework"
 slug = "honeypot-for-zend-framework"
 description = "A honeypot validator for Zend Form based on Matthew Turland's Honeypot Wordpress plugin."
-tags = ["framework", "honeypot", "php", "validator", "zend"]
+tags = ["framework", "honeypot", "php", "validator", "zend", "zf"]
 categories = ["Development", "Programming"]
 2010 = ["04"]
 +++

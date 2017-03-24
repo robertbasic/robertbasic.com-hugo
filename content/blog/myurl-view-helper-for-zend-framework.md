@@ -3,7 +3,7 @@ date = "2008-12-02T18:02:48+02:00"
 title = "MyUrl view helper for Zend Framework"
 slug = "myurl-view-helper-for-zend-framework"
 description = "Adding the GET query string to the link created by Zend Framework's Url View Helper"
-tags = ["example", "framework", "helper", "link", "php", "url", "view", "zend"]
+tags = ["example", "framework", "helper", "link", "php", "url", "view", "zend", "zf"]
 categories = ["Development", "Programming"]
 2008 = ["12"]
 +++

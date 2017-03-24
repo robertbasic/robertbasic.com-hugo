@@ -3,7 +3,7 @@ date = "2009-11-17T21:14:44+02:00"
 title = "Zend Framework 1.8 Web Application Development book review"
 slug = "zend-framework-18-web-application-development-book-review"
 description = "My review of Keith Pope's book titled Zend Framework 1.8 Web Application Development"
-tags = ["book", "framework", "php", "review", "zend"]
+tags = ["book", "framework", "php", "review", "zend", "zf"]
 categories = ["Development", "Programming"]
 2009 = ["11"]
 +++

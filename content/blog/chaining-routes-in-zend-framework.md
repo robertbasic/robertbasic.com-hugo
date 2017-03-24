@@ -3,7 +3,7 @@ date = "2009-11-27T19:23:23+02:00"
 title = "Chaining routes in Zend Framework"
 slug = "chaining-routes-in-zend-framework"
 description = "Example of using Zend_Router_Routes_Chain for adding multilanguage support to routes"
-tags = ["example", "framework", "php", "route", "routing", "zend"]
+tags = ["example", "framework", "php", "route", "routing", "zend", "zf"]
 categories = ["Development", "Programming"]
 2009 = ["11"]
 +++
