@@ -1,10 +1,10 @@
             </div>
             <div id="right" class="col-md-4">
                 <div id="sidebar">
-                    <div id="about">
+                    <div id="about" class="sidebar">
                         <img src="/img/robertbasic.jpg" alt="Robert Basic" />
                         <h4><a href="https://robertbasic.com/">Robert Basic</a></h4>
-                        <p>Software engineer, business owner, open source contributor.</p>
+                        <p>Software engineer, PHP consultant, business owner, open source contributor.</p>
                     </div>
                     <h2>RSS</h2>
                     <ul>
@@ -13,6 +13,14 @@
                         </li>
                     </ul>
                     {{ partial "projects.html" ($.Site.Data.projects.projects) }}
+
+                    <h2>Let's work together!</h2>
+                    <div class="sidebar">
+                        <p>
+                        If you require outsourcing or consulting help on your PHP projects, <a href="/#hire-me">let's talk</a>!
+                        </p>
+                    </div>
+
                     {{ partial "recent-posts.html" .Site.Pages }}
                     {{ partial "tag-cloud.html" . }}
                     {{ partial "categories.html" . }}
