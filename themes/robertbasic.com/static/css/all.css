@@ -64,11 +64,11 @@ blockquote {
     margin-bottom: 10px;
 }
 
-#about {
+.sidebar {
     text-align: center;
 }
 
-#about p {
+.sidebar p {
     font-size: 16px;
 }
 
