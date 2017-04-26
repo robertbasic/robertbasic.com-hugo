@@ -12,14 +12,15 @@
                             <a href="https://robertbasic.com/index.xml">Get the feed</a>
                         </li>
                     </ul>
-                    {{ partial "projects.html" ($.Site.Data.projects.projects) }}
 
                     <h2>Let's work together!</h2>
                     <div class="sidebar">
                         <p>
-                        If you require outsourcing or consulting help on your PHP projects, <a href="/#hire-me">let's talk</a>!
+                        If you require outsourcing or consulting help on your PHP projects, <a href="/#hire-me" class='btn btn-sm btn-success hire-me-button'>I'm available</a>!
                         </p>
                     </div>
+
+                    {{ partial "projects.html" ($.Site.Data.projects.projects) }}
 
                     {{ partial "recent-posts.html" .Site.Pages }}
                     {{ partial "tag-cloud.html" . }}

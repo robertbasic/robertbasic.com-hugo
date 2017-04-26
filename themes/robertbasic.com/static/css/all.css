@@ -92,6 +92,27 @@ blockquote {
     text-align: right;
 }
 
+.post-entry {
+    font-size: 90%;
+    text-align: left;
+    border-bottom: 1px solid #6C7388;
+    margin-top: -40px;
+}
+
+.post-entry h2 {
+    font-size: 100%;
+    margin: 0 0 5px 0;
+}
+
+.post-entry li {
+    padding: 2px;
+}
+
+.hire-me-button {
+    padding: 0 5px;
+    font-size: 100%;
+}
+
 .post {
     margin: 0 0 60px;
     text-align: left;
