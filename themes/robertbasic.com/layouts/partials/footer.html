@@ -6,13 +6,6 @@
                         <h4><a href="https://robertbasic.com/">Robert Basic</a></h4>
                         <p>Software engineer, PHP consultant, business owner, open source contributor.</p>
                     </div>
-                    <h2>RSS</h2>
-                    <ul>
-                        <li>
-                            <a href="https://robertbasic.com/index.xml">Get the feed</a>
-                        </li>
-                    </ul>
-
                     <h2>Let's work together!</h2>
                     <div class="sidebar">
                         <p>
@@ -20,9 +13,17 @@
                         </p>
                     </div>
 
+                    {{ partial "recent-posts.html" .Site.Pages }}
+
                     {{ partial "projects.html" ($.Site.Data.projects.projects) }}
 
-                    {{ partial "recent-posts.html" .Site.Pages }}
+                    <h2>RSS</h2>
+                    <ul>
+                        <li>
+                            <a href="https://robertbasic.com/index.xml">Get the feed</a>
+                        </li>
+                    </ul>
+
                     {{ partial "tag-cloud.html" . }}
                     {{ partial "categories.html" . }}
                     {{ partial "archives.html" .Site.RegularPages }}

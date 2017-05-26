@@ -4,6 +4,11 @@ url = "https://github.com/robertbasic/pugdebug"
 description = "pugdebug is a standalone debugging client for PHP applications that uses XDebug as the debugging engine."
 
 [[projects]]
+name = "bugreport"
+url = "https://github.com/robertbasic/bugreport"
+description = "Get a bug report on a project's dependencies"
+
+[[projects]]
 name = "Vim Hugo helper"
 url = "https://github.com/robertbasic/vim-hugo-helper"
 description = "A small Vim plugin with a set of helpers for [Hugo](https://gohugo.io)."
