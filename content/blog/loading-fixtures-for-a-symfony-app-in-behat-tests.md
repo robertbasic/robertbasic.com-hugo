@@ -131,7 +131,7 @@ default:
     suites:
         my_feature:
             contexts:
-                - 'FeatureContext'
+                - 'FeatureContext':
                     kernel: '@kernel'
     extensions:
         Behat\Symfony2Extension:
