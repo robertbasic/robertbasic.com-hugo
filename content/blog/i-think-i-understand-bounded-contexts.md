@@ -9,7 +9,7 @@ categories = ["Programming", "Development", "Blablabla"]
 2017 = ["10"]
 +++
 
-Earlier this year I started reading **the** DDD book by Eric Evans. Together with the Eventsourcery videos from Shawn McCool, the first three chapters of the book were... easy to understand, even.
+Earlier this year I started reading **the** [DDD book by Eric Evans](https://www.goodreads.com/book/show/179133.Domain_Driven_Design). Together with the [Eventsourcery](https://eventsourcery.com/) videos from [Shawn McCool](https://twitter.com/ShawnMcCool), the first three chapters of the book were... easy to understand, even.
 
 Lots of "A-ha!" and "Oh!" moments, followed by "That makes perfect sense." statements, and a couple of excited "I knew that!"-ones.
 
