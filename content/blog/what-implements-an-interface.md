@@ -1,15 +1,15 @@
 +++
-draft = true
-date = 2017-10-31T07:43:21+01:00
+draft = false
+date = "2017-11-02T07:43:21+01:00"
 title = "What implements an interface"
 slug = "what-implements-an-interface"
-description = ""
-tags = [""]
-categories = [""]
-2017 = ["10"]
+description = "Careful with that interface, Eugene"
+tags = ["php", "interface", "architecture"]
+categories = ["Programming", "Development"]
+2017 = ["11"]
 +++
 
-Having interfaces in our code is important. It helps with swapping out components, eases testing, separates the what from the how.
+Creating and implementing interfaces in our code is important. It helps with swapping out components, eases testing, separates the what from the how.
 
 But, it's not enough just to slap an interface on a class and be done with it.
 
@@ -17,9 +17,9 @@ We also need to consider on what are we putting that interface on.
 
 ## An example
 
-Say, we're creating a queuing system for an RSS feed reader. We can tell the queue to queue the feed URLs. Based on our needs, we can use something like RabbitMq, or a database, to use as a queuing mechanism.
+Say, we're creating a queuing system for an RSS feed reader. We can tell the queue to queue the feed URLs. Depending on our needs, we can use something like RabbitMq, or a database, to use as a queuing mechanism.
 
-As we don't know yet what the mechanism will be, we create an interface for it:
+We haven't decided on that yet, but either way, we start with an interface for this imaginary queue:
 
 ``` php
 <?php declare(strict_types=1);
