@@ -3,23 +3,23 @@ draft = true
 date = 2017-11-03T09:10:53+01:00
 title = "Prooph command bus"
 slug = "prooph-command-bus"
-description = ""
-tags = [""]
-categories = [""]
+description = "How to use the Prooph service bus to dispatch and handle commands"
+tags = ["prooph", "php", "cqrs", "service bus", "command", "command bus"]
+categories = ["Programming", "Software", "Development"]
 2017 = ["11"]
 +++
 
-Prooph is a CQRS and Event Sourcing component for PHP, and as they state on their website, they:
+[Prooph](http://getprooph.org/) is a CQRS and Event Sourcing component for PHP, and as they state on their website:
 
 <blockquote>
-[Prooph components] include everything to get you started with CQRS and Event Sourcing.
+Prooph components include everything to get you started with CQRS and Event Sourcing.
 </blockquote>
 
-CQRS and Event Sourcing go hand in hand with Domain Driven Design, and are patterns and methodologies that are here to help us make complicated and complex software designs more manageable, and all around better. Or make them even more complicated and complex.
+CQRS and Event Sourcing go hand in hand with Domain Driven Design, but can be used outside of DDD too. They are patterns and methodologies that are here to help us make complicated and complex software designs more manageable, and all around better. Or make them even more complicated and complex.
 
 In any case, I believe DDD is the way to go forward, as it puts communication with business stakeholders front and center, and at the end of the day, communication is the key to the success of any software project.
 
-## A sprinkle of theory
+## A tiny drop of theory
 
 CQRS stands for Command Query Responsibility Segregation.
 
@@ -31,19 +31,21 @@ As for Event Sourcing... We'll get to that in another blog post, when we'll talk
 
 ## The command bus
 
-Now, let's get started with Prooph. The first component we're going to look at is the service bus.
+Note: this post relates to Prooph Service Bus v6.1, which was the latest release at the time of writing.
+
+Now, let's get started with Prooph. The first component we're going to look at is the [Service Bus](https://github.com/prooph/service-bus).
 
 The service bus offers a messaging system between the application and the domain layer. It allows us to send, or dispatch, a message on this service bus, and then to have handlers on the other side of the service bus that we'll use to, well, handle these messages.
 
 Prooph's service bus has three different kinds of buses:
 
- - the command bus &mdash; it dispatches one message, a command, to exactly one handler,
- - the event bus &mdash; it dispatches one message, an event, to zero or more event handlers,
- - and, the query bus &mdash; I honestly haven't used it yet, so I'm not sure exactly what it does.
+ - **the command bus** &mdash; it dispatches one message, a command, to exactly one handler,
+ - **the event bus** &mdash; it dispatches one message, an event, to zero or more event handlers,
+ - and, **the query bus** &mdash; I honestly haven't used it yet, so I'm not sure exactly what it does.
 
 Today we're going to look at &mdash; you've guessed it! &mdash; the command bus.
 
-The command bus can dispatch anything as a command: a primitive like a string or an integer, a DTO that represents our command, or a Prooph Message (an interface found in the `prooph-common` library).
+The command bus can dispatch anything as a command: a primitive like a string or an integer, a Data Transfer Object (DTO) that represents our command, or a Prooph Message (an interface found in the `prooph-common` library).
 
 To dispatch a command on the command bus, we do the following:
 
@@ -53,7 +55,7 @@ To dispatch a command on the command bus, we do the following:
  - we attach the router to the command bus,
  - and finally, we dispatch the command on the command bus.
 
-A ~~picture~~ code example is worth a thousand words:
+This sounds like an awful lot, so a ~~picture~~ code example is worth a thousand words:
 
 <div class='filename'>command-bus.php</div>
 ``` php
@@ -121,7 +123,7 @@ That's because we told the `$commandRouter` to route the command `'A simple stri
 
 Except for showing examples, I don't think primitives as commands are really useful.
 
-How I personally use the command bus, is by creating classes of commands, which are nothing else but Data Transfer Objects, or DTOs:
+How I personally use the command bus, is by creating classes of commands, which are nothing else but DTOs:
 
 <div class='filename'>src/ProophExample/Command/FetchUrl.php</div>
 ``` php
@@ -129,27 +131,32 @@ How I personally use the command bus, is by creating classes of commands, which 
 
 namespace ProophExample\Command;
 
+use ProophExample\Url;
+
 class FetchUrl
 {
     /**
-    * @var string
+    * @var Url
     */
     protected $url;
 
     public function __construct(string $url)
     {
-        $this->url = $url;
+        $this->url = Url::fromString($url);
     }
 
-    public function url(): string
+    public function url(): Url
     {
         return $this->url;
     }
 }
 ```
 
-with an accompanying command handler:
+A command is a good place to convert our primitives to value objects!
 
+The accompanying command handler is:
+
+<div class='filename'>src/ProophExample/CommandHandler/FetchUrl.php</div>
 ``` php
 <?php declare(strict_types=1);
 
@@ -193,3 +200,169 @@ $command = new ProophExample\Command\FetchUrl($url);
 
 $commandBus->dispatch($command);
 ```
+
+## Prooph Messages
+
+As mentioned earlier, the commands can also be Prooph Messages. These are commands that implement the `Prooph\Common\Messaging\Message` interface.
+
+Note that the [prooph-common](https://github.com/prooph/common/) library not only provides us the interface(s) we should implement, but also some abstract classes and traits to do the "plumbing" for us.
+
+In the case of commands, I honestly don't see the benefit of this interface, but since it's there, let's take a look at it:
+
+<div class='filename'>src/ProophExample/Command/RegisterUser.php</div>
+``` php
+<?php declare(strict_types=1);
+
+namespace ProophExample\Command;
+
+use Prooph\Common\Messaging\Command;
+use Prooph\Common\Messaging\PayloadConstructable;
+use Prooph\Common\Messaging\PayloadTrait;
+use ProophExample\Email;
+
+class RegisterUser extends Command implements PayloadConstructable
+{
+    use PayloadTrait;
+
+    public function email(): Email
+    {
+        return Email::fromString($this->payload['email']);
+    }
+}
+```
+
+The two interfaces, `Message` and `HasMessageName`, together with the `Command` abstract class, and the `DomainMessage` abstract class it extends, provide a type for our message (command in this case), a UUID, a date and time when the command was created, the payload of the command, and some meta data.
+
+The `PayloadConstructable` interface and the `PayloadTrait` trait give us an implementation of a constructor that expects exactly one argument, an array, that holds the payload for our command.
+
+To create this command now, we'd have to do the following:
+
+``` php
+<?php
+$payload = ['email' => 'john.doe@example.com'];
+$command = new ProophExample\Command\RegisterUser($payload);
+```
+
+I'm not really a fan of this; I'd rather keep the constructor with the type-hints.
+
+Of course, we can implement our own constructor for the `Command`, but then `RegisterUser` becomes this unwieldy mess:
+
+``` php
+<?php declare(strict_types=1);
+
+namespace ProophExample\Command;
+
+use Prooph\Common\Messaging\Command;
+use Prooph\Common\Messaging\PayloadConstructable;
+use Prooph\Common\Messaging\PayloadTrait;
+use ProophExample\Email;
+
+class RegisterUser extends Command
+{
+    /**
+    * @var Email
+    */
+    protected $email;
+
+    public function __construct(string $email)
+    {
+        $this->init();
+
+        $this->email = Email::fromString($email);
+
+        $payload = [
+            'email' => $this->email
+        ];
+        $this->setPayload($payload);
+    }
+
+    public function setPayload(array $payload): void
+    {
+        $this->payload = $payload;
+    }
+
+    public function payload(): array
+    {
+        return $this->payload;
+    }
+
+    public function email(): Email
+    {
+        return $this->email;
+    }
+}
+```
+
+Not. A. Fan.
+
+Maybe someone from the Prooph team could shed a light on why/when would be a good idea to implement the `Message` interface, vs. having our own DTOs as commands?
+
+## A more real-world like example
+
+The `command-bus.php` example from before doesn't really show how would we use the command bus in a more real-life setting. When we want to dispatch a command somewhere in our application, we don't want to deal with all the routing and stuff, we just want to send a command to the command bus to be handled by a command handler.
+
+If we're using Symfony, one option would be to create a custom factory for the command bus, where we create the command bus, the router for it, and route the commands to command handlers:
+
+<div class='filename'>src/ProophExample/CommandBusFactory.php</div>
+``` php
+<?php declare(strict_types=1);
+
+namespace ProophExample;
+
+use Prooph\ServiceBus\CommandBus;
+use Prooph\ServiceBus\Plugin\Router\CommandRouter;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
+class CommandBusFactory
+{
+    public static function createCommandBus(ContainerInterface $container): CommandBus
+    {
+        $commandBus = new CommandBus();
+
+        $router = new CommandRouter();
+
+        $router->route(ProophExample\Command\FetchUrl::class)
+            ->to($container->get(ProophExample\CommandHandler\FetchUrl::class));
+
+        $router->attachToMessageBus($commandBus);
+
+        return $commandBus;
+    }
+}
+```
+
+The relevant part in the service definition file would be:
+
+<div class='filename'>app/config/services.xml</div>
+``` xml
+<service id="Prooph\ServiceBus\CommandBus" class="Prooph\ServiceBus\CommandBus">
+    <factory service="ProophExample\CommandBusFactory" method="createCommandBus" />
+    <argument type="service" id="service_container" />
+</service>
+```
+
+Then somewhere in our application, for example in a controller, we can get the `CommandBus` from the container, and dispatch the command:
+
+<div class='filename'>src/AppBundle/Controller/ExampleController.php</div>
+``` php
+<?php
+// namespace imports left out intentionally
+class ExampleController extends Controller
+{
+    public function indexAction(Request $request)
+    {
+        $url = 'https://robertbasic.com/index.xml';
+        $command = new ProophExample\Command\FetchUrl($url);
+
+        $this->get(Prooph\ServiceBus\CommandBus::class)->dispatch($command);
+    }
+}
+```
+
+The Prooph ServiceBus also comes equipped with a `psr/container` compatible `Prooph\ServiceBus\Container\CommandBusFactory` factory. The [proophesor-do](https://github.com/prooph/proophessor-do) application has an example how to configure and use it.
+
+There's also a [Symfony bundle](https://github.com/prooph/service-bus-symfony-bundle) that provides integration of the ServiceBus with Symfony.
+
+Some of the examples shown and discussed here are available in my [prooph-examples](https://github.com/robertbasic/prooph-examples) repository.
+
+Happy hackin'!
