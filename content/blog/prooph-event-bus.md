@@ -9,7 +9,7 @@ categories = ["Programming", "Software", "Development"]
 2017 = ["11"]
 +++
 
-Continuing on with the Prooph components, today I want to cover another part of the Service Bus: the event bus.
+Let's continue with the Prooph components, with another part of the Service Bus: the event bus.
 
 As mentioned in the previous article on the command bus, the Prooph Service Bus has three kinds of buses:
 
@@ -199,3 +199,70 @@ In the previous article about the command bus, we saw that the messages, that is
 Why?
 
 By implementing that interface, we get a UUID for that event, a date and a time when it happened, and other information. All of this is of great value because an event listener might handle an event sometimes in the future, whereas we expect a command to be handled immediately. This extra information about events can be especially useful if/when we want to have Event Sourcing in our application.
+
+An example event that signals that a RSS feed has been updated would look something like this implementing the `Message` interface:
+
+``` php
+<?php declare(strict_types=1);
+
+namespace ProophExample\Event;
+
+use Prooph\Common\Messaging\DomainEvent;
+use Prooph\Common\Messaging\PayloadConstructable;
+use Prooph\Common\Messaging\PayloadTrait;
+use ProophExample\Url;
+
+class FeedUpdated extends DomainEvent implements PayloadConstructable
+{
+    use PayloadTrait;
+
+    public function url(): Url
+    {
+        return $this->payload['url'];
+    }
+}
+```
+
+The `prooph-common` library not only provides the interface, but also abstract classes that help us with implementing the methods defined in the interfaces.
+
+Creating and dispatching this event will then be:
+
+``` php
+<?php
+
+$url = ProophExample\Url::fromString('https://robertbasic.com/index.xml');
+$event = new ProophExample\Event\FeedUpdated(['url' => $url]);
+
+$eventBus->dispatch($event);
+```
+
+And the listener then can access the `Url`, as well as the extra event information, like the date and time when the event was created:
+
+``` php
+<?php declare(strict_types=1);
+
+namespace ProophExample\EventListener;
+
+use ProophExample\Event\FeedUpdated;
+
+class NotifyAboutNewArticles
+{
+    public function __invoke(FeedUpdated $event)
+    {
+        echo sprintf("There are new articles to read from %s since %s",
+            $event->url(),
+            $event->createdAt()->format('Y-m-d H:i:s')
+        ) . PHP_EOL;
+    }
+}
+```
+
+## A more real-world like example
+
+Same as with the command bus, we wouldn't really use the event bus as we see it in this `event-bus.php` example file.
+
+We would maybe have a factory of some kind that would create the event bus, configure the event router, and attach it to the event bus. Then we would get the event bus from a `psr/container` compatible container, create the event, and then dispatch it on the event bus. I've already given an example of this in the previous article, so I don't want to repeat myself here.
+
+The examples shown and discussed here are available in my [prooph-examples](https://github.com/robertbasic/prooph-examples) repository.
+
+Happy hackin'!
