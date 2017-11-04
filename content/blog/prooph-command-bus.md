@@ -4,7 +4,7 @@ date = 2017-11-03T09:10:53+01:00
 title = "Prooph command bus"
 slug = "prooph-command-bus"
 description = "How to use the Prooph service bus to dispatch and handle commands"
-tags = ["prooph", "php", "cqrs", "service bus", "command", "command bus"]
+tags = ["prooph", "php", "cqrs", "service bus", "command", "command bus", "command handlers"]
 categories = ["Programming", "Software", "Development"]
 2017 = ["11"]
 +++
@@ -31,8 +31,6 @@ As for Event Sourcing... We'll get to that in another blog post, when we'll talk
 
 ## The command bus
 
-Note: this post relates to Prooph Service Bus v6.1, which was the latest release at the time of writing.
-
 Now, let's get started with Prooph. The first component we're going to look at is the [Service Bus](https://github.com/prooph/service-bus).
 
 The service bus offers a messaging system between the application and the domain layer. It allows us to send, or dispatch, a message on this service bus, and then to have handlers on the other side of the service bus that we'll use to, well, handle these messages.
@@ -45,7 +43,13 @@ Prooph's service bus has three different kinds of buses:
 
 Today we're going to look at &mdash; you've guessed it! &mdash; the command bus.
 
+The command bus gives us the ability to send a command through the command bus itself, and dispatches that command to a command handler we specified. We send in a message, and on the otherside that same message comes out to the command handler.
+
+It is worth mentioning that the command bus can be used as a standalone component, if you're interested only in that part. You're not required to do CQRS, Event Sourcing, and/or DDD, to be able to use the command bus. If all you want, or all you need, to do is send a command, and have that command handled on the other side, by all means, do just that.
+
 The command bus can dispatch anything as a command: a primitive like a string or an integer, a Data Transfer Object (DTO) that represents our command, or a Prooph Message (an interface found in the `prooph-common` library).
+
+We name these commands based on the action that we want to do: `RegisterUser`, `FetchUrl`, `SendEmail`.
 
 To dispatch a command on the command bus, we do the following:
 
@@ -55,7 +59,7 @@ To dispatch a command on the command bus, we do the following:
  - we attach the router to the command bus,
  - and finally, we dispatch the command on the command bus.
 
-This sounds like an awful lot, so a ~~picture~~ code example is worth a thousand words:
+This sounds like an awful lot; a ~~picture~~ code example is worth a thousand words:
 
 <div class='filename'>command-bus.php</div>
 ``` php
