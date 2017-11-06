@@ -1,6 +1,6 @@
 +++
-draft = true
-date = 2017-11-01T20:32:17+01:00
+draft = false
+date = 2017-11-06T08:27:14+01:00
 title = "Visual sudo for shell scripts"
 slug = "visual-sudo-for-shell-scripts"
 description = "Use pkexec to ask sudo permissions "
