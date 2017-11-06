@@ -9,9 +9,9 @@ categories = ["Programming", "Software", "Development"]
 2017 = ["11"]
 +++
 
-Let's continue with the Prooph components, with another part of the Service Bus: the event bus.
+Let's continue with the [Prooph components](/tags/prooph), with another part of the Service Bus: the event bus.
 
-As mentioned in the previous article on the command bus, the Prooph Service Bus has three kinds of buses:
+As mentioned in the previous article on [the command bus](/blog/prooph-command-bus), the Prooph Service Bus has three kinds of buses:
 
  - the command bus,
  - the event bus,
@@ -83,6 +83,8 @@ class Primitives
 ```
 
 It just outputs the event that it got from the event bus.
+
+## Sending a welcome email
 
 A bit more realistic example would be to send a welcome email to a user when they register with us, and to increase the total number of user accounts. Remember, we can have multiple event listeners react to the same event!
 
@@ -194,7 +196,7 @@ As we can see, first the event listener responsible for sending the welcome emai
 
 ## Prooph Messages
 
-In the previous article about the command bus, we saw that the messages, that is the commands can implement the `Prooph\Common\Messaging\Message` interface. In that section I said that I don't really see the benefit of having commands implement that interface, but I do think that the events benefit a great deal from that interface.
+In the previous article about the command bus, we saw that the messages, that is the commands, can implement the `Prooph\Common\Messaging\Message` interface. In that section I said that I don't really see the benefit of having commands implement that interface, but I do think that the events benefit a great deal from that interface.
 
 Why?
 
@@ -261,7 +263,7 @@ class NotifyAboutNewArticles
 
 Same as with the command bus, we wouldn't really use the event bus as we see it in this `event-bus.php` example file.
 
-We would maybe have a factory of some kind that would create the event bus, configure the event router, and attach it to the event bus. Then we would get the event bus from a `psr/container` compatible container, create the event, and then dispatch it on the event bus. I've already given an example of this in the previous article, so I don't want to repeat myself here.
+We would maybe have a factory of some kind that would create the event bus, configure the event router, and attach it to the event bus. Then we would get the event bus from a `psr/container` compatible container, create the event, and then dispatch it on the event bus. I've already [given an example of this](/blog/prooph-command-bus#a-more-real-world-like-example) in the previous article, so I don't want to repeat myself here.
 
 The examples shown and discussed here are available in my [prooph-examples](https://github.com/robertbasic/prooph-examples) repository.
 

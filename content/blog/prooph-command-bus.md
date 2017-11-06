@@ -211,7 +211,7 @@ As mentioned earlier, the commands can also be Prooph Messages. These are comman
 
 Note that the [prooph-common](https://github.com/prooph/common/) library not only provides us the interface(s) we should implement, but also some abstract classes and traits to do the "plumbing" for us.
 
-In the case of commands, I honestly don't see the benefit of this interface, but since it's there, let's take a look at it:
+Let's see how what would this be like:
 
 <div class='filename'>src/ProophExample/Command/RegisterUser.php</div>
 ``` php
@@ -239,7 +239,7 @@ The two interfaces, `Message` and `HasMessageName`, together with the `Command` 
 
 The `PayloadConstructable` interface and the `PayloadTrait` trait give us an implementation of a constructor that expects exactly one argument, an array, that holds the payload for our command.
 
-To create this command now, we'd have to do the following:
+To create this command, we do the following:
 
 ``` php
 <?php
@@ -247,59 +247,7 @@ $payload = ['email' => 'john.doe@example.com'];
 $command = new ProophExample\Command\RegisterUser($payload);
 ```
 
-I'm not really a fan of this; I'd rather keep the constructor with the type-hints.
-
-Of course, we can implement our own constructor for the `Command`, but then `RegisterUser` becomes this unwieldy mess:
-
-``` php
-<?php declare(strict_types=1);
-
-namespace ProophExample\Command;
-
-use Prooph\Common\Messaging\Command;
-use Prooph\Common\Messaging\PayloadConstructable;
-use Prooph\Common\Messaging\PayloadTrait;
-use ProophExample\Email;
-
-class RegisterUser extends Command
-{
-    /**
-    * @var Email
-    */
-    protected $email;
-
-    public function __construct(string $email)
-    {
-        $this->init();
-
-        $this->email = Email::fromString($email);
-
-        $payload = [
-            'email' => $this->email
-        ];
-        $this->setPayload($payload);
-    }
-
-    public function setPayload(array $payload): void
-    {
-        $this->payload = $payload;
-    }
-
-    public function payload(): array
-    {
-        return $this->payload;
-    }
-
-    public function email(): Email
-    {
-        return $this->email;
-    }
-}
-```
-
-Not. A. Fan.
-
-Maybe someone from the Prooph team could shed a light on why/when would be a good idea to implement the `Message` interface, vs. having our own DTOs as commands?
+In the case of commands, I personally prefer a custom DTO, over a `Message` type.
 
 ## A more real-world like example
 
