@@ -1,6 +1,6 @@
 +++
-draft = true
-date = 2017-11-03T09:10:53+01:00
+draft = false
+date = 2017-11-07T11:30:52+01:00
 title = "Prooph command bus"
 slug = "prooph-command-bus"
 description = "How to use the Prooph service bus to dispatch and handle commands"
@@ -39,7 +39,7 @@ Prooph's service bus has three different kinds of buses:
 
  - **the command bus** &mdash; it dispatches one message, a command, to exactly one handler,
  - **the event bus** &mdash; it dispatches one message, an event, to zero or more event handlers,
- - and, **the query bus** &mdash; I honestly haven't used it yet, so I'm not sure exactly what it does.
+ - and, **the query bus** &mdash; it dispatches one message, a query, to exactly one handler, but returns a `React\Promise\Promise`.
 
 Today we're going to look at &mdash; you've guessed it! &mdash; the command bus.
 
