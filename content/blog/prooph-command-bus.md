@@ -55,7 +55,7 @@ To dispatch a command on the command bus, we do the following:
 
  - we create the command bus,
  - we create a command router that the command bus uses to route commands to command handlers,
- - we route a command to it's command handler,
+ - we route a command to its command handler,
  - we attach the router to the command bus,
  - and finally, we dispatch the command on the command bus.
 

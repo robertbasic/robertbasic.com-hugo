@@ -1,6 +1,6 @@
 +++
-draft = true
-date = 2017-11-04T17:33:23+01:00
+draft = false
+date = 2017-11-15T14:30:09+01:00
 title = "Prooph event bus"
 slug = "prooph-event-bus"
 description = "How to use the Prooph service bus to dispatch and listen to events"
@@ -37,7 +37,7 @@ Setting up and using the event bus is similar to setting up and using the comman
 
  - we create the event bus,
  - we create an event router that the event bus uses to route events to event listeners,
- - we route a event to it's event listeners,
+ - we route a event to its event listeners,
  - we attach the router to the event bus,
  - and finally, we dispatch the event on the event bus.
 
@@ -157,6 +157,7 @@ class IncreaseNumberOfAccounts
 
 When tying all this together, we'd have something like the following example:
 
+<div class='filename'>event-bus.php</div>
 ``` php
 <?php declare(strict_types=1);
 
@@ -182,7 +183,7 @@ $event = new ProophExample\Event\UserRegistered($user);
 $eventBus->dispatch($event);
 ```
 
-We create the event bus, the event router, we route the `UserRegistered` event to the `SendWelcomeEmail` event listener, **and to** the `IncreaseNumberOfAccounts` event listener, attaching the router to the event bus. Next we register our new user, and we create and dispatch our `UserRegistered` event.
+We create the event bus, the event router, we route the `UserRegistered` event to the `SendWelcomeEmail` event listener, and to the `IncreaseNumberOfAccounts` event listener, attaching the router to the event bus. Next we register our new user, and we create and dispatch our `UserRegistered` event.
 
 Running this example gives us:
 
@@ -204,6 +205,7 @@ By implementing that interface, we get a UUID for that event, a date and a time 
 
 An example event that signals that a RSS feed has been updated would look something like this implementing the `Message` interface:
 
+<div class='filename'>src/ProophExample/Event/FeedUpdated.php</div>
 ``` php
 <?php declare(strict_types=1);
 
@@ -229,6 +231,7 @@ The `prooph-common` library not only provides the interface, but also abstract c
 
 Creating and dispatching this event will then be:
 
+<div class='filename'>event-bus.php</div>
 ``` php
 <?php
 
@@ -240,6 +243,7 @@ $eventBus->dispatch($event);
 
 And the listener then can access the `Url`, as well as the extra event information, like the date and time when the event was created:
 
+<div class='filename'>src/ProophExample/EventListener/NotifyAboutNewArticles.php</div>
 ``` php
 <?php declare(strict_types=1);
 
@@ -263,7 +267,7 @@ class NotifyAboutNewArticles
 
 Same as with the command bus, we wouldn't really use the event bus as we see it in this `event-bus.php` example file.
 
-We would maybe have a factory of some kind that would create the event bus, configure the event router, and attach it to the event bus. Then we would get the event bus from a `psr/container` compatible container, create the event, and then dispatch it on the event bus. I've already [given an example of this](/blog/prooph-command-bus#a-more-real-world-like-example) in the previous article, so I don't want to repeat myself here.
+We would maybe have a factory of some kind that would create the event bus, configure the event router, and attach it to the event bus. Then we would get the event bus from a `psr/container` compatible container where we need it, create the event, and then dispatch it on the event bus. I've already [given an example of this](/blog/prooph-command-bus#a-more-real-world-like-example) in the previous article, so I don't want to repeat myself here.
 
 The examples shown and discussed here are available in my [prooph-examples](https://github.com/robertbasic/prooph-examples) repository.
 
