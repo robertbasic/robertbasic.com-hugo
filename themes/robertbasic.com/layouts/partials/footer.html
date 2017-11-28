@@ -1,39 +1,32 @@
-            </div>
-            <div id="right" class="col-md-4">
-                <div id="sidebar">
-                    <div id="about" class="sidebar">
-                        <img src="/img/robertbasic.jpg" alt="Robert Basic" />
-                        <h4><a href="https://robertbasic.com/">Robert Basic</a></h4>
-                        <p>Software engineer, PHP consultant, business owner, open source contributor.</p>
-                    </div>
-                    <h2>Let's work together!</h2>
-                    <div class="sidebar">
-                        <p>
-                        If you require outsourcing or consulting help on your PHP projects, <a href="/#hire-me" class='btn btn-sm btn-success hire-me-button'>I'm available</a>!
-                        </p>
-                    </div>
+<section class="section content is-marginless">
+    <div class="container has-text-centered">
+        <a href="https://robertbasic.com">Robert Basic</a> &copy; 2008 &#151; {{ now.Format "2006" }}
+        <br>
+        <a href="https://robertbasic.com/index.xml">Get the feed</a>
+    </div>
+</section>
 
-                    {{ partial "recent-posts.html" .Site.Pages }}
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all "navbar-burger" elements
+    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+        // Add a click event on each of them
+        $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
 
-                    {{ partial "projects.html" ($.Site.Data.projects.projects) }}
+                // Get the target from the "data-target" attribute
+                var target = $el.dataset.target;
+                var $target = document.getElementById(target);
 
-                    <h2>RSS</h2>
-                    <ul>
-                        <li>
-                            <a href="https://robertbasic.com/index.xml">Get the feed</a>
-                        </li>
-                    </ul>
-
-                    {{ partial "tag-cloud.html" . }}
-                    {{ partial "categories.html" . }}
-                    {{ partial "archives.html" .Site.RegularPages }}
-                </div>
-            </div>
-            <div id="footer" class="col-md-12">
-                <a href="https://robertbasic.com">Robert Basic</a> &copy; 2008 &#151; {{ now.Format "2006" }}
-                <br>
-                <a href="https://robertbasic.com/index.xml">Get the feed</a>
-            </div>
-        </div>
+                // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                $el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    }
+});
+</script>
     </body>
 </html>

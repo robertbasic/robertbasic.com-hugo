@@ -1,6 +1,6 @@
 baseurl = "https://robertbasic.com/"
 languageCode = "en-us"
-title = "Robert Basic, software engineer, PHP consultant"
+title = "Robert Basic, software engineer, consultant"
 theme = "robertbasic.com"
 
 pygmentsstyle = "monokai"
@@ -10,7 +10,7 @@ pygmentscodefences = "true"
     blog = "/:section/:slug/"
 
 [params]
-    description = "Robert Basic is a software engineer, PHP consultant, business owner and open source contributor."
+    description = "Robert Basic is a software engineer, consultant, and open source contributor."
 
 
 [taxonomies]

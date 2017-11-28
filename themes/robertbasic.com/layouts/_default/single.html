@@ -1,13 +1,25 @@
 {{ partial "header.html" . }}
 
-{{ partial "post.html" . }}
+<section class="section content">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                {{ partial "post.html" . }}
 
-<div class="post-entry">
-    <p>
-        Thanks for reading! If you require help on a PHP project of any kind, <a href="/#hire-me" class='btn btn-sm btn-success hire-me-button'>let's talk!</a>
-    </p>
+                <div class="post-entry">
+                    <p>
+                        Thanks for reading! If you require help on a project of any kind, <a href="/#hire-me" class='button is-link hire-me-button'>let's talk!</a>
+                    </p>
 
-    {{ partial "recent-posts.html" .Site.Pages }}
-</div>
+                    {{ partial "recent-posts.html" .Site.Pages }}
+                </div>
+            </div>
+
+            <div class="column">
+                {{ partial "sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</section>
 
 {{ partial "footer.html" . }}

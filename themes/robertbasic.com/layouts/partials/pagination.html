@@ -14,24 +14,24 @@
     {{ $.Scratch.Set "last" false }}
 {{ end }}
 
-<div class="navigation">
+<div class="pagination">
     {{ if .Paginator.HasPrev }}
-        <a href="{{ $cu }}page/{{ sub $cp 1 }}/"> Prev </a>
+    <a href="{{ $cu }}page/{{ sub $cp 1 }}/" class="button"> Prev </a>
     {{ end }}
 
     {{ if (not ($.Scratch.Get "first")) }}
-        <a href="{{ $cu }}" {{ if eq $cp 1 }}class="current"{{ end }}> 1 </a> <span>...</span>
+        <a href="{{ $cu }}" class="button {{ if eq $cp 1 }} is-link {{ end }}"> 1 </a> <span>...</span>
     {{ end }}
 
     {{ range $.Scratch.Get "p" }}
-        <a href="{{ $cu }}page/{{ .PageNumber }}/" {{ if eq $cp .PageNumber }}class="current"{{ end }}> {{ .PageNumber }} </a>
+        <a href="{{ $cu }}page/{{ .PageNumber }}/" class="button {{ if eq $cp .PageNumber }} is-link {{ end }}"> {{ .PageNumber }} </a>
     {{ end }}
 
     {{ if (not ($.Scratch.Get "last")) }}
-        <span>...</span> <a href="{{ $cu }}page/{{ .Paginator.TotalPages }}/" {{ if eq $cp .Paginator.TotalPages }}class="current"{{ end }}> {{ .Paginator.TotalPages }} </a>
+        <span>...</span> <a href="{{ $cu }}page/{{ .Paginator.TotalPages }}/" class="button {{ if eq $cp .Paginator.TotalPages }} is-link {{ end }}"> {{ .Paginator.TotalPages }} </a>
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a href="{{ $cu }}page/{{ add $cp 1 }}/"> Next </a>
+        <a href="{{ $cu }}page/{{ add $cp 1 }}/" class="button"> Next </a>
     {{ end }}
 </div>

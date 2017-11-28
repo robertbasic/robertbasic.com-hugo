@@ -1,9 +1,20 @@
 {{ partial "header.html" . }}
 
-{{ range (.Paginator 5).Pages }}
-    {{ partial "post.html" . }}
-{{ end }}
+<section class="section content">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                {{ range (.Paginator 5).Pages }}
+                    {{ partial "post.html" . }}
+                {{ end }}
+                {{ partial "pagination.html" . }}
+            </div>
 
-{{ partial "pagination.html" . }}
+            <div class="column">
+                {{ partial "sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</section>
 
 {{ partial "footer.html" . }}
