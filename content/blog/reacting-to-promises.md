@@ -17,9 +17,9 @@ What this promise library allows us is a nicer workflow with asynchronous code.
 
 With promises, when we want to execute something asynchronously we **defer** the work that will be executed asynchronously. The `Deferred` unit of work will complete sometimes in the future, but we don't know when. But it does **promise** that the work will be done, one way or the other.
 
-The `Promise` is a sort of a placeholder for the result that will eventually be returned from our deferred work. This promise can **then** either be resolved or rejected by our deferred. When a promise is resolved successfully it has an associated value, and when it is rejected it has an associated reason for the rejection. The deferred can also notify the promise about the progress of the work.
+The `Promise` is a sort of a placeholder for the result that will eventually be returned from our deferred work. This promise can **then** either be resolved or rejected by our deferred. When a promise is resolved successfully it has an associated value, and when it is rejected it has an associated reason for the rejection.
 
-We use the `then` method on the promise to register handlers that will be called when the deferred is resolved or rejected, or when it notifies our promise about progress.
+We use the `then` method on the promise to register handlers that will be called when the deferred is resolved or rejected.
 
 To install the `React/Promise` component, run:
 
@@ -41,20 +41,16 @@ class FetchStatusCodes extends Deferred
 {
     public function __invoke(array $urls)
     {
-        $this->notify('Initializing');
         $multiHandle = curl_multi_init();
 
         $handles = $this->getHandlesForUrls($urls, $multiHandle);
 
-        $this->notify('Executing multi handles');
         $this->executeMultiHandle($multiHandle);
 
-        $this->notify('Getting status codes');
         $statusCodes = $this->getStatusCodes($handles);
 
         curl_multi_close($multiHandle);
 
-        $this->notify('Calculating success rate');
         $successRate = $this->calculateSuccessRate($statusCodes);
 
         if ($successRate > 50) {
@@ -68,7 +64,7 @@ class FetchStatusCodes extends Deferred
 
 I've left out here a bunch of code that deals with the actual fetching of the status codes, just to keep the "noise" down. The full example is available in [this repository](https://github.com/robertbasic/react-promise-example).
 
-The important thing here is that we extend `React\Promise\Deferred` and that at the end we call the `resolve()` method to resolve this deferred if the success rate is over 50%, or that we call the `reject()` method if the success rate is below 50%. We also added a couple of `notify()` calls to show how we can notify the promise of the deferreds progress.
+The important thing here is that we extend `React\Promise\Deferred` and that at the end we call the `resolve()` method to resolve this deferred if the success rate is over 50%, or that we call the `reject()` method if the success rate is below 50%.
 
 The set up of the actual promise and its handlers would look something like this:
 
@@ -86,9 +82,6 @@ $promise
         },
         function($reason) {
             echo $reason . PHP_EOL;
-        },
-        function($progress) {
-            echo "Progress: " . $progress . PHP_EOL;
         }
     );
 
@@ -102,20 +95,15 @@ $urls = [
 $statusCodes($urls);
 ```
 
-We create the `FetchStatusCodes` deferred object and get the `promise`. We setup the resolve/reject/notify handler callbacks in the `then` method. They don't do much for now:
+We create the `FetchStatusCodes` deferred object and get the `promise`. We setup the resolve and reject handler callbacks in the `then` method. They don't do much for now:
 
  - the resolve handler dumps the value it got,
- - the reject handler prints out the reason of the rejection,
- - and the notify handler prints out the progress.
+ - the reject handler prints out the reason of the rejection.
 
 The output for a resolved promise would be something like this:
 
 ``` text
 $ php promise.php
-Progress: Initializing
-Progress: Executing multi handles
-Progress: Getting status codes
-Progress: Calculating success rate
 /home/robert/projects/react-promise-example/promise.php:32:
 array(5) {
   'https://example.com/' => int(200)
