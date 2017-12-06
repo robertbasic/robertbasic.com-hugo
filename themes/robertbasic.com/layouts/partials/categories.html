@@ -1,7 +1,9 @@
-<h2>Categories</h2>
+<div class="box is-marginless">
+    <h2>Categories</h2>
 
-<ul>
-  {{ range $cat, $tax := .Site.Taxonomies.categories }}
-    <li><a href="/categories/{{ $cat | urlize }}">{{ replace $cat "-" " " | title }}</a></li>
-  {{ end }}
-</ul>
+    <ul>
+    {{ range $cat, $tax := .Site.Taxonomies.categories }}
+        <li><a href="/categories/{{ $cat | urlize }}">{{ replace $cat "-" " " | title }}</a></li>
+    {{ end }}
+    </ul>
+</div>

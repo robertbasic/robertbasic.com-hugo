@@ -1,0 +1,156 @@
+body {
+    background: whitesmoke;
+    color: #292929;
+    font-family: 'Georgia', serif;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: #161616;
+}
+
+a {
+    text-decoration: none;
+    color: #3273dc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+acronym {
+    border-bottom: 1px dotted #23527C;
+}
+
+blockquote {
+    border-left: 1px solid #23527C;
+    margin: 0 20px 20px 20px;
+    padding-left: 20px;
+    display: block;
+}
+
+section.section {
+    padding-bottom: 0;
+}
+
+#navbar {
+    margin-right: 5.8rem !important;
+}
+
+.navbar {
+    background: none;
+}
+
+a.navbar-item:hover {
+    text-decoration: none;
+}
+
+div.box {
+    background: none;
+    border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    font-size: 1rem;
+}
+
+div.box:first-child {
+    padding-top: 0.5rem;
+}
+
+.Zend_Tag_Cloud {
+    margin-left: 32px;
+}
+
+.post {
+    margin-bottom: 4.1rem;
+}
+
+.post .date {
+    margin-bottom: 1rem;
+}
+
+.post .entry {
+    margin-bottom: 1rem;
+}
+
+.content h2, .content h3 {
+    margin-top: 1.1rem !important;
+}
+
+.hire-me-button {
+    padding: 0 5px;
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+.pagination {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 60px;
+    font-size: 1.2rem;
+}
+
+.pagination span {
+    text-align: center;
+    padding: 5px 5px;
+}
+
+#my_contact {
+    font-size: 1.1rem;
+    text-align: left;
+    color: #292929;
+    margin: 0 50px 20px 50px;
+    padding: 5px;
+    border: 1px solid #23527C;
+    border-radius: 5px;
+}
+
+#my_contact dd {
+    margin: 0 0 0 30px;
+    color: #292929;
+}
+
+pre {
+    color: #FFF;
+    border: none;
+    padding: 0.5rem !important;
+    font-size: 0.8rem;
+}
+
+code {
+    background: #FFF;
+    padding: 0.2rem;
+    font-size: 0.8rem;
+}
+
+div.old_entry_warn {
+    font-size: 90%;
+    text-align: left;
+    background: #23527C;
+    color: #FFFFFF;
+    margin: 0 50px 20px 50px;
+    padding: 5px;
+    border: 1px solid #6c7388;
+    border-radius: 5px;
+}
+
+div.highlight {
+    border-radius: 0 0 4px 4px;
+}
+
+div.filename {
+    background: #FFFFFF !important;
+    padding: 0;
+    margin-bottom: -1.1rem;
+    color: #c7254e;
+    font-family: monospace;
+    font-size: 0.8rem;
+    text-align: center;
+    border: #272822 solid 1px;
+    border-radius: 4px 4px 0 0;
+    border-bottom: none;
+}

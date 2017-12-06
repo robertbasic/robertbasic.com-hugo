@@ -1,11 +1,23 @@
 {{ partial "header.html" . }}
 
-<h1>Posts tagged '{{ .Title | lower }}'</h1>
+<section class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-two-thirds">
+                <h1>Posts tagged '{{ .Title | lower }}'</h1>
 
-{{ range (.Paginator 5).Pages }}
-    {{ partial "post.html" . }}
-{{ end }}
+                {{ range (.Paginator 5).Pages }}
+                    {{ partial "post.html" . }}
+                {{ end }}
 
-{{ partial "pagination.html" . }}
+                {{ partial "pagination.html" . }}
+            </div>
+
+            <div class="column">
+                {{ partial "sidebar.html" . }}
+            </div>
+        </div>
+    </div>
+</section>
 
 {{ partial "footer.html" . }}

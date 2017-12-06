@@ -1,0 +1,26 @@
+<div class="box has-text-centered is-marginless">
+    <img src="/img/robertbasic.jpg" alt="Robert Basic" />
+
+    <h4>
+        <a href="https://robertbasic.com/">Robert Basic</a>
+    </h4>
+    <p>
+        Software engineer, consultant, open source contributor.
+    </p>
+</div>
+
+<div class="box has-text-centered is-marginless">
+    <h2>
+        Let's work together!
+    </h2>
+    <p>
+        If you require outsourcing or consulting help on your projects, <a href="/#hire-me" class='button is-link hire-me-button'>I'm available</a>!
+    </p>
+</div>
+
+{{ partial "recent-posts.html" .Site.Pages }}
+
+{{ partial "tag-cloud.html" . }}
+{{ partial "categories.html" . }}
+
+{{ partial "archives.html" .Site.RegularPages }}

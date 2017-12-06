@@ -1,8 +1,10 @@
-<h2>Archives</h2>
+<div class="box is-marginless">
+    <h2>Archives</h2>
 
-<ul>
-{{ range .GroupByDate "January, 2006" }}
-    {{ $url := (index .Pages 0).Date.Format "2006/01" | urlize }}
-    <li><a href="/{{ $url }}">{{ .Key }}</a></li>
-{{ end }}
-</ul>
+    <ul>
+    {{ range .GroupByDate "January, 2006" }}
+        {{ $url := (index .Pages 0).Date.Format "2006/01" | urlize }}
+        <li><a href="/{{ $url }}">{{ .Key }}</a></li>
+    {{ end }}
+    </ul>
+</div>
