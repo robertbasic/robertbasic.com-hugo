@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2017-12-12T10:10:21+01:00
 title = "Mockery return values based on arguments"
 slug = "mockery-return-values-based-on-arguments"
