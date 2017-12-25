@@ -4,7 +4,7 @@ date = 2017-12-25T10:32:34+01:00
 title = "Buffered vs. unbuffered channels in Golang"
 slug = "buffered-vs-unbuffered-channels-in-golang"
 description = "Solving Advent of Code 2017 day 20 puzzle 1 made me understand the difference between buffered and unbuffered channels"
-tags = ["golang", "goroutines", "channels", "buffered", "unbuffered", "concurrency"]
+tags = ["golang", "goroutines", "channels", "buffered", "unbuffered", "concurrency", "go"]
 categories = ["Programming", "Development"]
 2017 = ["12"]
 +++
@@ -51,7 +51,7 @@ type Particle struct {
 }
 ```
 
-The `coord` is again a `struct` that holds the xyz coordinates and has two methods on it, [nothing fancy](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L13-L27). When the particle moves, we add the acceleration to the velocity and the velocity to the position. Again, [nothing interesting there](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L37-L41).
+The `coord` is again a `struct` that holds the XYZ coordinates and has two methods on it, [nothing fancy](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L13-L27). When the particle moves, we add the acceleration to the velocity and the velocity to the position. Again, [nothing interesting there](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L37-L41).
 
 That's pretty much all the setup I had.
 
@@ -66,7 +66,6 @@ func closest(particles []Particle) Particle {
 	var cp Particle
 	var wg sync.WaitGroup
 	wg.Add(len(particles))
-
 	pch := make(chan Particle)
 
 	for _, particle := range particles {
@@ -74,9 +73,7 @@ func closest(particles []Particle) Particle {
 	}
 
 	wg.Wait()
-
 	close(pch)
-
     return cp
 }
 ```
@@ -95,4 +92,203 @@ func move(particle Particle, iterations int, pch chan Particle, wg *sync.WaitGro
 }
 ```
 
-So far this seems like something that **could** work.
+So far this seems like something that **could** work. Running this code as is, results in "fatal error: all goroutines are asleep - deadlock!". OK, sort of make sense that it fails, we only send to the particle channel, we never receive from it.
+
+## Send and you shall receive
+
+So... let's receive from it I guess:
+
+``` golang
+func closest(particles []Particle) Particle {
+    // snip...
+	for _, particle := range particles {
+		go move(particle, 10000, pch, &wg)
+	}
+
+    p := <-pch
+    log.Println(p)
+
+	wg.Wait()
+	close(pch)
+    return cp
+}
+```
+
+Surprise! "fatal error: all goroutines are asleep - deadlock!". Errr...
+
+Oh, right, can't send and receive to a channel in the same goroutine! Even though, receiving is not in the same goroutine as sending, lets see what happens if we do receive in one:
+
+``` golang
+func closest(particles []Particle) Particle {
+    // snip...
+	for _, particle := range particles {
+		go move(particle, 10000, pch, &wg)
+	}
+
+    go func() {
+        p := <-pch
+        log.Println(p)
+    }()
+
+	wg.Wait()
+	close(pch)
+    return cp
+}
+```
+
+Guess what? "fatal error: all goroutines are asleep - deadlock!" This should totally be possible, I'm doing something wrong!
+
+[Matej](https://twitter.com/matejbaco) mentioned something on Twitter the other day that buffered channels can send and receive inside the same goroutine. Let's try a buffered channel, see if that works.
+
+## Maybe buffers is what we need after all
+
+When creating the `pch` channel, we pass in a second argument to `make`, the size of the buffer for the channel. No idea what's a good size for it, so let's make it the size of the `particles` slice:
+
+``` golang
+func closest(particles []Particle) Particle {
+    // snip...
+	pch := make(chan Particle, len(particles))
+
+	for _, particle := range particles {
+		go move(particle, 10000, pch, &wg)
+	}
+
+    p := <-pch
+    log.Println(p)
+
+	wg.Wait()
+	close(pch)
+    return cp
+}
+```
+
+Run it and... A-ha! One particle gets logged! There's no comparing of particles in there yet, so it must be the first particle that was sent on that channel. OK, let's `range` over it, that'll do it:
+
+``` golang
+func closest(particles []Particle) Particle {
+    // snip...
+	for _, particle := range particles {
+		go move(particle, 10000, pch, &wg)
+	}
+
+    for p := range pch {
+        log.Println(p)
+    }
+
+	wg.Wait()
+	close(pch)
+    return cp
+}
+```
+
+"fatal error: all goroutines are asleep - deadlock!" motherf... gah! Fine, I'll loop over all the particles and receive from the channel, see what happens then:
+
+``` golang
+func closest(particles []Particle) Particle {
+    // snip...
+	for _, particle := range particles {
+		go move(particle, 10000, pch, &wg)
+	}
+
+    for i := 0; i < len(particles); i++ {
+		p := <-pch
+		log.Println(p)
+	}
+
+	wg.Wait()
+	close(pch)
+    return cp
+}
+```
+
+Bingo! All particles logged, no deadlocks. Throw in a closure to find the closest particle and we're done!
+
+``` golang
+// snip...
+    var findcp = func(p Particle) {
+        if cp.d == 0 || particle.d < cp.d {
+			cp = particle
+		}
+    }
+    for i := 0; i < len(particles); i++ {
+		p := <-pch
+		findcp(p)
+	}
+// snip...
+```
+
+For my input I get the answer `243`, submit it to Advent of Code and it's the correct answer! I did it! I used goroutines and channels to solve one puzzle!
+
+## But... how?
+
+How, why does this work? I've seen code examples using `range` to range over a channel and use whatever is received from the channel to do something with it. Countless blog posts and tutorials, I've never seen a "regular" `for` loop and in it receiving from the channel. There must be a nicer way to achieve the same. Re-reading a couple of the articles, I spot the error I made in the `range` approach:
+
+``` golang
+func closest(particles []Particle) Particle {
+    // snip...
+	for _, particle := range particles {
+		go move(particle, 10000, pch, &wg)
+	}
+
+	wg.Wait()
+	close(pch)
+
+    for p := range pch {
+        findcp(cp)
+    }
+
+    return cp
+}
+```
+
+243! After some thinking about it, it makes sense, or at least this is how I explained it to myself:
+
+**Lesson number 1**  &mdash; golang's `range` doesn't "like" open-ended things, it needs to know where does the thing we `range` over begin and where does it end. By closing the channel we tell `range` that it's OK to range over the `pch` channel, as **nothing will send to it** any more.
+
+To put it in another way, if we leave the channel open when we try to `range` over it, `range` can't possibly know when will the next value come in to the channel. It might happen immediately, it might happen in 2 minutes. And given that the `pch` channel is buffered, `range` probably also knows that there are at most `len(particles)` number of items in that channel.
+
+Next step is to try and make it work using unbuffered channels. If I just make this buffered channel an unbuffered one, but otherwise leave the working code as-is, it blows up with a deadlock. Something something same goroutine.
+
+Back to the example where I tried to receive in a separate goroutine:
+
+``` golang
+    // snip..
+    go func() {
+        p := <-pch
+        log.Println(p)
+    }()
+    // snip...
+```
+
+Ah, this goroutine runs only once. It even prints out a single particle at the beginning, I just didn't look closely enough the first time, all I saw was the deadlock error message and moved on. I should probably loop over the channel somehow and receive from it in that loop.
+
+I remembered reading something about a weird looking `for/select` loop, let's try writing one of those:
+
+``` golang
+    // snip..
+    go func() {
+        for{
+			select {
+			case p := <-pch:
+				findcp(p)
+			}
+		}
+    }()
+    // snip...
+```
+
+243! Yey! And again, after giving it some thought, this is how I explained this unbuffered channel version to myself:
+
+**Lesson number 2** &mdash; an unbuffered channel can't hold on to values (yah, it's right there in the name "unbuffered"), so whatever is sent to that channel, it **must be received** by some other code right away. That receiving code must be in a different goroutine because one goroutine can't do two things at the same time: it can't send and receive; it must be one or the other.
+
+Armed with these two bits of new knowledge, when to use buffered and when to use unbuffered channels?
+
+I guess buffered channels can be used when we want to aggregate data from goroutines and then do with that data some further processing either in the current goroutine or in new ones. Another possible use case would be when we can't or don't want to receive on the channel at the exact moment, so we let the senders fill up the buffer on the channel, until we can process it.
+
+And I guess in any other case, use an unbuffered channel.
+
+And that's pretty much all I learned from this one Advent of Code puzzle. Here's my final solution [using buffered channels](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L76-L103) and here's the one [using unbuffered channels](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L105-L136). I even figured out other ways to make it work while writing this blog post, but those solutions all come from this understanding of how these channels work.
+
+If you spot any errors in either my working code examples or in my reasoning, please [let me know](https://robertbasic.com/#hire-me). I want to know better. Thanks!
+
+Happy hackin'!

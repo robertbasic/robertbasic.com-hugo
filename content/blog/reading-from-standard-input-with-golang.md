@@ -4,7 +4,7 @@ date = 2017-10-30T07:15:19+01:00
 title = "Reading from standard input with Go"
 slug = "reading-from-standard-input-with-go"
 description = "First foray into Go, figuring out how to read from the standard input."
-tags = ["go", "stdin", "learning", "standard input"]
+tags = ["go", "stdin", "learning", "standard input", "golang"]
 categories = ["Programming", "Development"]
 2017 = ["10"]
 +++
