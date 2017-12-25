@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2017-12-25T10:32:34+01:00
 title = "Buffered vs. unbuffered channels in Golang"
 slug = "buffered-vs-unbuffered-channels-in-golang"
@@ -9,7 +9,7 @@ categories = ["Programming", "Development"]
 2017 = ["12"]
 +++
 
-As any newcomer to Golang and it's ecosystem, I was eager to find out what is this all hubbub about these things called [goroutines](https://tour.golang.org/concurrency/1) and [channels](https://tour.golang.org/concurrency/2). I read the documentation and blog posts, watched videos, tried out some of the "hello world" examples and even wasted a couple of days trying to solve the puzzles for day 18 from Advent of Code 2017 using goroutines and failed spectacularly.
+As any newcomer to Golang and it's ecosystem, I was eager to find out what is this hubbub about these things called [goroutines](https://tour.golang.org/concurrency/1) and [channels](https://tour.golang.org/concurrency/2). I read the documentation and blog posts, watched videos, tried out some of the "hello world" examples and even wasted a couple of days trying to solve the puzzles for day 18 from Advent of Code 2017 using goroutines and failed spectacularly.
 
 All this was just... doing stuff without actually understanding of when, how, and why use goroutines and channels. And without that basic understanding, most of my attempts at doing anything that resembles a useful example ended up with deadlocks. Lots and lots and lots of deadlocks.
 
@@ -217,11 +217,13 @@ Bingo! All particles logged, no deadlocks. Throw in a closure to find the closes
 // snip...
 ```
 
-For my input I get the answer `243`, submit it to Advent of Code and it's the correct answer! I did it! I used goroutines and channels to solve one puzzle!
+For my input I get that the answer is Particle number 243, submit it to Advent of Code and it's the correct answer! I did it! I used goroutines and channels to solve one puzzle!
 
 ## But... how?
 
-How, why does this work? I've seen code examples using `range` to range over a channel and use whatever is received from the channel to do something with it. Countless blog posts and tutorials, I've never seen a "regular" `for` loop and in it receiving from the channel. There must be a nicer way to achieve the same. Re-reading a couple of the articles, I spot the error I made in the `range` approach:
+I made it work, but I still didn't understand how and why does this work. Time to play around it with some more.
+
+I've seen code examples using `range` to range over a channel and use whatever is received from the channel to do something with it. Countless blog posts and tutorials, I've never seen a "regular" `for` loop and in it receiving from the channel. There must be a nicer way to achieve the same. Re-reading a couple of the articles, I spot the error I made in the `range` approach; I was closing the channel too late:
 
 ``` golang
 func closest(particles []Particle) Particle {
@@ -241,11 +243,11 @@ func closest(particles []Particle) Particle {
 }
 ```
 
-243! After some thinking about it, it makes sense, or at least this is how I explained it to myself:
+Particle number 243! After some thinking about it, it makes sense, or at least this is how I made it make sense:
 
 **Lesson number 1**  &mdash; golang's `range` doesn't "like" open-ended things, it needs to know where does the thing we `range` over begin and where does it end. By closing the channel we tell `range` that it's OK to range over the `pch` channel, as **nothing will send to it** any more.
 
-To put it in another way, if we leave the channel open when we try to `range` over it, `range` can't possibly know when will the next value come in to the channel. It might happen immediately, it might happen in 2 minutes. And given that the `pch` channel is buffered, `range` probably also knows that there are at most `len(particles)` number of items in that channel.
+To put it in another way, if we leave the channel open when we try to `range` over it, `range` can't possibly know when will the next value come in to the channel. It might happen immediately, it might happen in 2 minutes.
 
 Next step is to try and make it work using unbuffered channels. If I just make this buffered channel an unbuffered one, but otherwise leave the working code as-is, it blows up with a deadlock. Something something same goroutine.
 
@@ -277,9 +279,13 @@ I remembered reading something about a weird looking `for/select` loop, let's tr
     // snip...
 ```
 
-243! Yey! And again, after giving it some thought, this is how I explained this unbuffered channel version to myself:
+Particle number 243! Yey! And again, after giving it some thought, this is how I explained this unbuffered channel version to myself:
 
 **Lesson number 2** &mdash; an unbuffered channel can't hold on to values (yah, it's right there in the name "unbuffered"), so whatever is sent to that channel, it **must be received** by some other code right away. That receiving code must be in a different goroutine because one goroutine can't do two things at the same time: it can't send and receive; it must be one or the other.
+
+So far whatever I threw at these two lessons learned, they're standing their grounds.
+
+## Buffered or unbuffered?
 
 Armed with these two bits of new knowledge, when to use buffered and when to use unbuffered channels?
 
@@ -287,7 +293,7 @@ I guess buffered channels can be used when we want to aggregate data from gorout
 
 And I guess in any other case, use an unbuffered channel.
 
-And that's pretty much all I learned from this one Advent of Code puzzle. Here's my final solution [using buffered channels](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L76-L103) and here's the one [using unbuffered channels](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L105-L136). I even figured out other ways to make it work while writing this blog post, but those solutions all come from this understanding of how these channels work.
+And that's pretty much all I learned from this one Advent of Code puzzle. Here's my final solution [using buffered channels](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L76-L103) and here's the one [using unbuffered channels](https://github.com/robertbasic/aoc2017/blob/be5299abf977ceb4acd2c5a7fdcb454f147735bf/day20/day20.go#L105-L136). I even figured out other ways to make it work while writing this blog post, but those solutions all come from understanding of how channels work.
 
 If you spot any errors in either my working code examples or in my reasoning, please [let me know](https://robertbasic.com/#hire-me). I want to know better. Thanks!
 
