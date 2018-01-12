@@ -16,6 +16,7 @@ pygmentscodefences = "true"
 [taxonomies]
     tag = "tags"
     category = "categories"
+    2018 = "2018"
     2017 = "2017"
     2016 = "2016"
     2015 = "2015"
