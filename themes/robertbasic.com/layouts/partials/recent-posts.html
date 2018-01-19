@@ -4,7 +4,7 @@
     </h2>
 
     <ul>
-    {{ range first 10 . }}
+    {{ range first 10 (where . "Section" "blog") }}
         <li>
             <a href="{{ .Permalink }}"> {{ .Title }} </a>
         </li>

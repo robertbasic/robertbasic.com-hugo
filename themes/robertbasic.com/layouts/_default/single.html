@@ -11,7 +11,7 @@
                         Thanks for reading! If you require help on a project of any kind, <a href="/#hire-me" class='button is-link hire-me-button'>let's talk!</a>
                     </p>
 
-                    {{ partial "recent-posts.html" .Site.Pages }}
+                    {{ partial "recent-posts.html" (where .Site.Pages "Section" "blog") }}
                 </div>
             </div>
 

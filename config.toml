@@ -8,6 +8,7 @@ pygmentscodefences = "true"
 
 [permalinks]
     blog = "/:section/:slug/"
+    static = "/:filename/"
 
 [params]
     description = "Robert Basic is a software engineer, consultant, and open source contributor."
