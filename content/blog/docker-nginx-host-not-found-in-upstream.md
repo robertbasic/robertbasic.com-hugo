@@ -68,7 +68,14 @@ Well, it's the docker version I should've installed in the first place.
 
 Fedora's repos have docker version 1.13.something. Docker-CE is at 17.12.something.
 
-Remove old docker, re-enable selinux, install new docker, everything works just fine.
+Remove old docker, re-enable selinux, install new docker, ~~everything works just fine~~, and run the following:
+
+``` bash
+sudo ausearch -c 'iptables' --raw | audit2allow -M my-iptables
+sudo semodule -X 300 -i my-iptables.pp
+```
+
+I have no idea what that does, but it was required to make it work.
 
 *sigh*
 
