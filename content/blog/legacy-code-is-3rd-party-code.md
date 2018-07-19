@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2018-07-19T06:17:30+02:00
 title = "Legacy code is 3rd party code"
 slug = "legacy-code-is-3rd-party-code"
