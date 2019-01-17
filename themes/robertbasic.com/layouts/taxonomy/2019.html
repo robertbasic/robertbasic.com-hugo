@@ -4,17 +4,14 @@
     <div class="container">
         <div class="columns">
             <div class="column is-two-thirds">
+                <h1>Archives for {{ .Date.Format "January, 2006" }}</h1>
 
-
+                {{ range (.Paginator 5).Pages }}
                 {{ partial "post.html" . }}
+                {{ end }}
 
-                <div class="post-entry">
-                    <p>
-                        Thanks for reading! If you require help on a project of any kind, <a href="/#hire-me" class='button is-link hire-me-button'>let's talk!</a>
-                    </p>
+                {{ partial "pagination.html" . }}
 
-                    {{ partial "recent-posts.html" (where .Site.Pages "Section" "blog") }}
-                </div>
             </div>
 
             <div class="column">

@@ -17,6 +17,10 @@
         {{ .Content }}
     </div>
     <div class="is-size-6 has-text-left">
+        {{ if isset .Params "software_versions" }}
+        Versions: {{ delimit (apply (apply .Params.software_versions "partial" "softwareVersion" ".") "chomp" ".") ", " }}.<br>
+        {{ end }}
+
         Tags: {{ delimit (apply (apply .Params.tags "partial" "tag" ".") "chomp" ".") ", " }}.<br>
         Categories: {{ delimit (apply (apply .Params.categories "partial" "category" ".") "chomp" ".") ", " }}.<br>
     </div>
