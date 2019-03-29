@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 date = 2019-03-29T06:06:04+01:00
 title = "PhpStorm previous version settings not imported"
 slug = "phpstorm-previous-version-settings-not-imported"
