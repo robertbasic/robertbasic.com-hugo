@@ -9,7 +9,7 @@ categories = ["Programming", "Development", "Software"]
 2017 = ["11"]
 +++
 
-I was working on the next post of my [Prooph service bus](/tags/prooph) series, which includes the usage of [ReactPHP](https://reactphp.org/) promises. Given that I haven't had the chance to take a closer look at it yet, I decided that this is the right time for it.
+I was working on something that includes the usage of [ReactPHP](https://reactphp.org/) promises. Given that I haven't had the chance to take a closer look at it yet, I decided that this is the right time for it.
 
 ReactPHP has several different components, with the end goal of providing a low-level library for event-driven programming in PHP. The one component I want to talk about today is the [promise component](https://reactphp.org/promise/), which is a [Promises/A](https://promisesaplus.com/) implementation for PHP.
 
