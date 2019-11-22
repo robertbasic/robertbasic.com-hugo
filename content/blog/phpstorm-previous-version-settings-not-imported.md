@@ -7,7 +7,6 @@ description = "After upgrading PhpStorm to 2019.1 the settings from 2018.3 were 
 tags = ["phpstorm", "php", "settings", "ide"]
 categories = ["Software", "Development"]
 2019 = ["03"]
-software_versions = [""]
 +++
 
 [PhpStorm 2019.1](https://www.jetbrains.com/phpstorm/whatsnew/) was released yesterday. During the first run after the upgrade PhpStorm usually asks from what previous version would I like to import the settings from, but this time it didn't ask that. It rather imported some of my old settings, but not the latest ones I had for 2018.3.
