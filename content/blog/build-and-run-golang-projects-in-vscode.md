@@ -20,6 +20,7 @@ Go to `Tasks -> Configure Default Build Task` and then select the "Create tasks.
 For my [overcomplicated d20 roller](https://github.com/robertbasic/d20), which is my first website built with Golang, I have the following content for the tasks:
 
 <div class="filename">.vscode/tasks.json</div>
+
 ``` json
 {
     "version": "2.0.0",

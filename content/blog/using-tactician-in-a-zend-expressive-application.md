@@ -38,6 +38,7 @@ $ composer require league/tactician-container
 Now that we have all our libraries in, let's change how the container creates the Ping action. Before it was being just invoked by the container, but now we want to create it through a factory:
 
 <div class='filename'>config/autoload/routes.global.php</div>
+
 ``` diff
 diff --git a/config/autoload/routes.global.php b/config/autoload/routes.global.php
 index 856f5ab..8335450 100644
@@ -62,6 +63,7 @@ This will allow us to pass in dependencies to the `PingAction` class.
 The Ping action's factory is simple:
 
 <div class='filename'>src/App/Action/PingFactory.php</div>
+
 ``` php
 <?php
 
@@ -87,6 +89,7 @@ We are telling the container to get the service called `CommandBus` and pass it 
 We haven't yet defined the `CommandBus` service, so let's do that next by telling the service manager to create the `CommandBus` using the `App\CommandBusFactory` factory:
 
 <div class='filename'>config/autoload/dependencies.global.php</div>
+
 ``` diff
 diff --git a/config/autoload/dependencies.global.php b/config/autoload/dependencies.global.php
 index b2b08f5..460c045 100644
@@ -105,6 +108,7 @@ index b2b08f5..460c045 100644
 This factory sets up the Tactician's command bus and is the main point of this example:
 
 <div class='filename'>src/App/CommandBusFactory.php</div>
+
 ``` php
 <?php
 
@@ -156,6 +160,7 @@ The `$commandsMapping` array that we are passing to the locator is going to be a
 In the next step, let's tell the `PingAction`'s constructor to accept the command bus:
 
 <div class='filename'>src/App/Action/PingAction.php</div>
+
 ``` diff
 diff --git a/src/App/Action/PingAction.php b/src/App/Action/PingAction.php
 index ea2ae22..612fb32 100644
@@ -186,6 +191,7 @@ Cool, at this point we have everything set up to start sending and handling comm
 The command we are going to create is a simple one:
 
 <div class='filename'>src/App/Command/Ping.php</div>
+
 ``` php
 <?php
 
@@ -212,6 +218,7 @@ It just sets the command time to the current unix timestamp.
 Updating the `PingAction` to include the creation of our `Ping` command and passing it on to the command bus to be handled:
 
 <div class='filename'>src/App/Action/PingAction.php</div>
+
 ``` diff
 diff --git a/src/App/Action/PingAction.php b/src/App/Action/PingAction.php
 index 612fb32..6cb9334 100644
@@ -243,6 +250,7 @@ index 612fb32..6cb9334 100644
 Now is the time to let Tactician know about our command and command handler mapping, so it knows which handler handles which command:
 
 <div class='filename'>src/App/CommandBusFactory.php</div>
+
 ``` diff
 diff --git a/src/App/CommandBusFactory.php b/src/App/CommandBusFactory.php
 index ba587f6..b79fbb1 100644
@@ -275,6 +283,7 @@ We're almost there. I promise.
 The command handler is going to be created through a factory, so we can inject dependencies into it:
 
 <div class='filename'>src/App/CommandHandler/PingFactory.php</div>
+
 ``` php
 <?php
 
@@ -298,6 +307,7 @@ It doesn't do much, it just passes a path to a log file. Of course, in real code
 The command handler won't do much either, it's just going to log the the ping's command time in the log file we passed in from the command handler factory:
 
 <div class='filename'>src/App/CommandHandler/Ping.php</div>
+
 ``` php
 <?php
 
@@ -326,6 +336,7 @@ class Ping
 And finally let the service manager know how to create the `Ping` command handler:
 
 <div class='filename'>config/autoload/dependencies.global.php</div>
+
 ``` diff
 diff --git a/config/autoload/dependencies.global.php b/config/autoload/dependencies.global.php
 index 460c045..2c8e3ee 100644

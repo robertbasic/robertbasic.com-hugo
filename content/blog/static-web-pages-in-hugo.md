@@ -18,6 +18,7 @@ I have tried different approaches, but what ended up working is the following.
 In the configuration file, I added a new type of permalink:
 
 <div class="filename">config.toml</div>
+
 ``` text
 [permalinks]
     talks = "/talks/"
@@ -26,6 +27,7 @@ In the configuration file, I added a new type of permalink:
 I created a new type of [an archetype](https://gohugo.io/content-management/archetypes/) under the `archetypes` directory of my theme:
 
 <div class="filename">themes/robertbasic.com/archetypes/talks.md</div>
+
 ``` text
 +++
 draft = false
@@ -37,6 +39,7 @@ title = "{{ replace .TranslationBaseName "-" " " | title }}"
 I have also created a new template file for that `talks` type, which actually has all the content I want to display, but is also capable of using the partials I have created before:
 
 <div class="filename">themes/robertbasic.com/layouts/static/list.html</div>
+
 ``` html
 {{ partial "header.html" . }}
 ...

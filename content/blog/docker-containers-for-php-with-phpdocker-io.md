@@ -26,6 +26,7 @@ PHPDocker.io is a tool that will help you build a typical PHP development enviro
 <p>The zip file comes with a <code>phpdocker</code> directory that holds the configurations for the specific containers such as the <code>nginx.conf</code> file for the nginx container. In the &ldquo;root&rdquo; of the zip there&rsquo;s a single <code>docker-compose.yml</code> file which configures all the services we told PHPDocker we need:</p>
 
 <p><div class="filename">docker-compose.yml</div></p>
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">###############################################################################</span>
 <span style="color:#75715e">#                          Generated on phpdocker.io                          #</span>
 <span style="color:#75715e">###############################################################################</span>
@@ -66,6 +67,7 @@ services:
 <p>Run <code>docker-compose up</code> in the directory where the <code>docker-compose.yml</code> file is located and it&rsquo;ll pull and build the required images and containers, and start the services. The application will be accessible from the &ldquo;host&rdquo; machine at <code>localhost:8080</code>, as that&rsquo;s the port I defined I wanted exposed in this case. You can see that in the <code>ports</code> section of the <code>webserver</code> service.</p>
 
 <p>One thing I noticed is that the <code>mysql</code> service doesn&rsquo;t keep the data around, but that can be fixed by adding a new line to the <code>volumes</code> section of that service: <code>./data/mysql:/var/lib/mysql</code>. The <code>mysql</code> service definition should now read:</p>
+
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    mysql:
       image: mysql:<span style="color:#ae81ff">5.7</span>
       container_name: test-mysql

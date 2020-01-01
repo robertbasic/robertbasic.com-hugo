@@ -16,6 +16,7 @@ One of the biggest problems with this kind of code is that it is pretty hard to 
 A typical example of this would be a base model class that has a `getDb()` method:
 
 <div class="filename">AbstractModel.php</div>
+
 ``` php
 <?php
 
@@ -39,6 +40,7 @@ abstract class AbstractModel
 which can be called in child classes to get access to the database connection:
 
 <div class="filename">ArticleModel.php</div>
+
 ``` php
 <?php
 
@@ -59,6 +61,7 @@ If we want to write unit tests for this `listArticles()` method, the best option
 In case refactoring is not an option for whatever reason, what we can do is to create a **partial mock** of the `ArticleModel` using [Mockery](http://docs.mockery.io/en/latest/reference/partial_mocks.html) and then mock (well, stub to be more precise) out only the `getDb()` method that will always return a mocked version of the `PDO` class:
 
 <div class="filename">tests/ArticleModelTest.php</div>
+
 ``` php
 <?php
 

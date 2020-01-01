@@ -30,6 +30,7 @@ Another, maybe an even bigger issue with legacy code is that we are so ready to 
 Instead of blindly using legacy code within new code, let's try writing interfaces that will expose only the required subset of the legacy "god" object's API. Say we have a `User` object in the legacy code that knows everything about everyone. It knows how to change emails and passwords, how to promote forum members to moderators, how to update a user's public profile, set notification settings, how to save itself, and so much more.
 
 <div class="filename">src/Legacy/User.php</div>
+
 ``` php
 <?php
 namespace Legacy;
@@ -58,6 +59,7 @@ It's a crude example, but shows the problems: every property is public and can b
 Let's limit and prohibit ourselves from reaching out to those public properties and having to guess how does the legacy system work any time we want to promote a user:
 
 <div class="filename">src/LegacyBridge/Promoter.php</div>
+
 ``` php
 <?php
 namespace LegacyBridge;
@@ -68,6 +70,7 @@ interface Promoter
 ```
 
 <div class="filename">src/LegacyBridge/LegacyUserPromoter.php</div>
+
 ``` php
 <?php
 namespace LegacyBridge;
@@ -101,6 +104,7 @@ Now when we want to promote a `User` from the new code we use this `LegacyBridge
 An interface for the legacy code gives us an opportunity to improve the design of the system. An interface can free us from any potential naming mistakes we did in the legacy. The process of changing a user's role from a moderator to a member is not a "promotion", but rather a "demotion". Nothing stops us from creating two interfaces for these two different things, even though the legacy code sees it the same:
 
 <div class="filename">src/LegacyBridge/Promoter.php</div>
+
 ``` php
 <?php
 namespace LegacyBridge;
@@ -111,6 +115,7 @@ interface Promoter
 ```
 
 <div class="filename">src/LegacyBridge/LegacyUserPromoter.php</div>
+
 ``` php
 <?php
 namespace LegacyBridge;
@@ -136,6 +141,7 @@ class LegacyUserPromoter implements Promoter
 
 
 <div class="filename">src/LegacyBridge/Demoter.php</div>
+
 ``` php
 <?php
 namespace LegacyBridge;
@@ -146,6 +152,7 @@ interface Demoter
 ```
 
 <div class="filename">src/LegacyBridge/LegacyUserDemoter.php</div>
+
 ``` php
 <?php
 namespace LegacyBridge;

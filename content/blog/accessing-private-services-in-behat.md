@@ -19,6 +19,7 @@ In a Behat test this test service container is not available through the `static
 We need Symfony, Behat, and Behat Symfony2 extension with the Behat Symfony2 extension configured to bootstrap an instance of the `App\Kernel` for us:
 
 <div class="filename">./behat.yml</div>
+
 ``` yaml
 default:
     extensions:
@@ -41,6 +42,7 @@ If the `behat.yml` example looks weird, I'm reusing it from my previous blog pos
 Now that we have injected the kernel into our Context file, we can get the service container from the kernel, and from that service container access the `test.service_container`:
 
 <div class="filename">./features/bootstrap/SystemContext.php</div>
+
 ``` php
 <?php
 

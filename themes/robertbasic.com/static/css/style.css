@@ -145,7 +145,6 @@ div.highlight {
 div.filename {
     background: #FFFFFF !important;
     padding: 0;
-    margin-bottom: -1.1rem;
     color: #c7254e;
     font-family: monospace;
     font-size: 0.8rem;

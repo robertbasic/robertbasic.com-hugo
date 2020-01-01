@@ -23,6 +23,7 @@ Ugh.
 Lets look at a couple of example test cases:
 
 <div class='filename'>tests/App/UnitTest/Transaction/TransactionTest.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 namespace App\UnitTest\Transaction;
@@ -78,6 +79,7 @@ What if we move the creation of those test doubles to traits?
 A trait for creating account types:
 
 <div class='filename'>tests/Traits/AccountTypeTrait.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 namespace Traits;
@@ -101,6 +103,7 @@ trait AccountTypeTrait
 and a trait for creating accounts:
 
 <div class='filename'>tests/Traits/AccountTrait.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 namespace Traits;
@@ -127,6 +130,7 @@ trait AccountTrait
 The example test case from the beginning now becomes a little bit more clear, hopefully:
 
 <div class='filename'>tests/App/UnitTest/Transaction/TransactionTest.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 namespace App\UnitTest\Transaction;

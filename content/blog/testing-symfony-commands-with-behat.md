@@ -15,6 +15,7 @@ The other day I was creating a Symfony command that will be periodically execute
 We need [Symfony](https://symfony.com/), [Behat](http://behat.org/en/latest/), and [Behat Symfony2 extension](https://github.com/Behat/Symfony2Extension). In the `behat.yml` file we configure the Behat extension to boot up the Kernel for us and pass it in is a constructor argument to our Behat Context:
 
 <div class="filename">./behat.yml</div>
+
 ``` yaml
 default:
     extensions:
@@ -37,6 +38,7 @@ We enable and configure the Behat Symfony2 extension, and tell Behat that the `s
 The `boostrap.php` file is created when installing the extension (at least, it was created for me as I installed it using [Symfony Flex](https://symfony.com/doc/current/setup/flex.html)):
 
 <div class="filename">./features/bootstrap/bootstrap.php</div>
+
 ``` php
 <?php
 putenv('APP_ENV='.$_SERVER['APP_ENV'] = $_ENV['APP_ENV'] = 'test');
@@ -46,6 +48,7 @@ require dirname(__DIR__, 2).'/config/bootstrap.php';
 The `system.feature` file doesn't have much, just an example scenario:
 
 <div class="filename">./features/system.feature</div>
+
 ``` gherkin
 Feature: System executed commands
 
@@ -60,6 +63,7 @@ Feature: System executed commands
 The `SystemContext` file is where it gets interesting:
 
 <div class="filename">./features/bootstrap/SystemContext.php</div>
+
 ``` php
 <?php
 
@@ -100,6 +104,7 @@ We also create a `BufferedOutput` in the constructor, that will hold the output 
 The steps are defined like so (it's in the same `SystemContext.php` file as the previous example):
 
 <div class="filename">./features/bootstrap/SystemContext.php</div>
+
 ``` php
 <?php
 
@@ -159,6 +164,7 @@ In the third Behat step we fetch the output and assert that it is the same as th
 To make it a bit more reusable, the running of the command in the `iGreetTheWorld` step can be extracted to a private method so that it all reads a little bit nicer. The final result looks something like this:
 
 <div class="filename">./features/bootstrap/SystemContext.php</div>
+
 ``` php
 <?php
 

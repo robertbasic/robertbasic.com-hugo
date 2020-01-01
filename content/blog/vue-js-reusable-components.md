@@ -17,6 +17,7 @@ While reading up on Vue.js I came across the part of their documentation that ta
 A simplified version of my initial Vue.js page was something like this:
 
 <div class="filename">./assets/vue/components/Journal.vue</div>
+
 ``` html
 <template>
     <div>
@@ -73,6 +74,7 @@ Now, for the case when the journal *has no tasks*, I decided I want to show the 
 How did I do that? By copy/pasting a bunch of times the HTML for the todo and done tasks.
 
 <div class="filename">./assets/vue/components/Journal.vue</div>
+
 ``` html
 <template>
     <div>
@@ -112,6 +114,7 @@ What I did was I created two reusable components, one for a todo task, and one f
 
 The component for the todo task looks something like this:
 <div class="filename">./assets/vue/components/Tasks/Todo.vue</div>
+
 ``` html
 <template>
     <div>
@@ -131,6 +134,7 @@ The `<slot>` element acts like a kind of a placeholder where Vue.js will insert 
 
 The component for the done task is similar:
 <div class="filename">./assets/vue/components/Tasks/Done.vue</div>
+
 ``` html
 <template>
     <div>
@@ -146,6 +150,7 @@ The component for the done task is similar:
 
 To use these components we need to import them and list them under `components` within our component where we want to use them:
 <div class="filename">./assets/vue/components/Journal.vue</div>
+
 ``` html
 <script>
     import TodoTask from "./Tasks/Todo";
@@ -163,6 +168,7 @@ To use these components we need to import them and list them under `components` 
 
 We take the name of the components we imported, turn them [kebab-case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles), and use them as HTML tags. What we put between the opening and closing tags of our component will be inserted into the `<slot>` tag inside:
 <div class="filename">./assets/vue/components/Journal.vue</div>
+
 ``` html
 <template>
     <div>
@@ -191,6 +197,7 @@ For a while I didn't know what to do with the `Mark as done` button. The origina
 Turns out the solution is quite elegant. On the button within the `TodoTask` we listen for the `click` event and trigger our own custom `clickedToMarkTaskAsDone` event:
 
 <div class="filename">./assets/vue/components/Tasks/Todo.vue</div>
+
 ``` html
 <template>
     <div>
@@ -215,6 +222,7 @@ Turns out the solution is quite elegant. On the button within the `TodoTask` we 
 In the parent component where we use this `TodoTask` component, we create a handler for our custom event using the existing code we have:
 
 <div class="filename">./assets/vue/components/Journal.vue</div>
+
 ``` html
 <todo-task v-if="task.status === 'todo'" @clickedToMarkTaskAsDone="markTaskAsDone(task.id)">
     {{ task.description }}

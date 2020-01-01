@@ -28,6 +28,7 @@ $ composer require zendframework/zend-eventmanager
 Next we expand the factory for the Ping command handler. We create an `EventManager` object that we will pass to the Ping command handler, so that we can trigger events:
 
 <div class='filename'>src/App/CommandHandler/PingFactory.php</div>
+
 ``` diff
 diff --git a/src/App/CommandHandler/PingFactory.php b/src/App/CommandHandler/PingFactory.php
 index e995d1a..0737631 100644
@@ -61,6 +62,7 @@ Later on we will use the same event manager to attach event listeners to our eve
 In the Ping command handler we use the event manager, that we pass in as a constructor argument from the ping command handler factory, to trigger events:
 
 <div class='filename'>src/App/CommandHandler/Ping.php</div>
+
 ``` diff
 diff --git a/src/App/CommandHandler/Ping.php b/src/App/CommandHandler/Ping.php
 index 538e3af..9768738 100644
@@ -115,6 +117,7 @@ Zend EventManager comes with lazy listeners that allows to fetch event listeners
 Let's attach our event listener to the event using the lazy listener:
 
 <div class='filename'>src/App/CommandHandler/PingFactory.php</div>
+
 ``` diff
 diff --git a/src/App/CommandHandler/PingFactory.php b/src/App/CommandHandler/PingFactory.php
 index 0737631..5ce9c7e 100644
@@ -152,6 +155,7 @@ After that we attach the lazy listener to the events we are interested in, in th
 Let's quickly tell the container how to create our event listener:
 
 <div class='filename'>config/autoload/dependencies.global.php</div>
+
 ``` diff
 diff --git a/config/autoload/dependencies.global.php b/config/autoload/dependencies.global.php
 index 794304e..cf47c99 100644
@@ -170,6 +174,7 @@ index 794304e..cf47c99 100644
 And finally our event listener looks something like this:
 
 <div class='filename'>src/App/EventListener/Ping.php</div>
+
 ``` php
 <?php
 namespace App\EventListener;

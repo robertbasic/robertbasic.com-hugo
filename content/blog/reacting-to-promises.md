@@ -32,6 +32,7 @@ $ composer require react/promise
 Let's say we have some code that does some asynchronous work. Checking the HTTP status code of a bunch of URLs, for example. We could create an invokable class that extends the `Deferred`:
 
 <div class='filename'>FetchStatusCodes.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 
@@ -69,6 +70,7 @@ The important thing here is that we extend `React\Promise\Deferred` and that at 
 The set up of the actual promise and its handlers would look something like this:
 
 <div class='filename'>promise.php</div>
+
 ``` php
 <?php
 
@@ -125,6 +127,7 @@ On this second promise we can again set up our resolve/reject handlers calling t
 Let's see if an example makes it a bit more clearer:
 
 <div class='filename'>promise.php</div>
+
 ``` php
 <?php
 
@@ -178,6 +181,7 @@ When we call `then`, we make a new promise.
 To actually be **done** with all the promises, we need to call the `done` method on the last promise in our chain. With `done` we stop making promises and use the result of our last promise:
 
 <div class='filename'>promise.php</div>
+
 ``` php
 <?php
 $thirdPromise->done(

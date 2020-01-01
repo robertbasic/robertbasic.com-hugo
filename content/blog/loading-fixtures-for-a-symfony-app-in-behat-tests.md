@@ -25,6 +25,7 @@ composer require --dev doctrine/doctrine-fixtures-bundle:2.3.0
 and enable the bundle in the `AppKernel`:
 
 <div class='filename'>app/AppKernel.php</div>
+
 ``` diff
 diff --git a/app/AppKernel.php b/app/AppKernel.php
 index 0d22098..c30e863 100644
@@ -47,6 +48,7 @@ Now we can write a fixture loader. Writing fixture loaders is explained well in 
 Here's an example fixture loader for the [FOSUser bundle](https://github.com/FriendsOfSymfony/FOSUserBundle), creating users for the application:
 
 <div class='filename'>src/AppBundle/DataFixtures/ORM/LoadUserData.php</div>
+
 ``` php
 <?php
 
@@ -126,6 +128,7 @@ composer require --dev behat/symfony2-extension:2.1.1
 Next, we need to tell Behat to pass an instance of the `AppKernel` to our test. We do so through the `behat.yml` file:
 
 <div class='filename'>behat.yml</div>
+
 ``` yaml
 default:
     suites:
@@ -142,6 +145,7 @@ default:
 This will allow our `FeatureContext` test file to get an instance of a `KernelInterface`, the `AppKernel`, through the constructor:
 
 <div class='filename'>features/bootstrap/FeatureContext.php</div>
+
 ``` php
 <?php
 

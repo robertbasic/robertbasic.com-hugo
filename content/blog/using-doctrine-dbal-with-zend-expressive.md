@@ -20,6 +20,7 @@ But what if want to use only the DBAL with Zend Expressive, and not the entire O
 It's pretty easy as all we need to do is write one short factory that will create the database connection using the connection parameters we provide to it:
 
 <div class='filename'>src/App/Infrastructure/Database/ConnectionFactory.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 
@@ -44,6 +45,7 @@ class ConnectionFactory
 Configuration of the database connection is pretty straightforward as well:
 
 <div class='filename'>config/database.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 
@@ -65,6 +67,7 @@ Next, we configure a `container-interop` service locator, like [Zend ServiceMana
 in parts of the application where we need it. This configuration consists of mapping a factory name to the `ConnectionFactory` factory:
 
 <div class='filename'>config/dependencies.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 
@@ -82,6 +85,7 @@ return [
 Now all we need to access the database connection is to grab it from the `ContainerInterface` container somewhere in our application and we're all set:
 
 <div class='filename'>src/App/SomeObjectFactory.php</div>
+
 ``` php
 <?php declare(strict_types=1);
 

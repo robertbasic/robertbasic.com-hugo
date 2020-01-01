@@ -14,6 +14,7 @@ Sometimes when working with Mockery mock objects, we want to tell a mocked metho
 The feature that allows us to return different values based on arguments is the `andReturnUsing` Mockery method, which takes a closure as an argument:
 
 <div class="filename">example.php</div>
+
 ``` php
 $dependencyMock = \Mockery::mock('SomeDependency');
 $dependencyMock->shouldReceive('callDependency')
@@ -36,6 +37,7 @@ Not much of an example, so let's take a look at one a bit closer to a real world
 Say we're using Doctrine's entity manager to get repositories for our entities in a service class:
 
 <div class="filename">src/ArticleService.php</div>
+
 ``` php
 <?php
 
@@ -54,6 +56,7 @@ Not the best of the codes, but we'll manage. The entity manager receives two cal
 In a test case we could then set up the mocks like so:
 
 <div class="filename">tests/ArticleServiceTest.php</div>
+
 ``` php
 <?php
 
@@ -91,6 +94,7 @@ Now when we instantiate the `ArticleService` with the mocked entity manager, tha
 Of course there is another way to achieve the same thing and that's by using `andReturn` for the return value expectations, but it's a bit more to write:
 
 <div class="filename">tests/ArticleServiceTest.php</div>
+
 ``` php
 <?php
     public function testArticleService()

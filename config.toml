@@ -29,3 +29,20 @@ pygmentscodefences = "true"
     2010 = "2010"
     2009 = "2009"
     2008 = "2008"
+
+[markup]
+    defaultMarkdownHandler = "goldmark"
+    [markup.highlight]
+        codeFences = true
+        guessSyntax = false
+        hl_Lines = ""
+        lineNoStart = 1
+        lineNos = false
+        lineNumbersInTable = true
+        noClasses = true
+        style = "monokai"
+        tabWidth = 4
+    [markup.goldmark.renderer]
+        hardWraps = true
+        unsafe = true
+        xHTML = true
