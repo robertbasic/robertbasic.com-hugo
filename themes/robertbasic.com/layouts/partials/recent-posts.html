@@ -4,10 +4,12 @@
     </h2>
 
     <ul>
-    {{ range first 10 (where . "Section" "blog") }}
+    {{ range first 11 (where . "Section" "blog") }}
+        {{ if ne .Title "Blogs" }}
         <li>
             <a href="{{ .Permalink }}"> {{ .Title }} </a>
         </li>
+        {{ end }}
     {{ end }}
     </ul>
 </div>
