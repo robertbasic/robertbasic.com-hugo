@@ -15,6 +15,7 @@ The future me will be grateful for this post. I always get it wrong the first ti
 To set a Symfony form field as a read-only, we can't set the `readonly` attribute as an option on that field:
 
 <div class='filename'>src/AppBundle/Form/FooType.php</div>
+
 ``` php
 <?php
 declare(strict_types=1);
@@ -41,6 +42,7 @@ This won't work, and will give the `The option "readonly" does not exist. Define
 We need to set it as an attribute of that field:
 
 <div class='filename'>src/AppBundle/Form/FooType.php</div>
+
 ``` php
 <?php
 declare(strict_types=1);
