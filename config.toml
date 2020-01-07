@@ -1,6 +1,6 @@
 baseurl = "https://robertbasic.com/"
 languageCode = "en-us"
-title = "Robert Basic, software engineer, consultant"
+title = "Robert Basic, software developer making web applications better"
 theme = "robertbasic.com"
 
 pygmentsstyle = "monokai"
@@ -11,7 +11,7 @@ pygmentscodefences = "true"
     talks = "/talks/"
 
 [params]
-    description = "Robert Basic is a software engineer, consultant, and open source contributor."
+    description = "Robert Basic is a software developer making web applications better."
 
 
 [taxonomies]
