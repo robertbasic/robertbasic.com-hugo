@@ -16,6 +16,8 @@ From time to time I come across a mistake in unit tests that makes them useless.
 ``` php
 <?php
 
+declare(strict_types=1);
+
 class BadTest extends TestCase
 {
     public function testThatPasswordIsHashed(): void
@@ -40,6 +42,8 @@ The `SortOfFixedTest` example shows an improvement over the `BadTest`. The probl
 ``` php
 <?php
 
+declare(strict_types=1);
+
 class SortOfFixedTest extends TestCase
 {
     public function testThatPasswordIsHashed(): void
@@ -63,6 +67,8 @@ We have to set the expected result to the result that we are expecting:
 
 ``` php
 <?php
+
+declare(strict_types=1);
 
 class FixedTest extends TestCase
 {
