@@ -63,7 +63,7 @@ function blog-new() {
 
 ``` bash
 function blog-drafts() {
-    ag -l "draft = true" content
+    ag -l "^draft = true" content
 }
 ```
 
