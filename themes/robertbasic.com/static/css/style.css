@@ -10,6 +10,7 @@ body {
 
 h1, h2, h3 {
     color: #161616;
+    font-weight: 400;
 }
 
 a {
@@ -99,21 +100,6 @@ div.box:first-child {
     padding: 5px 5px;
 }
 
-#my_contact {
-    font-size: 1.1rem;
-    text-align: left;
-    color: #292929;
-    margin: 0 50px 20px 50px;
-    padding: 5px;
-    border: 1px solid #23527C;
-    border-radius: 5px;
-}
-
-#my_contact dd {
-    margin: 0 0 0 30px;
-    color: #292929;
-}
-
 pre {
     color: #FFF;
     border: none;
@@ -125,17 +111,6 @@ code {
     background: #FFF;
     padding: 0.2rem;
     font-size: 0.8rem;
-}
-
-div.old_entry_warn {
-    font-size: 90%;
-    text-align: left;
-    background: #23527C;
-    color: #FFFFFF;
-    margin: 0 50px 20px 50px;
-    padding: 5px;
-    border: 1px solid #6c7388;
-    border-radius: 5px;
 }
 
 div.highlight {
@@ -152,8 +127,4 @@ div.filename {
     border: #272822 solid 1px;
     border-radius: 4px 4px 0 0;
     border-bottom: none;
-}
-
-.software-versions {
-     
 }
