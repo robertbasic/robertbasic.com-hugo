@@ -22,6 +22,6 @@ To start a new command line in a pane: `Ctrl+a Ctrl+c`.
 
 To close the focused pane: `Ctrl+a Shift+x`.
 
-Now to figure out how to get back all the panes after reattaching to a detached session.
+Save the layout of the panes with: `Ctrl+a :` and then type `layout save name-of-your-layout`. After reattaching to the screen session the panes will be restored.
 
 Happy hackin'!
