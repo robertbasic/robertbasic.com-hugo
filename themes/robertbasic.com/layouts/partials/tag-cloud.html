@@ -4,7 +4,7 @@
 
     <div class="Zend_Tag_Cloud">
     {{ range $index, $tag := first 40 .Site.Taxonomies.tags.ByCount }}
-        {{ if lt $index 8 }}{{ $fontSize := sub 20 $index }}<span style="font-size: {{ $fontSize }}px;">{{ else }}<span style="font-size: 12px;">{{ end }}<a href="/tags/{{ $tag.Name | urlize }}">{{ $tag.Name }}</a>, </span>
+        {{ if lt $index 8 }}{{ $fontSize := sub 20 $index }}<span style="font-size: {{ $fontSize }}px;">{{ else }}<span style="font-size: 12px;">{{ end }}<a href="/tags/{{ $tag.Name | urlize }}/">{{ $tag.Name }}</a>, </span>
     {{ end }}
     </div>
 

@@ -6,7 +6,7 @@
         {{ $year := (index .Pages 0).Date.Format "2006" }}
         {{ if ne $year "0001" }}
         {{ $url := (index .Pages 0).Date.Format "2006/01" | urlize }}
-        <li><a href="/{{ $url }}">{{ .Key }}</a></li>
+        <li><a href="/{{ $url }}/">{{ .Key }}</a></li>
         {{ end }}
     {{ end }}
     </ul>
