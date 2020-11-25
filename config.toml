@@ -1,4 +1,4 @@
-baseurl = "https://robertbasic.com/"
+baseURL = "https://robertbasic.com/"
 languageCode = "en-us"
 title = "Robert Basic, software developer making web applications better"
 theme = "robertbasic.com"

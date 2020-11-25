@@ -1,37 +1,72 @@
 {{ $cp := .Paginator.PageNumber }}
 {{ $cu := .URL }}
 {{ if lt $cp 4 }}
-    {{ $.Scratch.Set "p" (first 5 .Paginator.Pagers) }}
-    {{ $.Scratch.Set "first" true }}
-    {{ $.Scratch.Set "last" false }}
+{{ $.Scratch.Set "p" (first 10 .Paginator.Pagers) }}
+{{ $.Scratch.Set "first" true }}
+{{ $.Scratch.Set "last" false }}
 {{ else if gt $cp (sub .Paginator.TotalPages 2) }}
-    {{ $.Scratch.Set "p" (last 5 .Paginator.Pagers) }}
-    {{ $.Scratch.Set "first" false }}
-    {{ $.Scratch.Set "last" true }}
+{{ $.Scratch.Set "p" (last 10 .Paginator.Pagers) }}
+{{ $.Scratch.Set "first" false }}
+{{ $.Scratch.Set "last" true }}
 {{ else }}
-    {{ $.Scratch.Set "p" (first 5 (after (sub $cp 3) .Paginator.Pagers)) }}
-    {{ $.Scratch.Set "first" false }}
-    {{ $.Scratch.Set "last" false }}
+{{ $.Scratch.Set "p" (first 10 (after (sub $cp 4) .Paginator.Pagers)) }}
+{{ $.Scratch.Set "first" false }}
+{{ $.Scratch.Set "last" false }}
 {{ end }}
 
-<div class="pagination">
-    {{ if .Paginator.HasPrev }}
-    <a href="{{ $cu }}page/{{ sub $cp 1 }}/" class="button"> Prev </a>
-    {{ end }}
+<nav class="border-t border-gray-200 px-4 flex items-center justify-between sm:px-0">
+    <div class="-mt-px w-0 flex-1 flex">
+        <a href="{{ if .Paginator.HasPrev }}{{ $cu }}page/{{ sub $cp 1 }}/{{ else }}#{{ end }}"
+            class="border-t-2 border-transparent pt-4 pr-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+            <!-- Heroicon name: arrow-narrow-left -->
+            <svg class="mr-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                    clip-rule="evenodd" />
+            </svg>
+            Previous
+        </a>
+        
+    </div>
+    <div class="hidden md:-mt-px md:flex">
+        {{ if (not ($.Scratch.Get "first")) }}
+        <a href="{{ $cu }}"
+            class="pagination-link {{ if eq $cp 1 }}pagination-link-active{{ end }}">
+            1
+        </a>
+        <svg class="mt-4 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+        </svg>
+        {{ end }}
 
-    {{ if (not ($.Scratch.Get "first")) }}
-        <a href="{{ $cu }}" class="button {{ if eq $cp 1 }} is-link {{ end }}"> 1 </a> <span>...</span>
-    {{ end }}
+        {{ range $.Scratch.Get "p" }}
+        <a href="{{ $cu }}page/{{ .PageNumber }}/" class="pagination-link {{ if eq $cp .PageNumber }}pagination-link-active{{ end }}">
+            {{ .PageNumber }}
+        </a>
+        {{ end }}
 
-    {{ range $.Scratch.Get "p" }}
-        <a href="{{ $cu }}page/{{ .PageNumber }}/" class="button {{ if eq $cp .PageNumber }} is-link {{ end }}"> {{ .PageNumber }} </a>
-    {{ end }}
-
-    {{ if (not ($.Scratch.Get "last")) }}
-        <span>...</span> <a href="{{ $cu }}page/{{ .Paginator.TotalPages }}/" class="button {{ if eq $cp .Paginator.TotalPages }} is-link {{ end }}"> {{ .Paginator.TotalPages }} </a>
-    {{ end }}
-
-    {{ if .Paginator.HasNext }}
-        <a href="{{ $cu }}page/{{ add $cp 1 }}/" class="button"> Next </a>
-    {{ end }}
-</div>
+        {{ if (not ($.Scratch.Get "last")) }}
+        <svg class="mt-4 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+        </svg>
+        <a href="{{ $cu }}page/{{ .Paginator.TotalPages }}/"
+            class="pagination-link {{ if eq $cp .Paginator.TotalPages }}pagination-link-active{{ end }}">
+            {{ .Paginator.TotalPages }}
+        </a>
+        {{ end }}
+    </div>
+    <div class="-mt-px w-0 flex-1 flex justify-end">
+        <a href="{{ if .Paginator.HasNext }}{{ $cu }}page/{{ add $cp 1 }}/{{ else }}#{{ end }}"
+            class="border-t-2 border-transparent pt-4 pl-1 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300">
+            Next
+            <!-- Heroicon name: arrow-narrow-right -->
+            <svg class="ml-3 h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+            </svg>
+        </a>
+    </div>
+</nav>

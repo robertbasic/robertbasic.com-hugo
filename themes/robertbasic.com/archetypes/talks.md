@@ -1,7 +1,7 @@
 +++
 draft = false
 date = {{ .Date }}
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
+title = "Talks"
 +++
 
 {{ .Content }}
