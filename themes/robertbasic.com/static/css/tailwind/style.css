@@ -1,0 +1,29 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+    .navigation-link {
+        @apply inline-flex items-center px-1 pt-1 font-medium border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300
+    }
+
+    .navigation-link-active {
+        @apply border-indigo-500  text-gray-900
+    }
+
+    .pagination-link {
+        @apply border-t-2 border-transparent pt-4 px-4 inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300
+    }
+
+    .pagination-link-active {
+        @apply border-indigo-500 text-gray-900
+    }
+
+    div.highlight pre {
+        @apply mt-0 rounded-none text-xs md:text-sm
+    }
+
+    .filename {
+        @apply text-xs md:text-sm border border-gray-600 rounded-lg rounded-b-none pl-4
+    }
+}

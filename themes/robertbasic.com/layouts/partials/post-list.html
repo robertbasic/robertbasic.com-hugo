@@ -1,0 +1,31 @@
+{{ partial "header.html" . }}
+
+<div class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+
+        {{ if eq .Kind "taxonomy" }}
+        <div class="relative px-4 sm:px-6 lg:px-8 mb-4">
+            <div class="text-lg prose lg:prose-xl prose-indigo mx-auto">
+            {{ $c := (len .Data.Pages) }}
+            <p class="text-sm text-gray-500 leading-8">
+            
+            There {{ if eq $c 1 }}is{{ else }}are{{ end }} {{ $c }} article{{ if ne $c 1 }}s{{ end }}
+            {{ if eq .Data.Singular "category" }}categorized as "{{ .Data.Term }}"
+            {{ else if eq .Data.Singular "tag" }}tagged as "{{ .Data.Term }}"
+            {{ else }}
+            written in {{ .Date.Format "January, 2006" }}
+            {{ end }}
+            
+            </p>
+            </div>
+        </div>
+        {{ end }}
+
+        {{ range (.Paginator 10).Pages }}
+        {{ partial "short-post.html" . }}
+        {{ end }}
+        {{ partial "pagination.html" . }}
+    </div>
+</div>
+
+{{ partial "footer.html" . }}

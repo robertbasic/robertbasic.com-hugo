@@ -1,22 +1,31 @@
-<div class="post">
-    <h1 class="is-marginless">
-        <a title="{{ .Title }}" href="{{ .Permalink }}" rel="bookmark">
-            {{ .Title }}
-        </a>
-    </h1>
-    <div class="is-size-6 date">
-        published on {{ .Date.Format "January 02, 2006." }}
-    </div>
+{{ partial "header.html" . }}
 
-    <div class="entry">
-        {{ .Content }}
-    </div>
-    <div class="is-size-6 has-text-left">
-        {{ if isset .Params "software_versions" }}
-        Versions used for examples: {{ delimit (apply (apply .Params.software_versions "partial" "softwareVersion" ".") "chomp" ".") ", " }}.<br>
-        {{ end }}
-
-        Tags: {{ delimit (apply (apply .Params.tags "partial" "tag" ".") "chomp" ".") ", " }}.<br>
-        Categories: {{ delimit (apply (apply .Params.categories "partial" "category" ".") "chomp" ".") ", " }}.<br>
+<div class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="relative px-4 sm:px-6 lg:px-8 mb-16">
+            <div class="text-lg prose lg:prose-xl prose-indigo mx-auto">
+                <h1>
+                    <a href="{{ .Permalink }}"
+                        class="mt-2 block text-3xl leading-8 font-extrabold tracking-tight no-underline sm:text-4xl" style="text-decoration: none;">{{ .Title }}</a>
+                </h1>
+                <p class="mt-6 text-sm text-gray-500 leading-8">on {{ .Date.Format "January 02, 2006." }} in {{ delimit (apply (apply .Params.categories "partial" "category" ".") "chomp" ".") ", " }}. A {{ .ReadingTime }} minute read.</p>
+            </div>
+            <div class="mt-6 prose prose-indigo lg:prose-xl text-gray-500 mx-auto">
+                {{ .Content }}
+            </div>
+        
+            <div class="text-lg prose lg:prose-xl prose-indigo mx-auto mt-6">
+                {{ if isset .Params "software_versions" }}
+                <p class="text-sm text-gray-500 leading-8">
+                Versions used for examples:
+                {{ delimit (apply (apply .Params.software_versions "partial" "softwareVersion" ".") "chomp" ".") ", " }}.
+                </p>
+                {{ end }}
+        
+                <p class="text-sm text-gray-500 leading-8">Tags: {{ delimit (apply (apply .Params.tags "partial" "tag" ".") "chomp" ".") ", " }}.</p>
+            </div>
+        </div>
     </div>
 </div>
+
+{{ partial "footer.html" . }}

@@ -1,0 +1,20 @@
+<div class="relative px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="text-lg prose lg:prose-xl prose-indigo mx-auto">
+        <h1>
+            <a href="{{ .Permalink }}"
+                class="mt-2 block text-3xl leading-8 font-extrabold tracking-tight no-underline sm:text-4xl" style="text-decoration: none;">{{ .Title }}</a>
+        </h1>
+        <p class="mt-6 text-sm text-gray-500 leading-8">on {{ .Date.Format "January 02, 2006." }} in {{ delimit (apply (apply .Params.categories "partial" "category" ".") "chomp" ".") ", " }}. A {{ .ReadingTime }} minute read.</p>
+    </div>
+    <div class="mt-6 prose prose-indigo lg:prose-xl text-gray-500 mx-auto">
+        {{ range $index, $element := split .Content "</p>" }}
+            {{ if eq $index 0 }}
+                {{ $element | safeHTML }}
+            {{ end }}
+        {{ end }}
+    </div>
+
+    <div class="text-lg prose lg:prose-xl prose-indigo mx-auto mt-6">
+        <p class="text-sm text-gray-500 leading-8">Continue reading <a href="{{ .Permalink }}">{{ .Title }}</a>...</p>
+    </div>
+</div>
