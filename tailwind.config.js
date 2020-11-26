@@ -2,7 +2,7 @@ module.exports = {
   purge: {
       content: ['themes/robertbasic.com/layouts/**/*.html'],
       options: {
-        safelist: ['filename', 'highlight'],
+        safelist: ['filename', 'highlight', 'block'],
       }
   },
   darkMode: false, // or 'media' or 'class'
