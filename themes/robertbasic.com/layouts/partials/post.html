@@ -25,6 +25,8 @@
                 <p class="text-sm text-gray-500 leading-8">Tags: {{ delimit (apply (apply .Params.tags "partial" "tag" ".") "chomp" ".") ", " }}.</p>
             </div>
         </div>
+
+        {{ partial "email.html" }}
     </div>
 </div>
 
