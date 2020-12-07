@@ -6,7 +6,7 @@ env.roledefs = {
     'robertbasic.com': ['robert@robertbasic.com'],
 }
 
-WEBSITE_PATH = "/var/www/robertbasic.com-hugo"
+WEBSITE_PATH = "/var/www/robertbasic.com"
 
 def create_public():
     with cd(WEBSITE_PATH):
