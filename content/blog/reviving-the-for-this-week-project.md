@@ -2,13 +2,13 @@
 slug = "reviving-the-for-this-week-project"
 description = "Time to revive a neglected project and put it live."
 tags = ["for this week", "current state", "revive"]
-categories = ["ForThisWeek"]
-draft = true
-date = 2020-12-08T07:32:53+01:00
+categories = ["Programming", "Development"]
+draft = false
+date = 2020-12-12T12:50:04+01:00
 title = "Reviving the ForThisWeek project"
 +++
 
-Way back in the summer of 2018 I've started a project called "ForThisWeek". It's nothing more than a glorified to-do application. I've used it mainly to learn more about some of the Domain-Driven Design concepts. Looking at the commit history, I've worked on it in the summer of 2018, then from November 2018 till May 2019, and then again from November 2019 till mid December 2019. Apparently I've put a decent amount of work in it, so if I want to have a project live, this one's a good candidate.
+Way back in the summer of 2018 I've started a project called "ForThisWeek". It's nothing more than a glorified to-do application. I've used it mainly to learn more about some of the Domain-Driven Design concepts. Looking at the commit history, I've worked on it in the summer of 2018, then from November 2018 till May 2019, and then again from November 2019 till mid December 2019. Apparently I've put a decent amount of work in it, so if I want to have a side project live, this one's a good candidate.
 
 The idea for the project came from how I organize my life around [a weekly to-do list](https://robertbasic.com/blog/a-weekly-to-do/):
 
@@ -34,13 +34,13 @@ The development environment is dockerized, so that's good. There's good test cov
 
 I'm so happy right now that I invested that time in the beginning.
 
-The `Makefile` has nice targets for the development environment, for running unit tests, [PHPStan analysis](https://phpstan.org/user-guide/getting-started), running migrations...
+The `Makefile` has nice targets for the development environment, for running unit tests, [PHPStan analysis](https://phpstan.org/user-guide/getting-started), migrations...
 
 ## What to do next?
 
 As for the codebase itself, I have the option to start over or use what's there. I would be crazy to start over, even though I could reuse the core logic from it, as is.
 
-The UI is better than I remember it. Looks like it doesn't need a lot of work. I've bought the [TailwindUI kit](https://tailwindui.com/) and maybe use some of the components from there. Good news is that the CSS is already done with [TailwindCSS](https://tailwindcss.com/).
+The UI is better than I remember it. Looks like it doesn't need a lot of work. I've bought the [TailwindUI kit](https://tailwindui.com/) and maybe I'll use some of the components from there. Good news is that the CSS is already done with [TailwindCSS](https://tailwindcss.com/).
 
 <img src="/img/ftw-ui.png">
 
@@ -62,4 +62,4 @@ So, to sum up:
 
 After these things are done, I think I can go back to the issues and features that need to be fixed and implemented, and see from those which ones are required for launch, which ones can be done after.
 
-Happy makin'!
+Happy hackin'!

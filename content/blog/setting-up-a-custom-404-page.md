@@ -2,7 +2,7 @@
 slug = "setting-up-a-custom-404-page"
 description = "Configuring nginx to use a custom 404 page when a page can't be found."
 tags = ["404", "nginx", "hugo", "template"]
-categories = ["BlaBlaBla"]
+categories = ["Development"]
 draft = false
 date = 2020-12-12T06:28:40+01:00
 title = "Setting up a custom 404 page"
