@@ -30,7 +30,7 @@ So as you can tell, a fair bit of neglect is going on on this project.
 
 The development environment is dockerized, so that's good. There's good test coverage with both unit tests and acceptance/feature tests. Documentation is **amazing** for a neglected pet project. The readme file is detailed with ideas, steps to take next, there's even a diagram:
 
-<img src="/img/fwtflow.png">
+<img src="/img/posts/fwtflow.png">
 
 I'm so happy right now that I invested that time in the beginning.
 
@@ -42,7 +42,7 @@ As for the codebase itself, I have the option to start over or use what's there.
 
 The UI is better than I remember it. Looks like it doesn't need a lot of work. I've bought the [TailwindUI kit](https://tailwindui.com/) and maybe I'll use some of the components from there. Good news is that the CSS is already done with [TailwindCSS](https://tailwindcss.com/).
 
-<img src="/img/ftw-ui.png">
+<img src="/img/posts/ftw-ui.png">
 
 I will host it on a Linode server, so I have to remove and undo all the changes I did to make it "runnable" on Heroku.
 
