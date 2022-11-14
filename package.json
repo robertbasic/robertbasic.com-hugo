@@ -6,7 +6,7 @@
   "dependencies": {
     "autoprefixer": "^10.0.2",
     "postcss-cli": "^8.3.0",
-    "postcss": "^8.1.8",
+    "postcss": "^8.2.13",
     "tailwindcss": "^2.0.1",
     "@tailwindcss/typography": "^0.3.1"
   },
