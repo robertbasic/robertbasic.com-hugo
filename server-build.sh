@@ -1,9 +1,9 @@
 #!/bin/bash
 
 cd /home/robert/robertbasic.com
-git fetch && git pull
-status=$(git status)
-if [[ "$status" == *"Your branch is up to date with 'origin/master'."* ]]; then
+git fetch
+status=$(git pull)
+if [[ "$status" == "Already up to date." ]]; then
     exit 0
 fi
 
