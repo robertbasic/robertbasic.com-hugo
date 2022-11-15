@@ -13,4 +13,6 @@ If I did it right, this blog post will appear on my blog after writing it on my 
 
 If not, I probably made a bug somewhere in a custom bash script running on my server. Let's find out!
 
+Edit: I do have a bug! Let's see if it's now fixed.
+
 Happy hackin'!
